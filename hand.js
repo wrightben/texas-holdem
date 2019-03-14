@@ -15,6 +15,11 @@ var winner = Hand.winners( solvedHands );
 
 
 // OUTPUT
-console.log( winner[0].descr );
-console.log( "\n" );
-console.log( winner[0].cards );
+console.log( 'Hands: '+winner.length );
+winner.forEach(function(a, e) {
+
+	console.log( a.descr );
+	console.log( "\n" );
+	console.log( a.cards );
+
+});
