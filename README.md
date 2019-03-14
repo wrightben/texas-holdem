@@ -1,0 +1,3 @@
+# poker
+
+`$./hand.sh`
