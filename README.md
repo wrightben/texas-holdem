@@ -31,6 +31,9 @@ $
 
 ### Use
 
-`$./hand.sh`
+```
+$./hand.sh
+
+```
 
 **shuffle.js**: Computer-generated permutation of cards to be dealt
