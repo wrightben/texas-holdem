@@ -29,7 +29,6 @@ Hands:
   [ 'Kc', '2d', '2s', '9s', 'Kd', 'Qs', '5s' ],		<-- Seat 8 bets heavily (prematurely)
   [ '4c', '5h', '2s', '9s', 'Kd', 'Qs', '5s' ],
   [ '7d', '8s', '2s', '9s', 'Kd', 'Qs', '5s' ] ]	<-- Seat 10 wins (unless deterred by colloquial play)
-$
 ```
 
 ### Use
