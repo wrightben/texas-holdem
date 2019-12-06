@@ -38,9 +38,9 @@ var getDeck = function( players /* (int 0-23) */ ) {
 
 }
 
-var players = 10;
-var hands = [];
-var deck = getDeck( players );
+var	players = 6,
+	hands = [],
+	deck = getDeck( players );
 
 for (var i = 0; i < players; i++ ) {
 	hands.push( [ deck[5+(2*i)], deck[6+(2*i)],   deck[0],deck[1],deck[2],deck[3],deck[4] ] );

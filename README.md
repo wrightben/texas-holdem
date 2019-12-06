@@ -1,5 +1,9 @@
 # poker
 
+### Purpose
+
+Relatively few domains are popular (as in participation), include financial consequences, and produce considerable data for analysis. I'm interested in how people make decisions in poker, the stock market, etc. Generating this data provides excellent hooks for analysis and rule generation.
+
 ### Theory
 
 Poker betting is heavily influenced by colloquial, rather than mathematical, play.
@@ -34,3 +38,6 @@ $
 ```
 $./hand.sh		# See hand.sh; Comment out appropriate line
 ```
+
+shuffle.js includes a **players** variable to control the number of hands generated
+hand.js includes an array to control which portions of the hand to evaluate ( hole, flop, turn, river )

@@ -59,12 +59,16 @@ var getHands = function ( _i, _e, _hands ) {
 
 
 // SUMMARY OUTPUT: Results of poker play
-console.log( "Result: [Seat #], [Rank] \n");
+var pokerResults = {
+	"results":[],
+	"hands": hands
+};
+
 [2,5,6,7].forEach(function(a,e) {
-	console.log( getSolvedHandSummary( getHands( 0, a, hands ) ) );
+	pokerResults.results.push( getSolvedHandSummary( getHands( 0, a, hands ) ) );
 });
 
 
+
 // SUMMARY OUTPUT: Hands
-console.log("\nHands:\n");
-console.log( hands );
+console.log( JSON.stringify( pokerResults ) );
