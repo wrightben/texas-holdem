@@ -10,15 +10,15 @@ hands.forEach(function (a,e) {
 	solvedHands.push( Hand.solve( a ) );
 });
 
-// winner: (array) - winner(s)
-var winner = Hand.winners( solvedHands );
+// winners: (array)
+var winners = Hand.winners( solvedHands );
 
 // OUTPUT
 console.log('----------');
 console.log('RESULT')
-console.log('Winning hands: '+winner.length);
+console.log('Winning hands: '+winners.length);
 console.log('----------');
-winner.forEach(function(a, e) {
+winners.forEach(function(a, e) {
 
 	var p = 0;
 	solvedHands.some(function(b,y) {
