@@ -38,8 +38,7 @@ var getDeck = function( players /* (int 0-23) */ ) {
 
 }
 
-
-var players = 9;
+var players = 10;
 var hands = [];
 var deck = getDeck( players );
 
