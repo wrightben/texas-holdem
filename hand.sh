@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Type in values
+# Type in card values
 # ./cards.pl < cards.txt > cards.json
 
-# Let computer produce hands
+# Computer generates card values
 node shuffle.js > cards.json
 
 node hand.js
