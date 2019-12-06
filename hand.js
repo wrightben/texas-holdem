@@ -16,7 +16,7 @@ var winners = Hand.winners( solvedHands );
 // OUTPUT
 console.log('----------');
 console.log('RESULT')
-console.log('Winning hands: '+winners.length);
+console.log('Winners: '+winners.length);
 console.log('----------');
 winners.forEach(function(a, e) {
 
