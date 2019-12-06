@@ -6,7 +6,7 @@
 
 ### Theory
 
-All players being with 1 in N probability of winning. Betting is determined by colloquial play.
+All players being with 1 in N probability of winning. Betting is usually determined by colloquial, rather than mathematical, play.
 
 ```
 $sh hand.sh
