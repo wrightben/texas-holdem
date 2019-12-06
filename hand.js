@@ -3,39 +3,72 @@
 
 // VARS
 var Hand = require('pokersolver').Hand,
-	solvedHands = [],
 	hands = require('./cards.json'); // Built with cards.pl
 
-hands.forEach(function (a,e) {
-	solvedHands.push( Hand.solve( a ) );
-});
 
-// winners: (array)
-var winners = Hand.winners( solvedHands );
+var getSolvedHandSummary = function( hands ) {
+	
+	var solvedHands = [],
+		_output = [];
 
-// SUMMARY OUTPUT
-console.log('----------');
-console.log('RESULT')
-console.log('Winners: '+winners.length);
-console.log('----------');
+	// Individual solved hands
+	var _seatRank = [];
+	hands.forEach(function (a,e) {
+		_solvedHand = Hand.solve( a );
+		_seatRank.push( [  _solvedHand.rank, _solvedHand.descr ] );
+		solvedHands.push( _solvedHand );
+	});
 
-winners.forEach(function(a, e) {
+	// Winners
+	var winners = Hand.winners( solvedHands ); // winners = [ ];
 
-	var p = 0;
-	solvedHands.some(function(b,y) {
-		if (a == b) {
-			p = y;
-			return true;
-		}
+	// Find positions of winners
+	var _positions = [];
+	winners.forEach(function(a, e) {
+
+		var p = 0;
+		solvedHands.some(function(b,y) {
+			if (a == b) {
+				p = y; // Seat of winner
+				return true;
+			}
+		});
+	
+		_positions.push( p+1 ); // Seat of winner
+
+	});
+
+	// Return
+	_output.push( _positions );
+	_output.push ( _seatRank );
+	return _output;
+	
+}
+
+
+var getHands = function ( _i, _e, _hands ) {
+	
+	var _ = [];
+	_hands.forEach(function(a,e) {
+		_.push( a.slice(_i, _e) );
 	});
 	
-	// SUMMARY OUTPUT
-	console.log('Seat ' + (p+1) +': ' + a.descr + " (Rank: " + a.rank + ")");
-	console.log(hands[p]);
-	console.log("\n");
+	return _;
+	
+}
 
-});
+
+// Hole
+console.log( "Result: [Seat #], [Rank] \n");
+console.log( getSolvedHandSummary( getHands( 0, 2, hands ) ) );
+
+console.log( getSolvedHandSummary( getHands( 0, 5, hands ) ) );
+
+console.log( getSolvedHandSummary( getHands( 0, 6, hands ) ) );
+
+console.log( getSolvedHandSummary( getHands( 0, 7, hands ) ) );
+
 
 // SUMMARY OUTPUT
-console.log("Hands:\n");
-console.log(hands);
+console.log("\nHands:\n");
+console.log( hands );
