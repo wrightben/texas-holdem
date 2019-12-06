@@ -58,17 +58,13 @@ var getHands = function ( _i, _e, _hands ) {
 }
 
 
-// Hole
+// SUMMARY OUTPUT: Results of poker play
 console.log( "Result: [Seat #], [Rank] \n");
-console.log( getSolvedHandSummary( getHands( 0, 2, hands ) ) );
-
-console.log( getSolvedHandSummary( getHands( 0, 5, hands ) ) );
-
-console.log( getSolvedHandSummary( getHands( 0, 6, hands ) ) );
-
-console.log( getSolvedHandSummary( getHands( 0, 7, hands ) ) );
+[2,5,6,7].forEach(function(a,e) {
+	console.log( getSolvedHandSummary( getHands( 0, a, hands ) ) );
+});
 
 
-// SUMMARY OUTPUT
+// SUMMARY OUTPUT: Hands
 console.log("\nHands:\n");
 console.log( hands );
