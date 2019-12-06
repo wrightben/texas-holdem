@@ -1,9 +1,5 @@
 # poker
 
-`$./hand.sh`
-
-
-
 ### Theory
 
 Poker betting is heavily influenced by colloquial, rather than mathematical, play.
@@ -32,3 +28,9 @@ Hands:
   [ '7d', '8s', '2s', '9s', 'Kd', 'Qs', '5s' ] ]	<-- Seat 10 wins (unless deterred by colloquial play)
 $
 ```
+
+### Use
+
+`$./hand.sh`
+
+**shuffle.js**: Computer-generated permutation of cards to be dealt
