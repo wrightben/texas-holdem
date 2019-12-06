@@ -24,8 +24,8 @@ Hands:
   [ '8d', 'Th', '2s', '9s', 'Kd', 'Qs', '5s' ],
   [ '7h', '3d', '2s', '9s', 'Kd', 'Qs', '5s' ],
   [ '6h', '3h', '2s', '9s', 'Kd', 'Qs', '5s' ],
-  **[ 'Kc', '2d', '2s', '9s', 'Kd', 'Qs', '5s' ],***
+  [ 'Kc', '2d', '2s', '9s', 'Kd', 'Qs', '5s' ],   <-- Seat 8 will bet heavily (prematurely)
   [ '4c', '5h', '2s', '9s', 'Kd', 'Qs', '5s' ],
-  [ '7d', '8s', '2s', '9s', 'Kd', 'Qs', '5s' ] ]
+  [ '7d', '8s', '2s', '9s', 'Kd', 'Qs', '5s' ] ]	<-- Seat 10 wins (unless deterred by colloquial play)
 $
 ```
