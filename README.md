@@ -32,5 +32,7 @@ $
 ### Use
 
 ```
-$./hand.sh
+$./hand.sh		#(create cards.json from shuffle.js)
+
+$./hand.sh -t   #(create cards.json from cards.txt) 
 ```
