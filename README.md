@@ -39,5 +39,5 @@ $
 $./hand.sh		# See hand.sh; Comment out appropriate line
 ```
 
-shuffle.js includes a **players** variable to control the number of hands generated
+shuffle.js includes a **players** variable to control the number of hands generated <br/>
 hand.js includes an array to control which portions of the hand to evaluate ( hole, flop, turn, river )
