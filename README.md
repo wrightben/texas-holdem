@@ -6,7 +6,7 @@
 
 ### Theory
 
-All players begin with 1 in N probability of winning. Betting seems determined by colloquial, rather than mathematical, play.
+All players begin with 1 in N probability of winning. Betting is determined by colloquial, rather than mathematical, play.
 
 ```
 $sh hand.sh
