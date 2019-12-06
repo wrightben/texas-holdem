@@ -8,7 +8,7 @@ Relatively few domains are popular (as in participation), include financial cons
 
 Poker betting is heavily influenced by colloquial, rather than mathematical, play.
 
----
+
 ### Use
 
 ```
