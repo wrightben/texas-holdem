@@ -38,4 +38,13 @@ var getDeck = function( players /* (int 0-23) */ ) {
 
 }
 
-console.log( JSON.stringify( getDeck( 0 ) ) );
+
+var players = 9;
+var hands = [];
+var deck = getDeck( players );
+
+for (var i = 0; i < players; i++ ) {
+	hands.push( [ deck[5+(2*i)], deck[6+(2*i)],   deck[0],deck[1],deck[2],deck[3],deck[4] ] );
+}
+
+console.log( JSON.stringify( hands ) );
