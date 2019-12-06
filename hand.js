@@ -10,16 +10,27 @@ hands.forEach(function (a,e) {
 	solvedHands.push( Hand.solve( a ) );
 });
 
-// Ties are a problem
+// winner: (array) - winner(s)
 var winner = Hand.winners( solvedHands );
 
-
 // OUTPUT
-console.log( 'Hands: '+winner.length );
+console.log('----------');
+console.log('RESULT')
+console.log('Winning hands: '+winner.length);
+console.log('----------');
 winner.forEach(function(a, e) {
 
-	console.log( a.descr );
-	console.log( "\n" );
-	console.log( a.cards );
+	var p = 0;
+	solvedHands.some(function(b,y) {
+		if (a == b) {
+			p = y;
+			return true;
+		}
+	});
+	
+	console.log('Seat ' + (p+1) +': ' + a.descr + " (Rank: " + a.rank + ")");
+	console.log(hands[p]);
+	
+	console.log("\n");
 
 });
