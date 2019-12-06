@@ -37,5 +37,5 @@ winners.forEach(function(a, e) {
 });
 
 // SUMMARY OUTPUT
-console.log( "Hands:\n");
+console.log("Hands:\n");
 console.log(hands);
