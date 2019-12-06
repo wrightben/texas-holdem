@@ -13,11 +13,12 @@ hands.forEach(function (a,e) {
 // winners: (array)
 var winners = Hand.winners( solvedHands );
 
-// OUTPUT
+// SUMMARY OUTPUT
 console.log('----------');
 console.log('RESULT')
 console.log('Winners: '+winners.length);
 console.log('----------');
+
 winners.forEach(function(a, e) {
 
 	var p = 0;
@@ -28,9 +29,9 @@ winners.forEach(function(a, e) {
 		}
 	});
 	
+	// SUMMARY OUTPUT
 	console.log('Seat ' + (p+1) +': ' + a.descr + " (Rank: " + a.rank + ")");
 	console.log(hands[p]);
-	
 	console.log("\n");
 
 });
