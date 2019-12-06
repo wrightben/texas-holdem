@@ -38,7 +38,7 @@ var getDeck = function( players /* (int 0-23) */ ) {
 
 }
 
-var	players = 6,
+var	players = 10,
 	hands = [],
 	deck = getDeck( players );
 
