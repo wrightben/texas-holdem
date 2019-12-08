@@ -1,9 +1,9 @@
-/* MASK for cards (array)
-"Ah", "2h", "3h", "4h", "5h", "6h", "7h", "8h", "9h", "Th", "Jh", "Qh", "Kh", 
-"Ad", "2d", "3d", "4d", "5d", "6d", "7d", "8d", "9d", "Td", "Jd", "Qd", "Kd", 
-"As", "2s", "3s", "4s", "5s", "6s", "7s", "8s", "9s", "Ts", "Js", "Qs", "Ks", 
-"Ac", "2c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "Tc", "Jc", "Qc", "Kc"
-*/
+var mask = [
+	"Ah",	"2h",	"3h",	"4h",	"5h",	"6h",	"7h",	"8h",	"9h",	"Th",	"Jh",	"Qh",	"Kh",	
+	"Ad",	"2d",	"3d",	"4d",	"5d",	"6d",	"7d",	"8d",	"9d",	"Td",	"Jd",	"Qd",	"Kd",	
+	"As",	"2s",	"3s",	"4s",	"5s",	"6s",	"7s",	"8s",	"9s",	"Ts",	"Js",	"Qs",	"Ks",	
+	"Ac",	"2c",	"3c",	"4c",	"5c",	"6c",	"7c",	"8c",	"9c",	"Tc",	"Jc",	"Qc",	"Kc"
+];
 
 var cards = [
 	0,	1,	2,	3,	4,	5,	6,	7,	8,	9,	10,	11,	12,
@@ -92,11 +92,14 @@ var	evaluateHand = function( _array ) {
 	for (i = 0; i < 13; i++) {
 		if (_values[i].length > 0) {
 			_collections[_values[i].length - 1].push(i); // Group			
+		
 			_sc += 1;	
+			if ( _sc >= 5 ) { _o.straight = i; }
+			if ( (_sc >= 4) && ( i == 12 ) && ( _values[0].length > 0 ) ) { _o.straight = 13; }
 		} else {
-			if ( (_sc == 4) && ( i == 12 ) && ( _values[0].length > 0 ) ) { _o.straight = 13; }
 			_sc = 0;
 		}
+
 	}
 	
 
@@ -157,8 +160,7 @@ var	players = 0,
 
 
 // TEST: evaluateHand
-//console.log( JSON.stringify(evaluateHand([0,7,8,9,10,11,25])) ); // Flush, Straight, Straight Flush
-console.log( JSON.stringify(evaluateHand([1,2,3,4,5,6])) ); // Flush, Straight, Straight Flush
+console.log( JSON.stringify(evaluateHand([0,7,8,9,10,11,25])) ); // Flush, Straight, Straight Flush
 
 
 
