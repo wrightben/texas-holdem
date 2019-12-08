@@ -111,10 +111,10 @@ var	evaluateHand = function( _array ) {
 		_o.rank = 6;
 		_o.value = _suits[_o.value];
 		
-			// Straight Flush?
-			
-			// Royal Flush?
-			
+			// (9) Straight Flush?
+			if (_o.straight != -1) {
+				console.log( "Straight Flush" );
+			}
 				
 	} else if ( _o.straight != -1 ) { // (5) Straight (See Group2)
 		_o.rank = 5;
