@@ -1,4 +1,4 @@
-var mask = [	
+var mask = [
 	"Ah",	"2h",	"3h",	"4h",	"5h",	"6h",	"7h",	"8h",	"9h",	"Th",	"Jh",	"Qh",	"Kh",	
 	"Ad",	"2d",	"3d",	"4d",	"5d",	"6d",	"7d",	"8d",	"9d",	"Td",	"Jd",	"Qd",	"Kd",	
 	"As",	"2s",	"3s",	"4s",	"5s",	"6s",	"7s",	"8s",	"9s",	"Ts",	"Js",	"Qs",	"Ks",	
@@ -45,8 +45,8 @@ var	evaluateHand = function( _array ) {
 		_l = _array.length,
 		c, s;
 		
-	var	_o = {/* 
-			rank, 
+	var	_o = {
+			"rank" : 1 /* 
 			value, 
 			cards, 
 			groups {
@@ -68,59 +68,73 @@ var	evaluateHand = function( _array ) {
 			[], [], [], []
 		]; 
 
-	// Group cards by value, suit
+	// GROUP 1: by value, suit; Flush?
+	_o.suit = -1; // Flush Suit
+	var _fc = 0;
 	for (i = 0; i < _l; i++ ) {
 		c = _array[i];
 		s = Math.floor(c / 13);	
 		_values[ c - (s*13) ].push(c);
-		_suits[s].push(c);
+		_fc = _suits[s].push(c);
+		if (_fc > 4) { _o.suit = s; }
 	}
 	
 
 	// COLLECTION
 	var _collections = [ 
 		// High Cards, Pairs, Trips, Quads
-		[],[],[],[] 
+		[], [], [], [] 
 	];
 	
-	// Group cards by HC, Pairs, Trips, Quads
+	// GROUP 2: by HC, Pairs, Trips, Quads; Straight?
+	var _sc = 0;
+	_o.straight = -1;  // Straight High Card
 	for (i = 0; i < 13; i++) {
 		if (_values[i].length > 0) {
-			_collections[_values[i].length - 1].push(i); // Group
+			_collections[_values[i].length - 1].push(i); // Group			
+			_sc += 1;	
+		} else {
+			if ( _sc > 4 ) { _o.straight = i-1; }
+			_sc = 0;
 		}
 	}
 	
 
-	// RANK, VALUE: uses _collections
-	if ( _collections[3].length > 0 ) { // Four
+	// RANK, VALUE
+	if ( _collections[3].length > 0 ) { // (8) Four
 		_o.rank = 8;
 		_o.value = _collections[3];
-	} else if ( _collections[2].length > 1 || (( _collections[2].length > 0) && (_collections[1].length > 0)) ) { // Full House
+	} else if ( _collections[2].length > 1 || (( _collections[2].length > 0) && (_collections[1].length > 0)) ) { // (7) Full House
 		_o.rank = 7;
 		_o.value = [ _collections[2][0], _collections[1][0] ];
-	} else if ( _collections[2].length > 0 ) { // Trips
+	} else if ( _o.suit != -1 ) { // (6) Flush (See Group1)
+		_o.rank = 6;
+		_o.value = _suits[_o.value];
+		
+			// Straight Flush?
+			
+			// Royal Flush?
+			
+				
+	} else if ( _o.straight != -1 ) { // (5) Straight (See Group2)
+		_o.rank = 5;
+		_o.value = [ _o.straight ];
+	} else if ( _collections[2].length > 0 ) { // (4) Trips
 		_o.rank = 4;
 		_o.value = _collections[2];
-	} else if ( _collections[1].length > 1 ) { // Pair x 2
+	} else if ( _collections[1].length > 1 ) { // (3) Pair x 2
 		_o.rank = 3;
 		_o.value = _collections[1];
-	} else if ( _collections[1].length > 0 ) { // Pair x 1
+	} else if ( _collections[1].length > 0 ) { // (2) Pair x 1
 		_o.rank = 2;
 		_o.value = _collections[1];
-	} else { // High Card
+	} else { // (1) High Card
 		_o.rank = 1;
-		(_collections[0][0] == 0) ? _o.value = _values[0] : _o.value = _collections[0]; // Only 1 x HC in collection; Either 0 || !0 (Ace, Not Ace)
+		( _collections[0][0] == 0 ) ? // 0 || !0 (Ace, Not Ace)
+			_o.value = _values[0] : 
+			_o.value = _collections[0]; 
 	}
-	
-	
-	// 	Flush ? sort, isStraight, setRank
-	for (i = 0; i < 4; i++) {
-		if (_suits[i].length > 4) {
-			_suits[i].sort();
-			console.log( 'Flush: '+ _suits[i]);
-		}
-	}
-	
+
 	
 	_o.cards = _array;
 	_o.groups = {
@@ -141,6 +155,6 @@ var	players = 0,
 	deck = getDeck( players );
 	
 //console.log( JSON.stringify(deck) );	
-console.log( JSON.stringify(evaluateHand([2,3,4,5,19,13])) );
+console.log( JSON.stringify(evaluateHand([16,4])) );
 //console.log( JSON.stringify(evaluateHand(deck)) );
 //evaluateHand([26, 14, 20, 5, 4]);
