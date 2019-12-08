@@ -200,9 +200,11 @@ var	compareHands = function( _array ) {
 	var _ = {}, i;
 	
 	_array.sort(function(a,b) {
-	
+		
+		// Ranks NOT equal, sort by rank
 		if (b.rank != a.rank) { return b.rank - a.rank; } // Sort by rank
-		// Ranks ARE equal
+	
+		// Ranks ARE equal, sort by value
 		for (i = b.value.length - 1; i >= 0; i--) {
 			if ( b.value[i] != a.value[i] ) { return b.value[i] - a.value[i]; }
 		}
@@ -247,10 +249,3 @@ for (var i = 2; i <= 2*players; i += 2) {
 
 console.log( compareHands(hands) );
 // console.log( JSON.stringify(evaluateHand( [27, 11, 30, 9, 29, 48, 39] )) );
-
-
-// TEST: evaluateHand
-// var test = [ 26, 9, 24, 1, 5, 20, 8, 47, 22 ];
-// console.log( [].concat( test.slice(2,4), test.slice( test.length-shared, test.length) ));
-// 
-// console.log( "var test = ", JSON.stringify( evaluateHand( deck ) ) );
