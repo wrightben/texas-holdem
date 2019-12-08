@@ -149,6 +149,7 @@ var	evaluateHand = function( _array ) {
 		}
 	}
 	
+	// isSequence: STRAIGHT
 	_o.straight = isSequence(_sc); // Consider [0,1,2,3,4,18]: Straight Flush: [0,1,2,3,4], Straight: [1,2,3,4,18]
 	
 	
@@ -165,15 +166,17 @@ var	evaluateHand = function( _array ) {
 			_o.value = [ _c2[_c2.length - 2], _c2[_c2.length - 1] ]:
 			_o.value = [ _c1[_c1.length - 1],  _c2[0] ];
 			
-	} else if ( _o.suit != -1 ) { // (6) Flush (See Group 1)
+	} else if ( _o.suit != -1 ) { // Flush (See Group 1)
 
-		// (9) Straight Flush?
+		// (9,10) Straight Flush
 		if ( _o.straight != -1 ) {
+			// isSequence: FLUSH
 			_o.flush = isSequence(_suits[_o.suit]);
 			if (_o.flush != -1) { _o.rank = 9; _o.value = [_o.flush]; }
 			if (_o.flush == 13) { _o.rank = 10; _o.value = [_o.flush]; }			
 		}
-
+		
+		// (6) Flush 
 		if ( _o.rank < 9 ) {				
 			_o.rank = 6;
 			_o.value = _suits[_o.suit];			
