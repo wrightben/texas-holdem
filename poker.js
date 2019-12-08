@@ -237,7 +237,7 @@ var	players = 7,
 	hands = [],
 	deck = getDeck( players, shared );
 
-// SLICE DECK: Create hands
+// Slice Deck: Create hands
 for (var i = 2; i <= 2*players; i += 2) {
 	hands.push( evaluateHand( [].concat( 
 		deck.slice(i-2, i), 
