@@ -46,7 +46,7 @@ var getSolvedHandSummary = function( hands ) {
 }
 
 
- 
+
 for (var i = 0; i < 1000000; i++) {
 	var cards = Poker.getCards(1);
 	var fv = Poker.getFaceValues(cards);
@@ -61,5 +61,4 @@ for (var i = 0; i < 1000000; i++) {
 		console.log(u.rank, t.rank);
 	}
 }
-
 
