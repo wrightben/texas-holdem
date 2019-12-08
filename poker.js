@@ -97,7 +97,7 @@ var	evaluateHand = function( _array ) {
 		_fc = _suits[s].push(c);
 		if (_fc > 4) { _o.suit = s; }
 	}
-	
+
 
 	// COLLECTION
 	var _collections = [ 
@@ -120,6 +120,9 @@ var	evaluateHand = function( _array ) {
 		}
 
 	}
+	[0,1,2,3].forEach(function(a,e) { // s/0/13/;
+		if (_collections[a][0] == 0) { _collections[a].shift(); _collections[a].push(13); }		
+	});
 	
 
 	// RANK, VALUE
@@ -128,9 +131,9 @@ var	evaluateHand = function( _array ) {
 		_o.value = _collections[3];
 	} else if ( _collections[2].length > 1 || (( _collections[2].length > 0) && (_collections[1].length > 0)) ) { // (7) Full House
 		_o.rank = 7;
-		( _collections[2].length > 1 ) ? 
-			_o.value = [ _collections[2][_collections[2].length - 1], _collections[2][_collections[2].length - 2] ]:
-			_o.value = [ _collections[2][0], _collections[1][_collections[1].length - 1] ];
+		( _collections[2].length > 1 ) ? // o.value = [pair, trips]
+			_o.value = [ _collections[2][_collections[2].length - 2], _collections[2][_collections[2].length - 1] ]:
+			_o.value = [ _collections[1][_collections[1].length - 1],  _collections[2][0] ];
 	} else if ( _o.suit != -1 ) { // (6) Flush (See Group 1)
 
 		// (9) Straight Flush?
@@ -142,8 +145,8 @@ var	evaluateHand = function( _array ) {
 			for (i = 1; i < _sfcards.length; i++) {
 				if ( (faceValueToNum(_sfcards[i]) - 1) == faceValueToNum(_sfcards[i-1]) ) {						
 					_sc += 1;	
-					if ( (_sc+1) >= 5 ) { _o.rank = 9; _o.value = [_sfcards[i]]; }
-					if ( ( (_sc+1) >= 4) && ( faceValueToNum(_sfcards[i]) == 12 ) && ( faceValueToNum(_sfcards[0]) == 0 ) ) { _o.rank = 10; _o.value = [13]; }
+					if ( (i == 3) && (_sc == 3) && (_sfcards[_sfcards.length -1] == 13) ) {  _o.rank = 9; _o.value = [_sfcards[i]];   } // [A-5] straight
+					if ( _sc >= 4 ) { _o.rank = 9; _o.value = [_sfcards[i]]; } // Higher Straight
 				} else {
 					_sc = 0;
 				}
@@ -170,9 +173,7 @@ var	evaluateHand = function( _array ) {
 		_o.value = _collections[1];
 	} else { // (1) High Card
 		_o.rank = 1;
-		( _collections[0][0] == 0 ) ? // 0 || !0 (Ace, Not Ace)
-			_o.value = _values[0] :
-			_o.value = _collections[0]; 
+		_o.value = _collections[0]; 
 	}
 
 	
@@ -199,11 +200,6 @@ var	compareHands = function( _array ) {
 	
 		if (b.rank != a.rank) { return b.rank - a.rank; } // Sort by rank
 		// Ranks ARE equal
-		if ( ( b.rank == 7 ) ) { // Full House 
-			for (i = 0; i < b.value.length; i++) {
-				if ( b.value[i] != a.value[i] ) { return b.value[i] - a.value[i]; }
-			}
-		}
 		for (i = b.value.length - 1; i >= 0; i--) {
 			if ( b.value[i] != a.value[i] ) { return b.value[i] - a.value[i]; }
 		}
@@ -246,7 +242,8 @@ for (var i = 2; i <= 2*players; i += 2) {
 }
 
 
-console.log( JSON.stringify(compareHands(hands)) );
+console.log( compareHands(hands) );
+// console.log( JSON.stringify(evaluateHand( [27, 11, 30, 9, 29, 48, 39] )) );
 
 
 // TEST: evaluateHand
