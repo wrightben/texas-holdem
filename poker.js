@@ -45,7 +45,7 @@ var	evaluateHand = function( _array ) {
 		_l = _array.length,
 		c, s;
 		
-	var	h = {/* 
+	var	_o = {/* 
 			rank, 
 			value, 
 			cards, 
@@ -93,26 +93,26 @@ var	evaluateHand = function( _array ) {
 
 	// RANK, VALUE: uses _collections
 	if ( _collections[3].length > 0 ) { // Four
-		h.rank = 8;
-		h.value = _collections[3];
+		_o.rank = 8;
+		_o.value = _collections[3];
 	} else if ( _collections[2].length > 1 || (( _collections[2].length > 0) && (_collections[1].length > 0)) ) { // Full House
-		h.rank = 7;
-		h.value = [ _collections[2][0], _collections[1][0] ];
+		_o.rank = 7;
+		_o.value = [ _collections[2][0], _collections[1][0] ];
 	} else if ( _collections[2].length > 0 ) { // Trips
-		h.rank = 4;
-		h.value = _collections[2];
+		_o.rank = 4;
+		_o.value = _collections[2];
 	} else if ( _collections[1].length > 1 ) { // Pair x 2
-		h.rank = 3;
-		h.value = _collections[1];
+		_o.rank = 3;
+		_o.value = _collections[1];
 	} else if ( _collections[1].length > 0 ) { // Pair x 1
-		h.rank = 2;
-		h.value = _collections[1];
+		_o.rank = 2;
+		_o.value = _collections[1];
 	} else { // High Card
-		h.rank = 1;
-		(_collections[0][0] == 0) ? h.value = _values[0] : h.value = _collections[0]; // Only 1 x HC in collection; Either 0 || !0 (Ace, Not Ace)
+		_o.rank = 1;
+		(_collections[0][0] == 0) ? _o.value = _values[0] : _o.value = _collections[0]; // Only 1 x HC in collection; Either 0 || !0 (Ace, Not Ace)
 	}
 	
-		
+	
 	// 	Flush ? sort, isStraight, setRank
 	for (i = 0; i < 4; i++) {
 		if (_suits[i].length > 4) {
@@ -122,14 +122,14 @@ var	evaluateHand = function( _array ) {
 	}
 	
 	
-	h.cards = _array;
-	h.groups = {
+	_o.cards = _array;
+	_o.groups = {
 		"values" : _values,
 		"suits" : _suits,
 		"collections" : _collections
 	};
 	
-	return h;
+	return _o;
 
 }
 
