@@ -2,7 +2,7 @@
 
 ### Purpose
 
-Relatively few domains are popular (as in participation), include financial consequences, and produce considerable data for analysis. I'm interested in how people make decisions in poker, the stock market, etc. Generating this data provides excellent hooks for analysis and rule generation.
+Relatively few domains are popular, include financial consequences, and produce considerable data for analysis. I'm interested in how people make decisions in poker, the stock market, etc. Generating this data provides excellent hooks for analysis and rule generation.
 
 #### Theory
 
