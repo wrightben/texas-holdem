@@ -14,14 +14,15 @@ var cards = [
 
 
 // Generate random integers
-var getDeck = function( players /* (int 0-23) */ ) {
+var getDeck = function( players /* (int 0-23) */, shared /* int (0,3,4,5) */ ) {
 
 	var _c = cards.slice();
 
 	if ( typeof players == "undefined" ) { return [ "players = 0" ]; }
+	if ( typeof shared == "undefined" ) { shared = 5; }	
 
 	var	_ = [],
-		count = 5 + ( players * 2 ),
+		count = shared + ( players * 2 ),
 		j;
 
 	for ( var i = 0; i < count; i++ ) {
@@ -63,7 +64,8 @@ var	evaluateHand = function( _array ) {
 		c, s;
 		
 	var	_o = {
-			"rank" : 1 /* 
+			"rank" : 1,
+			"readable" : "" /* 
 			value, // (array); rank values (high card, straight high card, full house (3/2), flush cards);
 			cards, 
 			groups {
@@ -126,7 +128,9 @@ var	evaluateHand = function( _array ) {
 		_o.value = _collections[3];
 	} else if ( _collections[2].length > 1 || (( _collections[2].length > 0) && (_collections[1].length > 0)) ) { // (7) Full House
 		_o.rank = 7;
-		_o.value = [ _collections[2][0], _collections[1][0] ];
+		( _collections[2].length > 1 ) ? 
+			_o.value = [ _collections[2][_collections[2].length - 1], _collections[2][_collections[2].length - 2] ]:
+			_o.value = [ _collections[2][0], _collections[1][_collections[1].length - 1] ];
 	} else if ( _o.suit != -1 ) { // (6) Flush (See Group 1)
 
 		// (9) Straight Flush?
@@ -180,11 +184,37 @@ var	evaluateHand = function( _array ) {
 		"collections" : _collections
 	};
 	
-	_o.readable = ["High Card", "One Pair", "Two Pair", "Three of a Kind", "Straight", "Flush", "Full House", "Four of a Kind", "Straight Flush", "Royal Flush"][_o.rank - 1];
+	_o.readable = ["High Card", "One Pair", "Two Pair", "Three of a Kind", "Straight", "Flush", "Full House", "Four of a Kind", "Straight Flush", "Royal Flush"][_o.rank - 1] + ": " + _o.value;
 	
 	return _o;
 
 }
+
+
+var	compareHands = function( _array ) {
+
+	var _ = {}, i;
+	
+	_array.sort(function(a,b) {
+	
+		if (b.rank != a.rank) { return b.rank - a.rank; } // Sort by rank
+		// Ranks ARE equal
+		if ( ( b.rank == 7 ) ) { // Full House 
+			for (i = 0; i < b.value.length; i++) {
+				if ( b.value[i] != a.value[i] ) { return b.value[i] - a.value[i]; }
+			}
+		}
+		for (i = b.value.length - 1; i >= 0; i--) {
+			if ( b.value[i] != a.value[i] ) { return b.value[i] - a.value[i]; }
+		}
+											
+	});
+	
+	return _array;
+
+};
+
+
 
 // Node
 var setExports = function() {
@@ -201,10 +231,26 @@ setExports();
 
 
 
-var	players = 1,
+var	players = 7,
+	shared = 5,
 	hands = [],
-	deck = getDeck( players );
+	deck = getDeck( players, shared );
+
+// Slice deck to create hands	
+// console.log(deck);
+for (var i = 2; i <= 2*players; i += 2) {
+	hands.push( evaluateHand( [].concat( 
+		deck.slice(i-2, i), 
+		deck.slice( deck.length-shared, deck.length ) 
+	) ) );
+}
+
+console.log( compareHands(hands) );
+
 
 
 // TEST: evaluateHand
-console.log( "var test = ", JSON.stringify( evaluateHand( deck ) ) );
+// var test = [ 26, 9, 24, 1, 5, 20, 8, 47, 22 ];
+// console.log( [].concat( test.slice(2,4), test.slice( test.length-shared, test.length) ));
+// 
+// console.log( "var test = ", JSON.stringify( evaluateHand( deck ) ) );

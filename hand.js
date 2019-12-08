@@ -74,20 +74,3 @@ for (var i = 0; i < 1000000; i++) {
 }
 
 
-
-/*
-// SUMMARY OUTPUT: Results of poker play
-var pokerResults = {
-	"results":[],
-	"hands": hands
-};
-
-[7].forEach(function(a,e) {
-	pokerResults.results.push( getSolvedHandSummary( getHands( 0, a, hands ) ) );
-});
-
-
-
-// SUMMARY OUTPUT: Hands
-console.log( JSON.stringify( pokerResults ) );
-*/
