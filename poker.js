@@ -41,74 +41,92 @@ var getDeck = function( players /* (int 0-23) */ ) {
 // Evaluate hands
 var	evaluateHand = function( _array ) {
 
-	// COLLECTION
-	var	_ = [
-			[	// Values (0s, 1s, 2s, 3s ...)
-				[], [], [], [], [], [], [], [], [], [], [], [], []
-				
-			],
-			[	// Suits (0-12), (13-25), (26-38), (39-51)
-				[], [], [], []
-			] 
-			/*
-				• By iterating over _[0], we can see how many cards are missing from a straight in that segment.
-				• Hand rank will be adequate to determine winners for most hands
-			*/
-		];
-
-
-	// Group cards by value, suit
 	var	i = 0, 
 		_l = _array.length,
-		c, s, h = {}; // card, suit, r (result object)
+		c, s;
+		
+	var	h = {/* 
+			rank, 
+			value, 
+			cards, 
+			groups {
+				_values, 
+				_suits 
+				_collections
+			}			
+		*/};
 
+
+	// COLLECTION
+	var	_values = [
+			// Values (0s, 1s, 2s, 3s ...)
+			[], [], [], [], [], [], [], [], [], [], [], [], []
+		];
+			
+	var _suits = [	
+			// Suits (0-12), (13-25), (26-38), (39-51)
+			[], [], [], []
+		]; 
+
+	// Group cards by value, suit
 	for (i = 0; i < _l; i++ ) {
 		c = _array[i];
 		s = Math.floor(c / 13);	
-		_[ 0 ][ c - (s*13) ].push(c);
-		_[ 1 ][s].push(c);
+		_values[ c - (s*13) ].push(c);
+		_suits[s].push(c);
 	}
 	
+
 	// COLLECTION
-	var _r = [ 
+	var _collections = [ 
 		// High Cards, Pairs, Trips, Quads
 		[],[],[],[] 
 	];
 	
-	
 	// Group cards by HC, Pairs, Trips, Quads
 	for (i = 0; i < 13; i++) {
-		if (_[0][i].length > 0) {
-			_r[_[0][i].length - 1].push(i);
+		if (_values[i].length > 0) {
+			_collections[_values[i].length - 1].push(i); // Group
 		}
 	}
+	
 
-	// RANK, VALUE: uses _r
-	if ( _r[3].length > 0 ) { // Four
+	// RANK, VALUE: uses _collections
+	if ( _collections[3].length > 0 ) { // Four
 		h.rank = 8;
-		h.value = _r[3];
-	} else if ( _r[2].length > 1 || (( _r[2].length > 0) && (_r[1].length > 0)) ) { // Full House
+		h.value = _collections[3];
+	} else if ( _collections[2].length > 1 || (( _collections[2].length > 0) && (_collections[1].length > 0)) ) { // Full House
 		h.rank = 7;
-		h.value = [ _r[2][0], _r[1][0] ];
-	} else if ( _r[2].length > 0 ) { // Trips
+		h.value = [ _collections[2][0], _collections[1][0] ];
+	} else if ( _collections[2].length > 0 ) { // Trips
 		h.rank = 4;
-		h.value = _r[2];
-	} else if ( _r[1].length > 1 ) { // Pair x 2
+		h.value = _collections[2];
+	} else if ( _collections[1].length > 1 ) { // Pair x 2
 		h.rank = 3;
-		h.value = _r[1];
-	} else if ( _r[1].length > 0 ) { // Pair x 1
+		h.value = _collections[1];
+	} else if ( _collections[1].length > 0 ) { // Pair x 1
 		h.rank = 2;
-		h.value = _r[1];
+		h.value = _collections[1];
 	} else { // High Card
 		h.rank = 1;
-		(_r[0][0] == 0) ? h.value = _[0][0] : h.value = _r[0]; // Only 1 x HC in collection; Either 0 || !0 (Ace, Not Ace)
+		(_collections[0][0] == 0) ? h.value = _values[0] : h.value = _collections[0]; // Only 1 x HC in collection; Either 0 || !0 (Ace, Not Ace)
 	}
-
+	
+		
+	// 	Flush ? sort, isStraight, setRank
+	for (i = 0; i < 4; i++) {
+		if (_suits[i].length > 4) {
+			_suits[i].sort();
+			console.log( 'Flush: '+ _suits[i]);
+		}
+	}
+	
 	
 	h.cards = _array;
-	h.hand = {
-		"_" : _,
-		"_r" : _r
+	h.groups = {
+		"values" : _values,
+		"suits" : _suits,
+		"collections" : _collections
 	};
 	
 	return h;
@@ -123,5 +141,6 @@ var	players = 0,
 	deck = getDeck( players );
 	
 //console.log( JSON.stringify(deck) );	
-console.log( JSON.stringify(evaluateHand([18, 44, 31, 5, 4])) );
+console.log( JSON.stringify(evaluateHand([2,3,4,5,19,13])) );
+//console.log( JSON.stringify(evaluateHand(deck)) );
 //evaluateHand([26, 14, 20, 5, 4]);
