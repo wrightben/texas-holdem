@@ -94,7 +94,7 @@ var	evaluateHand = function( _array ) {
 			_collections[_values[i].length - 1].push(i); // Group			
 			_sc += 1;	
 		} else {
-			if ( _sc > 4 ) { _o.straight = i-1; }
+			if ( (_sc == 4) && ( i == 12 ) && ( _values[0].length > 0 ) ) { _o.straight = 13; }
 			_sc = 0;
 		}
 	}
@@ -154,7 +154,13 @@ var	players = 0,
 	hands = [],
 	deck = getDeck( players );
 	
+
+
+// TEST: evaluateHand
+console.log( JSON.stringify(evaluateHand([0,7,8,9,10,11,25])) ); // Flush, Straight, Straight Flush
+console.log( JSON.stringify(evaluateHand([0,7,8,9,10,11,25])) ); // Flush, Straight, Straight Flush
+
+
+
 //console.log( JSON.stringify(deck) );	
-console.log( JSON.stringify(evaluateHand([16,4])) );
 //console.log( JSON.stringify(evaluateHand(deck)) );
-//evaluateHand([26, 14, 20, 5, 4]);
