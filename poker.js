@@ -246,7 +246,8 @@ for (var i = 2; i <= 2*players; i += 2) {
 }
 
 console.log( compareHands(hands) );
-
+console.log( "\n" );
+console.log( JSON.stringify(compareHands(hands)) );
 
 
 // TEST: evaluateHand
