@@ -64,7 +64,7 @@ var pokerResults = {
 	"hands": hands
 };
 
-[2,5,6,7].forEach(function(a,e) {
+[7].forEach(function(a,e) {
 	pokerResults.results.push( getSolvedHandSummary( getHands( 0, a, hands ) ) );
 });
 

@@ -1,8 +1,8 @@
-var mask = [
-	"Ah",	"2h",	"3h",	"4h",	"5h",	"6h",	"7h",	"8h",	"9h",	"Th",	"Jh",	"Qh",	"Kh",	
-	"Ad",	"2d",	"3d",	"4d",	"5d",	"6d",	"7d",	"8d",	"9d",	"Td",	"Jd",	"Qd",	"Kd",	
-	"As",	"2s",	"3s",	"4s",	"5s",	"6s",	"7s",	"8s",	"9s",	"Ts",	"Js",	"Qs",	"Ks",	
-	"Ac",	"2c",	"3c",	"4c",	"5c",	"6c",	"7c",	"8c",	"9c",	"Tc",	"Jc",	"Qc",	"Kc"
+var faceValues = [
+	"Ah", "2h", "3h", "4h", "5h", "6h", "7h", "8h", "9h", "Th", "Jh", "Qh", "Kh",
+	"Ad", "2d", "3d", "4d", "5d", "6d", "7d", "8d", "9d", "Td", "Jd", "Qd", "Kd",
+	"As", "2s", "3s", "4s", "5s", "6s", "7s", "8s", "9s", "Ts", "Js", "Qs", "Ks",
+	"Ac", "2c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "Tc", "Jc", "Qc", "Kc"
 ];
 
 var cards = [
@@ -38,6 +38,21 @@ var getDeck = function( players /* (int 0-23) */ ) {
 }
 
 
+var getFaceValues = function( _array ) {
+	var	_ = [];
+	_array.forEach(function (a, e) {
+		_.push(faceValues[a]);
+	});
+	return _;
+}
+
+
+var faceValueToNum = function( a ) {
+	var s = Math.floor(a / 13);
+	return a - (s*13);
+}
+
+
 // Evaluate hands
 var	evaluateHand = function( _array ) {
 
@@ -47,12 +62,12 @@ var	evaluateHand = function( _array ) {
 		
 	var	_o = {
 			"rank" : 1 /* 
-			value, 
+			value, // (array); rank values (high card, straight high card, full house (3/2), flush cards);
 			cards, 
 			groups {
-				_values, 
-				_suits 
-				_collections
+				_values,
+				_suits, 
+				_collections,
 			}			
 		*/};
 
@@ -110,16 +125,32 @@ var	evaluateHand = function( _array ) {
 	} else if ( _collections[2].length > 1 || (( _collections[2].length > 0) && (_collections[1].length > 0)) ) { // (7) Full House
 		_o.rank = 7;
 		_o.value = [ _collections[2][0], _collections[1][0] ];
-	} else if ( _o.suit != -1 ) { // (6) Flush (See Group1)
-		_o.rank = 6;
-		_o.value = _suits[_o.value];
-		
-			// (9) Straight Flush?
-			if (_o.straight != -1) {
-				console.log( "Straight Flush" );
+	} else if ( _o.suit != -1 ) { // (6) Flush (See Group 1)
+
+		// (9) Straight Flush?
+		if ( _o.straight != -1 ) {
+
+			var _sfcards = _suits[ _o.suit ].sort( function(a, b){ return a-b; } );
+			_sc = 0; // _sc (see Group 2)
+			
+			for (i = 1; i < _sfcards.length; i++) {
+				if ( (faceValueToNum(_sfcards[i]) - 1) == faceValueToNum(_sfcards[i-1]) ) {						
+					_sc += 1;	
+					if ( (_sc+1) >= 5 ) { _o.rank = 9; _o.value = [_sfcards[i]]; }
+					if ( ( (_sc+1) >= 4) && ( faceValueToNum(_sfcards[i]) == 12 ) && ( faceValueToNum(_sfcards[0]) == 0 ) ) { _o.rank = 10; _o.value = [13]; }
+				} else {
+					_sc = 0;
+				}
 			}
-				
-	} else if ( _o.straight != -1 ) { // (5) Straight (See Group2)
+
+		}
+
+		if ( _o.rank < 9 ) {				
+			_o.rank = 6;
+			_o.value = _suits[_o.suit];			
+		}
+
+	} else if ( _o.straight != -1 ) { // (5) Straight (See Group 2)
 		_o.rank = 5;
 		_o.value = [ _o.straight ];
 	} else if ( _collections[2].length > 0 ) { // (4) Trips
@@ -134,17 +165,20 @@ var	evaluateHand = function( _array ) {
 	} else { // (1) High Card
 		_o.rank = 1;
 		( _collections[0][0] == 0 ) ? // 0 || !0 (Ace, Not Ace)
-			_o.value = _values[0] : 
+			_o.value = _values[0] :
 			_o.value = _collections[0]; 
 	}
 
 	
 	_o.cards = _array;
+	_o.faceValues = getFaceValues( _array );
 	_o.groups = {
 		"values" : _values,
 		"suits" : _suits,
 		"collections" : _collections
 	};
+	
+	_o.readable = ["High Card", "One Pair", "Two Pair", "Three of a Kind", "Straight", "Flush", "Full House", "Four of a Kind", "Straight Flush", "Royal Flush"][_o.rank - 1];
 	
 	return _o;
 
@@ -153,16 +187,12 @@ var	evaluateHand = function( _array ) {
 
 
 
-var	players = 0,
+var	players = 1,
 	hands = [],
 	deck = getDeck( players );
 	
 
 
 // TEST: evaluateHand
-console.log( JSON.stringify(evaluateHand([0,7,8,9,10,11,25])) ); // Flush, Straight, Straight Flush
-
-
-
-//console.log( JSON.stringify(deck) );	
-//console.log( JSON.stringify(evaluateHand(deck)) );
+console.log( getFaceValues( deck ))
+console.log( JSON.stringify( evaluateHand( deck ) ) );
