@@ -16,6 +16,8 @@ var cards = [
 // Generate random integers
 var getDeck = function( players /* (int 0-23) */ ) {
 
+	var _c = cards.slice();
+
 	if ( typeof players == "undefined" ) { return [ "players = 0" ]; }
 
 	var	_ = [],
@@ -26,10 +28,10 @@ var getDeck = function( players /* (int 0-23) */ ) {
 
 		j = Math.floor( Math.random() * Math.floor( 52 ) );
 
-		while ( cards[j] == -1  ) { j = Math.floor( Math.random() * Math.floor( 52 ) ); }
+		while ( _c[j] == -1  ) { j = Math.floor( Math.random() * Math.floor( 52 ) ); }
 
-		_.push( cards[j] );
-		cards[j] = -1;
+		_.push( _c[j] );
+		_c[j] = -1;
 
 	}
 
@@ -184,14 +186,25 @@ var	evaluateHand = function( _array ) {
 
 }
 
+// Node
+var setExports = function() {
+	if (typeof exports !== "undefined") {
+		exports.getDeck = getDeck;
+		exports.getFaceValues = getFaceValues;
+		exports.evaluateHand = evaluateHand;
+	}
+}
+setExports();
+
+
+
 
 
 
 var	players = 1,
 	hands = [],
 	deck = getDeck( players );
-	
 
 
 // TEST: evaluateHand
-// console.log( "var test = ", JSON.stringify( evaluateHand( deck ) ) );
+console.log( "var test = ", JSON.stringify( evaluateHand( deck ) ) );

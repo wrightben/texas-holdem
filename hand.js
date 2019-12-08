@@ -3,8 +3,8 @@
 
 // VARS
 var Hand = require('pokersolver').Hand;
-// var hands = require('./cards.json'); // Built with cards.pl
-	require('./test.js');
+var Poker = require('./poker.js');
+	
 
 var getSolvedHandSummary = function( hands ) {
 	
@@ -58,6 +58,24 @@ var getHands = function ( _i, _e, _hands ) {
 }
 
 
+for (var i = 0; i < 1000000; i++) {
+	var deck = Poker.getDeck(1);
+	var fv = Poker.getFaceValues(deck);
+	var u =  Poker.evaluateHand( deck );
+	var t = Hand.solve( fv );
+
+	console.log(i, fv);
+	if ( u.rank != t.rank ) {
+		console.log( "::: REVIEW :::" );
+		console.log( JSON.stringify( u ) );
+		console.log( JSON.stringify( t ) );
+		console.log(u.rank, t.rank);
+	}
+}
+
+
+
+/*
 // SUMMARY OUTPUT: Results of poker play
 var pokerResults = {
 	"results":[],
@@ -72,3 +90,4 @@ var pokerResults = {
 
 // SUMMARY OUTPUT: Hands
 console.log( JSON.stringify( pokerResults ) );
+*/
