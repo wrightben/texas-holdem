@@ -194,5 +194,4 @@ var	players = 1,
 
 
 // TEST: evaluateHand
-console.log( getFaceValues( deck ))
-console.log( JSON.stringify( evaluateHand( deck ) ) );
+// console.log( "var test = ", JSON.stringify( evaluateHand( deck ) ) );

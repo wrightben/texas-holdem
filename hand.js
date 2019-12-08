@@ -2,9 +2,9 @@
 // $ node hand.js
 
 // VARS
-var Hand = require('pokersolver').Hand,
-	hands = require('./cards.json'); // Built with cards.pl
-
+var Hand = require('pokersolver').Hand;
+// var hands = require('./cards.json'); // Built with cards.pl
+	require('./test.js');
 
 var getSolvedHandSummary = function( hands ) {
 	
