@@ -64,16 +64,19 @@ var	evaluateHand = function( _array ) {
 		c, s;
 		
 	var	_o = {
-			"rank" : 1,
-			"readable" : "" /* 
-			value, // (array); rank values (high card, straight high card, full house (3/2), flush cards);
-			cards, 
-			groups {
-				_values,
-				_suits, 
-				_collections,
-			}			
-		*/};
+		"rank" : 1,
+		"readable" : "" /*
+		suit,
+		straight,
+		value, // (array)
+		cards, 
+		faceValues,
+		groups {
+			_values,
+			_suits, 
+			_collections,
+		}*/
+	};
 
 
 	// COLLECTION
