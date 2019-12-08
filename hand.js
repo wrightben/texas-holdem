@@ -46,26 +46,20 @@ var getSolvedHandSummary = function( hands ) {
 }
 
 
+ 
+for (var i = 0; i < 1000000; i++) {
+	var cards = Poker.getCards(1);
+	var fv = Poker.getFaceValues(cards);
+	var u =  Poker.evaluateHand( cards );
+	var t = Hand.solve( fv );
 
-
-
-console.log( Hand.solve(["Qh","Kh","Jh","5h","Ah","As","Th"]));
-
-
-// 
-// for (var i = 0; i < 1000000; i++) {
-// 	var deck = Poker.getDeck(1);
-// 	var fv = Poker.getFaceValues(deck);
-// 	var u =  Poker.evaluateHand( deck );
-// 	var t = Hand.solve( fv );
-// 
-// 	console.log(i, fv);
-// 	if ( u.rank != t.rank ) {
-// 		console.log( "::: REVIEW :::" );
-// 		console.log( JSON.stringify( u ) );
-// 		console.log( JSON.stringify( t ) );
-// 		console.log(u.rank, t.rank);
-// 	}
-// }
+	console.log(i, fv);
+	if ( u.rank != t.rank ) {
+		console.log( "::: REVIEW :::" );
+		console.log( JSON.stringify( u ) );
+		console.log( JSON.stringify( t ) );
+		console.log(u.rank, t.rank);
+	}
+}
 
 
