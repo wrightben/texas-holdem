@@ -299,6 +299,3 @@ var	players = 10,
 	cards = getCards( players, shared ),
 	hands = evaluateHands(getCardsAsPlayers( players, cards )),
 	rankSortedHands = compareHands(hands);
-
-	console.log( JSON.stringify(compareHands(rankSortedHands)) );
-// 	console.log( JSON.stringify(evaluateHand( [44, 39, 43, 24, 51, 2, 49] )) );
