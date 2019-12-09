@@ -227,8 +227,7 @@ var	evaluateHand = function( _array ) {
 		_o.value = _c0.slice(-5);
 	}
 	
-	
-	
+	// Object: 
 	_o.cards = _array;
 	_o.faceValues = getFaceValues( _array );
 	_o.groups = {
