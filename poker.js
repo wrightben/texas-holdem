@@ -253,7 +253,7 @@ var evaluateHands = function ( _array ) {
 }
 
 
-var	compareHands = function( _array ) {try {
+var compareHands = function( _array ) {try {
 
 	var _ = {}, i;
 	
