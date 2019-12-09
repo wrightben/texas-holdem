@@ -63,7 +63,9 @@ var numToFaceValue = function( n, hc ) {
 	
 }
 
-var isSequence = function (_sc) {
+var isSequence = function (_sc, req) {
+
+	if (typeof req == "undefined") { req = 5; }
 	
 	var _1 = _sc.slice(0,_sc.length).sort(function(a,b) { return a - b; });	 // sorted
 	
@@ -74,7 +76,7 @@ var isSequence = function (_sc) {
 	var _c = 0, _hc = -1;
 	for (var i = 1; i < _1.length; i++) {
 		( _1[i-1] + 1 == _1[i] ) ? _c += 1 : _c = 0;
-		if (_c >= 4) { _hc = _1[i]; }
+		if (_c >= req - 1) { _hc = _1[i]; }
 	}
 	
 	return _hc;
@@ -92,15 +94,15 @@ var	evaluateHand = function( _array ) {
 		_n;
 		
 	var	_o = {
-		"rank"		:1,
-		"readable"	:"",
-		"suit"		:-1, // Flush Suit
-		"straight"	:-1,
-		"flush"		:-1
-		/* // (arrays)
-		value, 
-		cards, 
-		faceValues,
+		"rank"			:1,
+		"readable"		:"",
+		"value"			:[],
+		"cards"			:[],
+		"faceValues"	:[],
+		"straight"		:-1,
+		"suit"			:-1, // Flush Suit		
+		"flush"			:-1
+		/*
 		groups {
 			_values,
 			_suits, 
@@ -192,15 +194,17 @@ var	evaluateHand = function( _array ) {
 		
 	} else if ( _c1.length > 1 ) { // (3) Pair x 2
 		_o.rank = 3;
-		_o.value = _c1;
-		
+		(_c1.length > 2) ? 
+			_o.value = _c1.slice(-3):
+			_o.value = [].concat( _c0.slice(-1), _c1.slice(-2) );
+			
 	} else if ( _c1.length > 0 ) { // (2) Pair x 1
 		_o.rank = 2;
-		_o.value = _c1;
+		_o.value = _c0.slice(-3).concat(_c1.slice(-1));
 		
 	} else { // (1) High Card
 		_o.rank = 1;
-		_o.value = _c0; 
+		_o.value = _c0.slice(-5);
 	}
 	
 	
@@ -260,16 +264,16 @@ var	players = 7,
 
 
 //	Slice Deck: Create hands
-	for (var i = 2; i <= 2*players; i += 2) {
-		hands.push( evaluateHand( [].concat( 
-			cards.slice(i-2, i), 
-			cards.slice( cards.length-shared, cards.length ) 
-		) ) );
-	}
+// 	for (var i = 2; i <= 2*players; i += 2) {
+// 		hands.push( evaluateHand( [].concat( 
+// 			cards.slice(i-2, i), 
+// 			cards.slice( cards.length-shared, cards.length ) 
+// 		) ) );
+// 	}
 
 
 
-	console.log( JSON.stringify(compareHands(hands)) );
+// 	console.log( JSON.stringify(compareHands(hands)) );
 // 	console.log( JSON.stringify(evaluateHand( [24,25,23,4,13,39,22] )) );
-// 	console.log( JSON.stringify(evaluateHand( [13,2,3,4,5,19] )) );
+	console.log( JSON.stringify(evaluateHand( [2,15,1,14,6,19,7] )) );
 //	console.log( JSON.stringify(evaluateHand( cards )) );
