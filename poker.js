@@ -163,7 +163,7 @@ var	evaluateHand = function( _array ) {
 	// RANK, VALUE
 	if ( _c3.length > 0 ) { // (8) Four
 		_o.rank = 8;
-		_o.value = _c3;
+		_o.value = [].concat( _c3, _c0.slice(-1) );
 		
 	} else if ( _c2.length > 1 || (( _c2.length > 0) && (_c1.length > 0)) ) { // (7) Full House
 		_o.rank = 7;
@@ -278,5 +278,5 @@ var	players = 7,
 
 // 	console.log( JSON.stringify(compareHands(hands)) );
 // 	console.log( JSON.stringify(evaluateHand( [24,25,23,4,13,39,22] )) );
-	console.log( JSON.stringify(evaluateHand( [1,14,27,3,16,29,9] )) );
+	console.log( JSON.stringify(evaluateHand( [1,14,27,40] )) );
 //	console.log( JSON.stringify(evaluateHand( cards )) );
