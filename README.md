@@ -13,7 +13,7 @@ Poker betting is heavily influenced by colloquial, rather than mathematical, pla
 
 ```
 var	players = 10,
-	shared = 5,
+	shared = 5,	// optional
 	hands = [],
 	cards = getCards( players, shared ),
 	hands = evaluateHands(getCardsAsPlayers( players, cards )),
