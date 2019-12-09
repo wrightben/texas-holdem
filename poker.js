@@ -219,7 +219,11 @@ var	evaluateHand = function( _array ) {
 		"suits" : _suits,
 		"collections" : _collections
 	};
-	_o.label = ["High Card", "One Pair", "Two Pair", "Three of a Kind", "Straight", "Flush", "Full House", "Four of a Kind", "Straight Flush", "Royal Flush"][_o.rank - 1];
+	_o.label = [
+		"High Card", "One Pair", "Two Pair", "Three of a Kind", 
+		"Straight", "Flush", "Full House", "Four of a Kind", 
+		"Straight Flush", "Royal Flush"
+	][_o.rank - 1];
 	
 	return _o;
 
@@ -267,16 +271,16 @@ var	players = 7,
 
 
 //	Slice Deck: Create hands
-// 	for (var i = 2; i <= 2*players; i += 2) {
-// 		hands.push( evaluateHand( [].concat( 
-// 			cards.slice(i-2, i), 
-// 			cards.slice( cards.length-shared, cards.length ) 
-// 		) ) );
-// 	}
+	for (var i = 2; i <= 2*players; i += 2) {
+		hands.push( evaluateHand( [].concat( 
+			cards.slice(i-2, i), 
+			cards.slice( cards.length-shared, cards.length ) 
+		) ) );
+	}
 
 
 
 // 	console.log( JSON.stringify(compareHands(hands)) );
 // 	console.log( JSON.stringify(evaluateHand( [24,25,23,4,13,39,22] )) );
-	console.log( JSON.stringify(evaluateHand( [1,14,27,40] )) );
+// 	console.log( JSON.stringify(evaluateHand( [1,14,27,40] )) );
 //	console.log( JSON.stringify(evaluateHand( cards )) );
