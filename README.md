@@ -2,7 +2,7 @@
 
 ### Purpose
 
-Relatively few domains are popular, include financial consequences, and produce considerable data for analysis. I'm interested in how people make decisions in poker, the stock market, etc. I'm using this tool to generating data for analysis and rule generation.
+I'm interested in how people make decisions in poker, the stock market, etc. Relatively few domains include financial consequences, are popular, and produce data for analysis, which is what I'm using this code for.
 
 #### Theory
 
