@@ -177,7 +177,7 @@ var	evaluateHand = function( _array ) {
 	
 
 
-	// RANK, VALUE
+	// Rank, Value
 	if ( _c3.length > 0 ) { // (8) Four
 		_o.rank = 8;
 		_o.value = [].concat( _c3, _c0.slice(-1) );
@@ -253,7 +253,7 @@ var evaluateHands = function ( _array ) {
 }
 
 
-var	compareHands = function( _array ) {
+var	compareHands = function( _array ) {try {
 
 	var _ = {}, i;
 	
@@ -271,11 +271,15 @@ var	compareHands = function( _array ) {
 	
 	return _array;
 
-}
+} catch (E) {
+	console.log('compareHands: '+E);
+}}
 
 
 
-// Node
+// Node:
+// var Poker = require('./poker.js'); 
+// var getCards = require('./poker.js').getCards;
 var setExports = function() {
 	if (typeof exports !== "undefined") {
 		exports.getCards = getCards;
@@ -292,12 +296,9 @@ setExports();
 var	players = 7,
 	shared = 5,
 	hands = [],
-	cards = getCards( players, shared );
+	cards = getCards( players, shared ),
+	hands = evaluateHands(getCardsAsPlayers( players, cards )),
+	win = compareHands(hands);
 
-console.log(evaluateHands(getCardsAsPlayers( players, cards )));
-
-//	Slice Deck: Create hands
-
-
-// 	console.log( JSON.stringify(compareHands(hands)) );
+	console.log( JSON.stringify(compareHands(win)) );
 // 	console.log( JSON.stringify(evaluateHand( [44, 39, 43, 24, 51, 2, 49] )) );
