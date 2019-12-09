@@ -67,15 +67,19 @@ var isSequence = function (_sc, req) {
 
 	if (typeof req == "undefined") { req = 5; }
 	
-	var _1 = _sc.slice(0,_sc.length).sort(function(a,b) { return a - b; });	 // sorted
+	var _1 = _sc.slice(0,_sc.length).sort(function(a,b) { return a - b; });
 	
 	for (var i = 0; i < _1.length; i++) { _1[i] = numToFaceValue(_1[i])[1]; }
 
 	if (_1[0] == 0) { _1.push(13); } // face + ace
 	
-	var _c = 0, _hc = -1;
+	var	_c = 0,
+		_hc = -1;
+	
 	for (var i = 1; i < _1.length; i++) {
+		
 		( _1[i-1] + 1 == _1[i] ) ? _c += 1 : _c = 0;
+		
 		if (_c >= req - 1) { _hc = _1[i]; }
 	}
 	
@@ -94,16 +98,15 @@ var	evaluateHand = function( _array ) {
 		_n;
 		
 	var	_o = {
-		"rank"			:1,
-		"readable"		:"",
-		"value"			:[],
+		"rank"			:1,		// Full House: 6
+		"label"			:"", 	// Label: "Full House", "High Card"
+		"value"			:[], 	// Full House of 333,22 = [2,3], Straight 1,2,3,4,5 = [5], Two Pair 33,22 = [2,3]
 		"cards"			:[],
 		"faceValues"	:[],
 		"straight"		:-1,
-		"suit"			:-1, // Flush Suit		
+		"suit"			:-1, 	// Index of groups._suits with length > 5
 		"flush"			:-1
-		/*
-		groups {
+		/*groups {
 			_values,
 			_suits, 
 			_collections,
@@ -165,8 +168,8 @@ var	evaluateHand = function( _array ) {
 	} else if ( _c2.length > 1 || (( _c2.length > 0) && (_c1.length > 0)) ) { // (7) Full House
 		_o.rank = 7;
 		( _c2.length > 1 ) ? // o.value = [pair, trips]
-			_o.value = [ _c2[_c2.length - 2], _c2[_c2.length - 1] ]:
-			_o.value = [ _c1[_c1.length - 1],  _c2[0] ];
+			_o.value = _c2.slice(-2):
+			_o.value = [].concat( _c1.slice(-1), _c2[0] );
 			
 	} else if ( _o.suit != -1 ) { // Flush (See Group 1)
 
@@ -181,7 +184,7 @@ var	evaluateHand = function( _array ) {
 		// (6) Flush 
 		if ( _o.rank < 9 ) {				
 			_o.rank = 6;
-			_o.value = _suits[_o.suit];			
+			_o.value = _suits[_o.suit].slice(-5);			
 		}
 
 	} else if ( _o.straight != -1 ) { // (5) Straight (See Group 2)
@@ -190,7 +193,7 @@ var	evaluateHand = function( _array ) {
 		
 	} else if ( _c2.length > 0 ) { // (4) Trips
 		_o.rank = 4;
-		_o.value = [].concat( _c0.slice(-2), _c1.slice(-1) );
+		_o.value = [].concat( _c0.slice(-2), _c2.slice(-1) );
 		
 	} else if ( _c1.length > 1 ) { // (3) Pair x 2
 		_o.rank = 3;
@@ -216,7 +219,7 @@ var	evaluateHand = function( _array ) {
 		"suits" : _suits,
 		"collections" : _collections
 	};
-	_o.readable = ["High Card", "One Pair", "Two Pair", "Three of a Kind", "Straight", "Flush", "Full House", "Four of a Kind", "Straight Flush", "Royal Flush"][_o.rank - 1] + ": " + _o.value;
+	_o.label = ["High Card", "One Pair", "Two Pair", "Three of a Kind", "Straight", "Flush", "Full House", "Four of a Kind", "Straight Flush", "Royal Flush"][_o.rank - 1];
 	
 	return _o;
 
@@ -275,5 +278,5 @@ var	players = 7,
 
 // 	console.log( JSON.stringify(compareHands(hands)) );
 // 	console.log( JSON.stringify(evaluateHand( [24,25,23,4,13,39,22] )) );
-	console.log( JSON.stringify(evaluateHand( [2,15,1,14,6,19,7] )) );
+	console.log( JSON.stringify(evaluateHand( [1,14,27,3,16,29,9] )) );
 //	console.log( JSON.stringify(evaluateHand( cards )) );
