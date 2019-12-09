@@ -22,12 +22,12 @@ var	players = 10,
 // Other examples	
 console.log( getFaceValues( getCards(0) ) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
 
-evaluateHand( [44, 39, 43, 24, 51, 2, 49] ))	// Flush
+evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// Flush
 ```
 
 
 ##### Output
-evaluateHand( [44, 39, 43, 24, 51, 2, 49] ))
+evaluateHand( [44, 39, 43, 24, 51, 2, 49] );
 ```
 {
 	"rank": 6,
