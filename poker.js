@@ -279,9 +279,5 @@ var	players = 7,
 		) ) );
 	}
 
-
-
 	console.log( JSON.stringify(compareHands(hands)) );
 // 	console.log( JSON.stringify(evaluateHand( [44, 39, 43, 24, 51, 2, 49] )) );
-// 	console.log( JSON.stringify(evaluateHand( [1,14,27,40] )) );
-//	console.log( JSON.stringify(evaluateHand( cards )) );
