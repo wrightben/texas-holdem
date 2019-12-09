@@ -14,12 +14,12 @@ var numbers = [
 ];
 
 
-// Function: Generate array of random integers
+// Function: Generate array of random integers; Default [].length = 7
 var getCards = function( players /* (int 0-23) */, shared /* int (0,3,4,5) */ ) {
 
 	var _c = numbers.slice();
 
-	if ( typeof players == "undefined" ) { return [ "players = 0" ]; }
+	if ( typeof players == "undefined" ) { players = 1; }
 	if ( typeof shared == "undefined" ) { shared = 5; }	
 
 	var	_ = [],
