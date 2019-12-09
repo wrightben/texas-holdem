@@ -293,7 +293,7 @@ setExports();
 
 
 
-var	players = 7,
+var	players = 10,
 	shared = 5,
 	hands = [],
 	cards = getCards( players, shared ),
