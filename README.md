@@ -26,7 +26,7 @@ evaluateHand( [44, 39, 43, 24, 51, 2, 49] ))	// Flush
 ```
 
 
-#### Output
+##### Output
 evaluateHand( [44, 39, 43, 24, 51, 2, 49] ))
 ```
 {
