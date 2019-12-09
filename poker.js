@@ -165,7 +165,7 @@ var	evaluateHand = function( _array ) {
 		_o.rank = 8;
 		_o.value = [].concat( _c3, _c0.slice(-1) );
 		
-	} else if ( _c2.length > 1 || (( _c2.length > 0) && (_c1.length > 0)) ) { // (7) Full House
+	} else if ( _c2.length > 1 || (( _c2.length > 0 ) && ( _c1.length > 0 )) ) { // (7) Full House
 		_o.rank = 7;
 		( _c2.length > 1 ) ? // o.value = [pair, trips]
 			_o.value = _c2.slice(-2):
