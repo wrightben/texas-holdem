@@ -14,7 +14,7 @@ var numbers = [
 ];
 
 
-// Generate random integers
+// Function: Generate array of random integers
 var getCards = function( players /* (int 0-23) */, shared /* int (0,3,4,5) */ ) {
 
 	var _c = numbers.slice();
@@ -42,15 +42,29 @@ var getCards = function( players /* (int 0-23) */, shared /* int (0,3,4,5) */ ) 
 }
 
 
-var getFaceValues = function( _array ) {
-	var	_ = [];
-	_array.forEach(function (a, e) {
-		_.push(faceValues[a]);
-	});
+// Function: Create array of arrays: [[2,3],[3,4]]
+var getCardsAsPlayers = function( players, cards ) {
+	var _ = [],
+		_p = 2 * players;
+	for (var i = 2; i <= _p; i += 2) {
+		_.push( [].concat( 
+			cards.slice(i-2, i), 
+			cards.slice( cards.length-shared, cards.length ) 
+		) );
+	}
 	return _;
 }
 
 
+// Function: 3 -> "4h"
+var getFaceValues = function( _array ) {
+	var	_ = [];
+	_array.forEach(function (a, e) { _.push(faceValues[a]); });
+	return _;
+}
+
+
+// Function: 29 -> 3; Confusing: 0 -> 13
 var numToFaceValue = function( n, hc ) {
 	
 	if (typeof hc == "undefined") { hc = false; }
@@ -64,6 +78,8 @@ var numToFaceValue = function( n, hc ) {
 	
 }
 
+
+// Function: 
 var isSequence = function (_sc, req) {
 
 	if (typeof req == "undefined") { req = 5; }
@@ -89,7 +105,7 @@ var isSequence = function (_sc, req) {
 }
 
 
-// Evaluate hands
+// Function: 
 var	evaluateHand = function( _array ) {
 
 	var	i = 0, 
@@ -231,6 +247,13 @@ var	evaluateHand = function( _array ) {
 }
 
 
+var evaluateHands = function ( _array ) {
+	var _ = [];
+	_array.forEach(function(a,e) { _.push( evaluateHand(a) ); });
+	return _;
+}
+
+
 var	compareHands = function( _array ) {
 
 	var _ = {}, i;
@@ -249,7 +272,7 @@ var	compareHands = function( _array ) {
 	
 	return _array;
 
-};
+}
 
 
 
@@ -257,8 +280,10 @@ var	compareHands = function( _array ) {
 var setExports = function() {
 	if (typeof exports !== "undefined") {
 		exports.getCards = getCards;
+		exports.getCardsAsPlayers = getCardsAsPlayers;
 		exports.getFaceValues = getFaceValues;
 		exports.evaluateHand = evaluateHand;
+		exports.evaluateHands = evaluateHands;
 	}
 }
 setExports();
@@ -270,14 +295,10 @@ var	players = 7,
 	hands = [],
 	cards = getCards( players, shared );
 
+console.log(evaluateHands(getCardsAsPlayers( players, cards )));
 
 //	Slice Deck: Create hands
-	for (var i = 2; i <= 2*players; i += 2) {
-		hands.push( evaluateHand( [].concat( 
-			cards.slice(i-2, i), 
-			cards.slice( cards.length-shared, cards.length ) 
-		) ) );
-	}
 
-	console.log( JSON.stringify(compareHands(hands)) );
+
+// 	console.log( JSON.stringify(compareHands(hands)) );
 // 	console.log( JSON.stringify(evaluateHand( [44, 39, 43, 24, 51, 2, 49] )) );

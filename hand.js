@@ -48,7 +48,8 @@ var getSolvedHandSummary = function( hands ) {
 
 
 for (var i = 0; i < 1000000; i++) {
-	var cards = Poker.getCards(1);
+
+	var cards = Poker.getCards(3); // Three players
 	var fv = Poker.getFaceValues(cards);
 	var u =  Poker.evaluateHand( cards );
 	var t = Hand.solve( fv );
