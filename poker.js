@@ -190,7 +190,7 @@ var	evaluateHand = function( _array ) {
 		
 	} else if ( _c2.length > 0 ) { // (4) Trips
 		_o.rank = 4;
-		_o.value = _c2;
+		_o.value = [].concat( _c0.slice(-2), _c1.slice(-1) );
 		
 	} else if ( _c1.length > 1 ) { // (3) Pair x 2
 		_o.rank = 3;
