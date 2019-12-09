@@ -184,7 +184,7 @@ var	evaluateHand = function( _array ) {
 		// (6) Flush 
 		if ( _o.rank < 9 ) {				
 			_o.rank = 6;
-			_o.value = _suits[_o.suit].slice(-5);			
+			_o.value = _suits[_o.suit].slice(-5).sort(function(a,b) { return a - b; });			
 		}
 
 	} else if ( _o.straight != -1 ) { // (5) Straight (See Group 2)
@@ -280,7 +280,7 @@ var	players = 7,
 
 
 
-// 	console.log( JSON.stringify(compareHands(hands)) );
+	console.log( JSON.stringify(compareHands(hands)) );
 // 	console.log( JSON.stringify(evaluateHand( [24,25,23,4,13,39,22] )) );
 // 	console.log( JSON.stringify(evaluateHand( [1,14,27,40] )) );
 //	console.log( JSON.stringify(evaluateHand( cards )) );
