@@ -6,7 +6,7 @@ I'm interested in how people make decisions in poker, the stock market, etc. Rel
 
 #### Theory
 
-Poker betting is heavily influenced by colloquial, rather than mathematical, play.
+Poker betting is heavily influenced by colloquial play, not mathematical play.
 
 
 ### Use
