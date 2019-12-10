@@ -331,4 +331,4 @@ var	players = 7,
 	rankSortedHands = compareHands(hands);
 	
 	
-	console.log(rankSortedHands);
+	console.log(JSON.stringify(rankSortedHands));
