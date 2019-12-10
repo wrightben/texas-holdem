@@ -330,3 +330,5 @@ var	players = 7,
 	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
 	rankSortedHands = compareHands(hands);
 	
+	
+	console.log(rankSortedHands);
