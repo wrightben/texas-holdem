@@ -324,13 +324,9 @@ setExports();
 
 
 
-// var	players = 10,
-// 	shared = 5,
-// 	hands = [],
+var	players = 7,
+	shared = 5,
 // 	cards = getCards( players, shared ),
-// 	hands = evaluateHands(getCardsAsPlayers( players, cards )),
-// 	rankSortedHands = compareHands(hands);
-
-// Aces vs Kings vs at least 1 Jack vs 4 other players with 5 shared cards
-console.log( getCardsAsPlayers( 7, getCards( [7,[ [0,13], [12,25], [10] ]], 5 ))  ); 
-
+	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
+	rankSortedHands = compareHands(hands);
+	
