@@ -17,6 +17,9 @@ var numbers = [
 // Function: Generate array of random integers; Default [].length = 7
 var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ]  */, shared /* int (0,3,4,5) */ ) {
 
+	if ( typeof players == "undefined" ) { players = 1; }
+	if ( (typeof shared == "undefined") || Array.isArray(shared) ) { shared = 5; }	
+
 	var _c = numbers.slice();
 	
 	// Closure: var _c = numbers.slice();
@@ -25,7 +28,7 @@ var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ] 
 		var n = Math.floor( Math.random() * Math.floor( 52 ) );
 		var _ = 0;
 		
-		while ( _c[n] == -1  ) { j = Math.floor( Math.random() * Math.floor( 52 ) ); }
+		while ( _c[n] == -1  ) { n = Math.floor( Math.random() * Math.floor( 52 ) ); }
 
 		_ = _c[n];
 		_c[n] = -1;
@@ -33,28 +36,31 @@ var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ] 
 		return _;
 		
 	}
-	
+
 	// Requires: getCard()
-	var	_ = [],
-		_players = [];
-		
-	if ( typeof players == "undefined" ) { players = 1; }
+	var	_ = []; // Return object: List of cards
+	var	_set = []; // [ [], [], ...]: Predetermined hole cards (1 or 2) for subset of players
+				
 	if ( Array.isArray(players) ) {
 
-		_players = players[1]; 	// Seed Cards
+		_set = players[1]; 	// Seed Cards
 		players = players[0];	// # Players
 		
-		_players.forEach(function(a,e) { 
-			if (a.length < 2) { a.push( getCard() ); }
+		if (players < _set.length) { 
+			return "players is less than _set.length";  
+		}
+		
+		_set.forEach(function(a,e) { // 
+			while (a.length < 2) { a.push( getCard() ); }
+			_c[a[0]] = -1;
+			_c[a[1]] = -1;
 			_.push( a[0],a[1] );
 		});
 
 	}
 	
-	if ( typeof shared == "undefined" ) { shared = 5; }	
-
-	count = ( players * 2 ) + shared - ( _players.length * 2 );
-
+	var count = ( players * 2 ) + shared - ( _set.length * 2 );
+	
 	for ( var i = 0; i < count; i++ ) { _.push( getCard() ); }
 
 	return _;
@@ -64,12 +70,17 @@ var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ] 
 
 // Function: Create array of arrays: [[2,3],[3,4]]
 var getCardsAsPlayers = function( players, cards ) {
+	if (! Array.isArray(cards)) { return "cards is not array"; }
+
 	var _ = [],
-		_p = 2 * players;
+		_p = 2 * players,
+		_length = cards.length,
+		_shared = _length - ( _length - (players * 2) );
+		
 	for (var i = 2; i <= _p; i += 2) {
 		_.push( [].concat( 
 			cards.slice(i-2, i), 
-			cards.slice( cards.length-shared, cards.length ) 
+			cards.slice( _shared, _length ) 
 		) );
 	}
 	return _;
@@ -320,5 +331,6 @@ setExports();
 // 	hands = evaluateHands(getCardsAsPlayers( players, cards )),
 // 	rankSortedHands = compareHands(hands);
 
-console.log(getCards([3,[ [10],[3] ]]))
+// Aces vs Kings vs at least 1 Jack vs 4 other players with 5 shared cards
+console.log( getCardsAsPlayers( 7, getCards( [7,[ [0,13], [12,25], [10] ]], 5 ))  ); 
 
