@@ -22,7 +22,7 @@ var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ] 
 
 	var _c = numbers.slice();
 	
-	// Closure: var _c = numbers.slice();
+	// Requires: var _c = numbers.slice();
 	var getCard = function() {
 
 		var n = Math.floor( Math.random() * Math.floor( 52 ) );
