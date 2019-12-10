@@ -23,7 +23,7 @@ getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
 
 evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// Flush (Output)
 
-// Aces vs Kings vs at least 1 Jack vs 4 other players with 5 shared cards
+// Aces vs Kings vs at least 1 Jack vs 4 other players; 5 community cards
 getCardsAsPlayers( 7, getCards( [7,[ [0,13], [12,25], [10] ]], 5 ));
 
 ```
