@@ -146,7 +146,7 @@ var	evaluateHand = function( _array ) {
 		_n;
 		
 	var	_o = {
-		"rank"			:1,		// Full House: 6
+		"rank"			:1,	// Full House: 6
 		"label"			:"", 	// Label: "Full House", "High Card"
 		"value"			:[], 	// Full House of 333,22 = [2,3], Straight 1,2,3,4,5 = [5], Two Pair 33,22 = [2,3]
 		"cards"			:[],
