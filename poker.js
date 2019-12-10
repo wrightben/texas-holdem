@@ -95,7 +95,7 @@ var getFaceValues = function( _array ) {
 }
 
 
-// Function: 29 -> 3; Confusing: 0 -> 13
+// Function: 29 -> 3; 0 -> 13 (Ace-high)
 var numToFaceValue = function( n, hc ) {
 	
 	if (typeof hc == "undefined") { hc = false; }
