@@ -19,7 +19,7 @@ var	players = 10,
 	rankSortedHands = compareHands(hands);
 
 // Other examples	
-console.log( getFaceValues( getCards(0) ) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
+getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
 
 evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// Flush (Output)
 
