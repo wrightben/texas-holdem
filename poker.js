@@ -201,6 +201,11 @@ var	evaluateHand = function( _array ) {
 			_sc.push(i);
 		}
 	}
+	// Sort Ace
+	_c0.sort(function(a,b) {return a-b});
+	_c1.sort(function(a,b) {return a-b});
+	_c2.sort(function(a,b) {return a-b});	
+	_c3.sort(function(a,b) {return a-b});
 	
 	// isSequence: STRAIGHT
 	_o.straight = isSequence(_sc); // Consider [0,1,2,3,4,18]: Straight Flush: [0,1,2,3,4], Straight: [1,2,3,4,18]
