@@ -15,27 +15,47 @@ var numbers = [
 
 
 // Function: Generate array of random integers; Default [].length = 7
-var getCards = function( players /* (int 0-23) */, shared /* int (0,3,4,5) */ ) {
+var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ]  */, shared /* int (0,3,4,5) */ ) {
 
 	var _c = numbers.slice();
+	
+	// Closure: var _c = numbers.slice();
+	var getCard = function() {
 
-	if ( typeof players == "undefined" ) { players = 1; }
-	if ( typeof shared == "undefined" ) { shared = 5; }	
+		var n = Math.floor( Math.random() * Math.floor( 52 ) );
+		var _ = 0;
+		
+		while ( _c[n] == -1  ) { j = Math.floor( Math.random() * Math.floor( 52 ) ); }
 
+		_ = _c[n];
+		_c[n] = -1;
+		
+		return _;
+		
+	}
+	
+	// Requires: getCard()
 	var	_ = [],
-		count = shared + ( players * 2 ),
-		j;
+		_players = [];
+		
+	if ( typeof players == "undefined" ) { players = 1; }
+	if ( Array.isArray(players) ) {
 
-	for ( var i = 0; i < count; i++ ) {
-
-		j = Math.floor( Math.random() * Math.floor( 52 ) );
-
-		while ( _c[j] == -1  ) { j = Math.floor( Math.random() * Math.floor( 52 ) ); }
-
-		_.push( _c[j] );
-		_c[j] = -1;
+		_players = players[1]; 	// Seed Cards
+		players = players[0];	// # Players
+		
+		_players.forEach(function(a,e) { 
+			if (a.length < 2) { a.push( getCard() ); }
+			_.push( a[0],a[1] );
+		});
 
 	}
+	
+	if ( typeof shared == "undefined" ) { shared = 5; }	
+
+	count = ( players * 2 ) + shared - ( _players.length * 2 );
+
+	for ( var i = 0; i < count; i++ ) { _.push( getCard() ); }
 
 	return _;
 
@@ -293,9 +313,12 @@ setExports();
 
 
 
-var	players = 10,
-	shared = 5,
-	hands = [],
-	cards = getCards( players, shared ),
-	hands = evaluateHands(getCardsAsPlayers( players, cards )),
-	rankSortedHands = compareHands(hands);
+// var	players = 10,
+// 	shared = 5,
+// 	hands = [],
+// 	cards = getCards( players, shared ),
+// 	hands = evaluateHands(getCardsAsPlayers( players, cards )),
+// 	rankSortedHands = compareHands(hands);
+
+console.log(getCards([3,[ [10],[3] ]]))
+
