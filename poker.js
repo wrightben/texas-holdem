@@ -14,7 +14,7 @@ var numbers = [
 ];
 
 
-// Function: Generate array of random integers; Default [].length = 7
+// Function: Generate array of random integers; Default [].length = 7 (1 player + 5 hole cards)
 var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ]  */, shared /* int (0,3,4,5) */ ) {
 
 	if ( typeof players == "undefined" ) { players = 1; }
