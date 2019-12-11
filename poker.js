@@ -154,7 +154,7 @@ var	evaluateHand = function( _array ) {
 		"straight"		:-1,
 		"suit"			:-1, 	// Index of groups._suits with length > 5
 		"flush"			:-1
-		/*groups {
+		/*groups {				// Added below
 			_values,
 			_suits, 
 			_collections,
