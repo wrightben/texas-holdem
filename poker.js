@@ -146,19 +146,19 @@ var	evaluateHand = function( _array ) {
 		_n;
 		
 	var	_o = {
-		"rank"		:1,	// Full House: 6
-		"label"		:"",	// Label: "Full House", "High Card"
-		"value"		:[],	// Full House of 333,22 = [2,3], Straight 1,2,3,4,5 = [5], Two Pair 33,22 = [2,3]
-		"cards"		:[],
-		"faceValues"	:[],
-		"straight"	:-1,
-		"suit"		:-1,	// Index of groups._suits with length > 5
-		"flush"		:-1
-		/*groups {		// Added below
-			_values,
-			_suits, 
-			_collections,
-		}*/
+			"rank"		:1,	// Full House: 6
+			"label"		:"",	// Label: "Full House", "High Card"
+			"value"		:[],	// Full House of 333,22 = [2,3], Straight 1,2,3,4,5 = [5], Two Pair 33,22 = [2,3]
+			"cards"		:[],
+			"faceValues"	:[],
+			"straight"	:-1,
+			"suit"		:-1,	// Index of groups._suits with length > 5
+			"flush"		:-1
+			/*groups {		// Added below
+				_values,
+				_suits, 
+				_collections,
+			}*/
 	};
 
 
