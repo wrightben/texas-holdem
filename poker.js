@@ -110,16 +110,16 @@ var numToFaceValue = function( n, hc ) {
 }
 
 
-// Function: 
-var isSequence = function (_sc, req) {
+// Function: _array (int), req (int): num cards required
+var isSequence = function ( _array, req ) {
 
 	if (typeof req == "undefined") { req = 5; }
 	
-	var _1 = _sc.slice(0,_sc.length).sort(function(a,b) { return a - b; });
+	var _1 = _array.slice(0,_array.length).sort(function(a,b) { return a - b; });
 	
 	for (var i = 0; i < _1.length; i++) { _1[i] = numToFaceValue(_1[i])[1]; }
 
-	if (_1[0] == 0) { _1.push(13); } // face + ace
+	if (_1[0] == 0) { _1.push(13); } // ace: 0 and 13
 	
 	var	_c = 0,
 		_hc = -1;
