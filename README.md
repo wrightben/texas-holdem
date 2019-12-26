@@ -30,7 +30,7 @@ getCardsAsPlayers( 7, getCards( [7,[ [0,13], [12,25], [10] ]], 5 ));
 
 ##### Warning:
 
-**getCards** accepts 2 optional parameters, *players* and *shared*, which default to 1 and 5, respectively. The *players* parameter may be *either* an int or an array in this format: [ int, [ [int, int], [int, int] ]. **getCardsAsPlayers** accepts 2 parameters, *players* and *cards*. The players parameter is an int.
+**getCards** accepts 2 optional parameters, *players* and *shared*, which default to 1 and 5, respectively. The *players* parameter may be either an *int* or an *array* in this format: [ int, [ [int, int], [int, int] ]. **getCardsAsPlayers** accepts 2 parameters, *players* and *cards*. The players parameter is an *int*.
 
 
 
