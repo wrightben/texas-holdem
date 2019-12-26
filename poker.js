@@ -329,10 +329,11 @@ setExports();
 
 
 
-var	players = 10,
-	shared = 5,	// community cards
-	cards = getCards( players, shared ),	// shared optional; 5 default
-	hands = evaluateHands(getCardsAsPlayers( players, cards )),	// hands = [ [], [], ... ]
+var	players = 7,
+	shared = 5,
+// 	cards = getCards( players, shared ),
+	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
 	rankSortedHands = compareHands(hands);
-
-console.log(rankSortedHands);
+	
+	
+	console.log(JSON.stringify(rankSortedHands));
