@@ -13,8 +13,8 @@ Poker betting is heavily influenced by colloquial play, not mathematical play.
 
 ```
 var	players = 10,
-	shared = 5,
-	cards = getCards( players, shared ),	// shared optional
+	shared = 5,	// community cards
+	cards = getCards( players, shared ),	// shared optional; 5 default
 	hands = evaluateHands(getCardsAsPlayers( players, cards )),	// hands = [ [], [], ... ]
 	rankSortedHands = compareHands(hands);
 
@@ -23,7 +23,7 @@ getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
 
 evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// Flush (Output)
 
-// Aces vs Kings vs at least 1 Jack vs 4 other players; 5 community cards
+// Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
 getCardsAsPlayers( 7, getCards( [7,[ [0,13], [12,25], [10] ]], 5 ));
 
 ```
