@@ -34,7 +34,7 @@ poker.js will not work properly if the number of players is not set consistently
 
 
 
-##### Output
+#### Output
 evaluateHand( [44, 39, 43, 24, 51, 2, 49] );
 ```
 {
