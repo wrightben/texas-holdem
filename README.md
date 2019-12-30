@@ -22,7 +22,7 @@ var	players = 10,
 *getCardsAsPlayers* accepts 2 parameters, *players* and *cards*. The players parameter is an *int*.
 
 
-#### Other examples	
+#### Examples	
 ```
 // Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
 getCardsAsPlayers( 7, getCards( [7,[ [0,13], [12,25], [10] ]], 5 ));
