@@ -17,9 +17,9 @@ var	players = 10,
 
 #### Functions: getCards and getCardsAsPlayers
 
-**getCards** accepts 2 optional parameters, *players* and *shared*, which default to 1 and 5, respectively. The *players* parameter may be either an *int* or an *array* in this format: [ int, [ [int, int], [int, int] ]]. 
+*getCards* accepts 2 optional parameters, *players* and *shared*, which default to 1 and 5, respectively. The *players* parameter may be either an *int* or an *array* in this format: [ int, [ [int, int], [int, int] ]]. 
 
-**getCardsAsPlayers** accepts 2 parameters, *players* and *cards*. The players parameter is an *int*.
+*getCardsAsPlayers* accepts 2 parameters, *players* and *cards*. The players parameter is an *int*.
 
 
 #### Other examples	
