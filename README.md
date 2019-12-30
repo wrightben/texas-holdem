@@ -25,7 +25,7 @@ var	players = 10,
 #### Examples	
 ```
 // Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
-getCardsAsPlayers( 7, getCards( [7,[ [0,13], [12,25], [10] ]], 5 ));
+getCardsAsPlayers( 7, getCards( [7,[[0,13], [12,25], [10] ]], 5 ));
 
 getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
 
