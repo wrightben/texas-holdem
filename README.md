@@ -39,20 +39,20 @@ evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// (See Output)
 {
 	"rank": 6,
 	"label": "Flush",
-	"value": [39, 43, 44, 49, 51], // Cards that make up hand; Low to High
-	"cards": [44, 39, 43, 24, 51, 2, 49], // Cards; Order dealt
-	"faceValues": ["6c", "Ac", "5c", "Qd", "Kc", "3h", "Jc"], // Cards; Order dealt
-	"straight": -1, // High card of straight
-	"suit": 3, // Index of suits[] with 5+ cards; Possible flush
-	"flush": -1, // Cards in flush
+	"value": [39, 43, 44, 49, 51],
+	"cards": [44, 39, 43, 24, 51, 2, 49],
+	"faceValues": ["6c", "Ac", "5c", "Qd", "Kc", "3h", "Jc"],
+	"straight": -1,
+	"suit": 3,
+	"flush": -1,
 	"groups": {
 		"values": [
-			[39], // Ace
+			[39],
 			[],
-			[2],  // 3
+			[2],
 			[],
-			[43], // 5
-			[44], // 6 ... Etc
+			[43],
+			[44],
 			[],
 			[],
 			[],
