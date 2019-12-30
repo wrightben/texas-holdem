@@ -2,11 +2,7 @@
 
 ### Purpose
 
-I'm interested in how people make decisions in poker, the stock market, etc. Relatively few domains include financial consequences, are popular, and produce data for analysis, which is what I'm using this code for.
-
-#### Theory
-
-Poker betting is heavily influenced by colloquial play, not mathematical play.
+I'm interested in how people make decisions in poker and the stock market. My theory is poker betting is primarily influenced by colloquial play instead of mathematical play.
 
 
 ### Use
@@ -15,17 +11,8 @@ Poker betting is heavily influenced by colloquial play, not mathematical play.
 var	players = 10,
 	shared = 5,	// community cards
 	cards = getCards( players, shared ),	// shared optional; 5 default
-	hands = evaluateHands(getCardsAsPlayers( players, cards )),	// hands = [ [], [], ... ]
+	hands = evaluateHands( getCardsAsPlayers( players, cards ) ),	// hands = [ [], [], ... ]
 	rankSortedHands = compareHands(hands);
-
-// Other examples	
-getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
-
-evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// Flush (Output)
-
-// Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
-getCardsAsPlayers( 7, getCards( [7,[ [0,13], [12,25], [10] ]], 5 ));
-
 ```
 
 #### Functions: getCards and getCardsAsPlayers
@@ -34,6 +21,17 @@ getCardsAsPlayers( 7, getCards( [7,[ [0,13], [12,25], [10] ]], 5 ));
 
 **getCardsAsPlayers** accepts 2 parameters, *players* and *cards*. The players parameter is an *int*.
 
+
+#### Other examples	
+```
+// Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
+getCardsAsPlayers( 7, getCards( [7,[ [0,13], [12,25], [10] ]], 5 ));
+
+getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
+
+evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// Flush (Output)
+
+```
 
 
 #### Output
