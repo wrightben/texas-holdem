@@ -2,7 +2,7 @@
 
 ### Summary
 
-Texas Hold'em in JavaScript
+Texas Hold'em in JavaScript for play and analysis
 
 
 ### Use
