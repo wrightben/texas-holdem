@@ -1,8 +1,8 @@
 # texas-holdem
 
-### Purpose
+### Summary
 
-I'm interested in how people make decisions in domains like texas-holdem (poker) and the stock market. My theory is betting is primarily influenced by colloquialisms rather than math.
+Texas Hold'em in JavaScript
 
 
 ### Use
