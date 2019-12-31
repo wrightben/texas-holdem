@@ -314,8 +314,8 @@ var compareHands = function( _array ) {try {
 
 
 // Node:
-// var Poker = require('./poker.js'); 
-// var getCards = require('./poker.js').getCards;
+// var Holdem = require('./texas-holdem.js'); 
+// var getCards = require('./texas-holdem.js').getCards;
 var setExports = function() {
 	if (typeof exports !== "undefined") {
 		exports.getCards = getCards;

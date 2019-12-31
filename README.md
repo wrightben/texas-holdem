@@ -1,8 +1,8 @@
-# poker
+# texas-holdem
 
 ### Purpose
 
-I'm interested in how people make decisions in poker and the stock market. My theory is poker betting is primarily influenced by colloquial play instead of mathematical play.
+I'm interested in how people make decisions in texas-holdem (poker) and the stock market. My theory is betting is primarily influenced by colloquial play instead of mathematical play.
 
 
 ### Use
