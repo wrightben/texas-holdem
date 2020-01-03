@@ -20,4 +20,4 @@ var probabilityCheck = function( p,t ) {
 	
 }
 
-probabilityCheck( 4 );
+probabilityCheck( 3, 5 );
