@@ -4,7 +4,7 @@ var probabilityCheck = function( p,t ) {
 	if (typeof p == "undefined") { p = 6; }
 	if (typeof t == "undefined") { t = p; }
 
-	var	_p = new Array(6).fill(0),
+	var	_p = new Array(p).fill(0),
 		_r = _p.slice();
 
 	for (i = 0; i < t; i++) {
