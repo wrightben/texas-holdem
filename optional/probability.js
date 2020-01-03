@@ -1,5 +1,5 @@
-// Probability Check
-var probabilityCheck = function( p,t ) {
+// distribution
+var distribution = function( p,t ) {
 
 	if (typeof p == "undefined") { p = 6; }
 	if (typeof t == "undefined") { t = p; }
@@ -20,4 +20,4 @@ var probabilityCheck = function( p,t ) {
 	
 }
 
-probabilityCheck( 3, 5 );
+distribution( 3, 5 );
