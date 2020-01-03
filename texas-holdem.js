@@ -334,5 +334,5 @@ var	players = 7,
 // 	cards = getCards( players, shared ),
 	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
 	rankSortedHands = compareHands(hands);
-//		
+	
 	console.log(JSON.stringify(rankSortedHands));
