@@ -23,3 +23,9 @@ var distribution = function( p,t ) {
 
 // Metaphor: 3 poker players play 5 hands (distribution of wins)
 distribution( 3, 5 );
+
+// Metaphor: Coin toss; 100 trials
+distribution( 2, 100 );
+
+// Actual: Math.random() (0-3) distribution over 100 trials
+distribution( 4, 100 );
