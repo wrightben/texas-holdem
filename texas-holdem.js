@@ -25,10 +25,10 @@ var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ] 
 	// Requires: var _c = numbers.slice();
 	var getCard = function() {
 
-		var n = Math.floor( Math.random() * Math.floor( 52 ) );
+		var n = Math.floor( Math.random() * 52 );
 		var _ = 0;
 		
-		while ( _c[n] == -1  ) { n = Math.floor( Math.random() * Math.floor( 52 ) ); }
+		while ( _c[n] == -1  ) { n = Math.floor( Math.random() * 52 ); }
 
 		_ = _c[n];
 		_c[n] = -1;
