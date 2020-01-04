@@ -1,5 +1,5 @@
 // distribution
-// Creates array of length p, and randomly fills in its indexes up to t trials.
+// Create array of length p, randomly increment indexes of p up to t trials.
 // Metaphor: 3 poker players play 5 hands (distribution of wins)
 var distribution = function( p,t ) {
 
