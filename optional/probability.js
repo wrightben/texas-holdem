@@ -1,4 +1,6 @@
 // distribution
+// Creates array of length p, and randomly fills in its indexes up to t trials.
+// Metaphor: 3 poker players play 5 hands (distribution of wins)
 var distribution = function( p,t ) {
 
 	if (typeof p == "undefined") { p = 6; }
