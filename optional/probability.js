@@ -1,6 +1,5 @@
 // distribution
 // Create array of length p, randomly increment indexes of p up to t trials.
-// Metaphor: 3 poker players play 5 hands (distribution of wins)
 var distribution = function( p,t ) {
 
 	if (typeof p == "undefined") { p = 6; }
@@ -22,4 +21,5 @@ var distribution = function( p,t ) {
 	
 }
 
+// Metaphor: 3 poker players play 5 hands (distribution of wins)
 distribution( 3, 5 );
