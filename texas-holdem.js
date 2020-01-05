@@ -123,7 +123,7 @@ var isSequence = function ( _array, req ) {
 
 	_s.sort(function(a,b){ return a-b; }); // [L..H]
 
-	if (_s[_s.length - 1] == 13) { _s.unshift(0); } // [13] = [0- -13]
+	if (_s[_s.length - 1] == 13) { _s.unshift(0); } // [a..13] = [0,a..13]
 
 	for (var i = (_s.length - 1); (i - 4) >= 0; i--) { // [ (L-4)..L ]
 		
