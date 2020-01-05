@@ -38,8 +38,8 @@ evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// (See Output)
 {
 	"rank": 6,
 	"label": "Flush",
-	"value": [43, 44, 49, 51, 39],
-	"cards": [44, 39, 43, 24, 51, 2, 49],
+	"value": [43, 44, 49, 51, 39], // Rank order (L..H)
+	"cards": [44, 39, 43, 24, 51, 2, 49], // Order dealt
 	"faceValues": ["6c", "Ac", "5c", "Qd", "Kc", "3h", "Jc"],
 	"straight": -1,
 	"suit": 3,
@@ -64,9 +64,9 @@ evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// (See Output)
 			[2],
 			[24],
 			[],
-			[44, 39, 43, 51, 49]
+			[44, 39, 43, 51, 49] // Order dealt
 		],
-		"collections": [
+		"collections": [ // 41 = 3; 13 = 13
 			[2, 4, 5, 10, 11, 12, 13],
 			[],
 			[],
