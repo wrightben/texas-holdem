@@ -114,24 +114,28 @@ var numToFaceValue = function( n, hc ) {
 var isSequence = function ( _array, req ) {
 
 	if (typeof req == "undefined") { req = 5; }
-	
-	var _1 = _array.slice(0,_array.length).sort(function(a,b) { return a - b; });
-	
-	for (var i = 0; i < _1.length; i++) { _1[i] = numToFaceValue(_1[i])[1]; }
+		
+	var	hc = -1,
+		_s = _array.slice(); // _array contains no dupes
 
-	if (_1[0] == 0) { _1.push(13); } // ace: 0 and 13
-	
-	var	_c = 0,
-		_hc = -1;
-	
-	for (var i = 1; i < _1.length; i++) {
+	_s.forEach(function(e,i) {
+		_s[i] = numToFaceValue(e,true)[1]; // [1-13]
+	});
+
+	_s.sort(function(a,b){ return a-b; }); // [L..H]
+
+	if (_s[_s.length - 1] == 13) { _s.unshift(0); } // [13] = [0,13]
+
+	console.log(_s);
+	for (var i = (_s.length - 1); (i - 4) >= 0; i--) { // Straight: [b] - [a] = 4
 		
-		( _1[i-1] + 1 == _1[i] ) ? _c += 1 : _c = 0;
-		
-		if (_c >= req - 1) { _hc = _1[i]; }
+		// Return [b] as high card if straight
+		if ( _s[i] - _s[i-4] == 4 ) { return _s[i]; }
+		 
 	}
 	
-	return _hc;
+	// No straight
+	return -1;
 
 }
 
