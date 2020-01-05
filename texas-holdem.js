@@ -237,7 +237,9 @@ var	evaluateHand = function( _array ) {
 		// (6) Flush 
 		if ( _o.rank < 9 ) {				
 			_o.rank = 6;
-			_o.value = _suits[_o.suit].slice(-5).sort(function(a,b) { return a - b; });			
+			_o.value = _suits[_o.suit].slice(-5).sort(function(a,b) { 
+				return numToFaceValue(a,true)[1] - numToFaceValue(b,true)[1];
+			});			
 		}
 
 	} else if ( _o.straight != -1 ) { // (5) Straight (See Group 2)
@@ -300,9 +302,13 @@ var compareHands = function( _array ) {try {
 	
 		// Ranks ARE equal, sort by value
 		for (i = b.value.length - 1; i >= 0; i--) {
-			if ( b.value[i] != a.value[i] ) { return b.value[i] - a.value[i]; }
+			
+			var	_a = numToFaceValue(a.value[i],true)[1],
+				_b = numToFaceValue(b.value[i],true)[1];
+						
+			return _b - _a;
 		}
-											
+					
 	});
 	
 	return _array;
@@ -336,3 +342,6 @@ var	players = 7,
 	rankSortedHands = compareHands(hands);
 	
 	console.log(JSON.stringify(rankSortedHands));
+	
+	
+console.log( evaluateHand( [44, 39, 43, 24, 51, 2, 49] ) );	
