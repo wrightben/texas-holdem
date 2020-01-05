@@ -344,4 +344,4 @@ var	players = 7,
 	console.log(JSON.stringify(rankSortedHands));
 	
 	
-console.log( evaluateHand( [44, 39, 43, 24, 51, 2, 49] ) );	
+console.log( JSON.stringify(evaluateHand( [44, 39, 43, 24, 51, 2, 49] )) );	
