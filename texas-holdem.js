@@ -113,10 +113,9 @@ var numToFaceValue = function( n, hc ) {
 // Function: _array (int), req (int): num cards required
 var isSequence = function ( _array, req ) {
 
-	if (typeof req == "undefined") { req = 5; }
+	if (typeof req == "undefined") { req = 5; } // Unused
 		
-	var	hc = -1,
-		_s = _array.slice(); // _array contains no dupes
+	var	_s = _array.slice(); // _array contains no dupes
 
 	_s.forEach(function(e,i) {
 		_s[i] = numToFaceValue(e,true)[1]; // [1-13]
@@ -126,8 +125,9 @@ var isSequence = function ( _array, req ) {
 
 	if (_s[_s.length - 1] == 13) { _s.unshift(0); } // [13] = [0- -13]
 
-	for (var i = (_s.length - 1); (i - 4) >= 0; i--) { // Straight: [b] - [a] = 4
+	for (var i = (_s.length - 1); (i - 4) >= 0; i--) { // [ (L-4)..L ]
 		
+		// Straight: [b] - [a] = 4
 		// Return [b] as high card if straight
 		if ( _s[i] - _s[i-4] == 4 ) { return _s[i]; }
 		 
