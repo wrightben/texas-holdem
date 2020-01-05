@@ -114,7 +114,7 @@ var numToFaceValue = function( n, hc ) {
 var isSequence = function ( _array, req ) {
 
 	if (typeof req == "undefined") { req = 5; } // Unused
-		
+
 	var	_s = _array.slice(); // _array contains no dupes
 
 	_s.forEach(function(e,i) {
