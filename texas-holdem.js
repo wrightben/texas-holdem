@@ -126,7 +126,6 @@ var isSequence = function ( _array, req ) {
 
 	if (_s[_s.length - 1] == 13) { _s.unshift(0); } // [13] = [0- -13]
 
-	console.log(_s);
 	for (var i = (_s.length - 1); (i - 4) >= 0; i--) { // Straight: [b] - [a] = 4
 		
 		// Return [b] as high card if straight
