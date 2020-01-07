@@ -337,10 +337,14 @@ setExports();
 
 
 
-var	players = 7,
-	shared = 5,
-// 	cards = getCards( players, shared ),
-	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
-	rankSortedHands = compareHands(hands);
-	
-	console.log(JSON.stringify(rankSortedHands));
+// var	players = 7,
+// 	shared = 5,
+// // 	cards = getCards( players, shared ),
+// 	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
+// 	rankSortedHands = compareHands(hands);
+// 	
+// 	console.log(JSON.stringify(rankSortedHands));
+
+console.log( ordinalToNominal(42,0)[1] );
+console.log( ordinalToNominal(42,1)[1] );
+console.log( getFaceValues( [ordinalToNominal(42,1)[1]] ) );
