@@ -1,0 +1,10 @@
+# Texas Hold'em App
+
+* Real-time, In-person, Group play
+* Cards on smart phone
+* Bet on smart phone
+* See turn, position, current pot in app (with alerts)
+
+### Other features
+* No need to deal
+* Choose your own card design
