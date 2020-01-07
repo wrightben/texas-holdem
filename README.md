@@ -39,7 +39,7 @@ evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// (See Output)
 	"rank": 6,
 	"label": "Flush",
 	"value": [43, 44, 49, 51, 39], // Nominal Order (L..H)
-	"cards": [44, 39, 43, 24, 51, 2, 49], // Order dealt
+	"cards": [44, 39, 43, 24, 51, 2, 49], // Dealt Order
 	"faceValues": ["6c", "Ac", "5c", "Qd", "Kc", "3h", "Jc"],
 	"straight": -1,
 	"suit": 3,
