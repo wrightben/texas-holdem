@@ -99,8 +99,8 @@ var getFaceValues = function( _array ) {
 // Function: o(rdinal) (int), hc (boolean)
 var ordinalToNominal = function( o, hc ) {
 
-	var s = Math.floor(o / 13);
-	var n = o - (s*13);
+	var	s = Math.floor(o / 13),
+		n = o - (s*13);
 
 	if ( Boolean(hc) && ( n == 0 ) ) { n = 13; }
 
