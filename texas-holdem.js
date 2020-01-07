@@ -104,7 +104,7 @@ var ordinalToNominal = function( o, hc ) {
 
 	if ( Boolean(hc) && ( n == 0 ) ) { n = 13; }
 
-	return [o,n,s]; // Ord (42), Nom (3), Suit (3)
+	return [o,n,s]; // Ord (42), Nom (3), Suit (3); Face (4c)
 	
 }
 
