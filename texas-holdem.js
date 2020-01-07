@@ -5,7 +5,7 @@ var faceValues = [
 	"Ac",	"2c",	"3c",	"4c",	"5c",	"6c",	"7c",	"8c",	"9c",	"Tc",	"Jc",	"Qc",	"Kc"
 ];
 
-var numbers = [
+var ordinals = [
 //	A	2	3	4	5	6	7	8	9	10	J	Q	K	A
 	0,	1,	2,	3,	4,	5,	6,	7,	8,	9,	10,	11,	12,
 	13,	14,	15,	16,	17,	18,	19,	20,	21,	22,	23,	24,	25,		
@@ -20,9 +20,9 @@ var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ] 
 	if ( typeof players == "undefined" ) { players = 1; }
 	if ( (typeof shared == "undefined") || Array.isArray(shared) ) { shared = 5; }	
 
-	var _c = numbers.slice();
+	var _c = ordinals.slice();
 	
-	// Requires: var _c = numbers.slice();
+	// Requires: var _c = ordinals.slice();
 	var getCard = function() {
 
 		var n = Math.floor( Math.random() * 52 );
