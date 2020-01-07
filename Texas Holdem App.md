@@ -7,4 +7,5 @@
 
 ### Other features
 * No more shuffling and dealing
+* History; Analytics
 * Choose your own card design
