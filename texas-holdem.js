@@ -95,7 +95,6 @@ var getFaceValues = function( _array ) {
 }
 
 
-
 // Function: o(rdinal) (int), hc (boolean)
 var ordinalToNominal = function( o, hc ) {
 
