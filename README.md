@@ -38,7 +38,7 @@ evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// (See Output)
 {
 	"rank": 6,
 	"label": "Flush",
-	"value": [43, 44, 49, 51, 39], // Mixed Value; Nominal Order (13-high)
+	"value": [43, 44, 49, 51, 39], // Nominal Order (13-high)
 	"cards": [44, 39, 43, 24, 51, 2, 49], // Dealt Order
 	"faceValues": ["6c", "Ac", "5c", "Qd", "Kc", "3h", "Jc"],
 	"straight": -1,
@@ -66,7 +66,7 @@ evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// (See Output)
 			[],
 			[44, 39, 43, 51, 49] // Dealt Order
 		],
-		"collections": [ // Nominal Value; Nominal Order (13-high)
+		"collections": [ // Nominal Order (13-high)
 			[2, 4, 5, 10, 11, 12, 13],
 			[],
 			[],
