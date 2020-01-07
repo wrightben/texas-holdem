@@ -66,7 +66,7 @@ evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// (See Output)
 			[],
 			[44, 39, 43, 51, 49] // Dealt Order
 		],
-		"collections": [ // Nominal Order (L-H, 13-high)
+		"collections": [ // Nominal Order (13-high)
 			[2, 4, 5, 10, 11, 12, 13],
 			[],
 			[],
