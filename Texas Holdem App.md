@@ -6,5 +6,5 @@
 * See turn, position, current pot in app (with alerts)
 
 ### Other features
-* No need to deal
+* No more shuffling and dealing
 * Choose your own card design
