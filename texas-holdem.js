@@ -1,8 +1,8 @@
 var faceValues = [
-	"Ah", "2h", "3h", "4h", "5h", "6h", "7h", "8h", "9h", "Th", "Jh", "Qh", "Kh",
-	"Ad", "2d", "3d", "4d", "5d", "6d", "7d", "8d", "9d", "Td", "Jd", "Qd", "Kd",
-	"As", "2s", "3s", "4s", "5s", "6s", "7s", "8s", "9s", "Ts", "Js", "Qs", "Ks",
-	"Ac", "2c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "Tc", "Jc", "Qc", "Kc"
+	"Ah",	"2h",	"3h",	"4h",	"5h",	"6h",	"7h",	"8h",	"9h",	"Th",	"Jh",	"Qh",	"Kh",	
+	"Ad",	"2d",	"3d",	"4d",	"5d",	"6d",	"7d",	"8d",	"9d",	"Td",	"Jd",	"Qd",	"Kd",	
+	"As",	"2s",	"3s",	"4s",	"5s",	"6s",	"7s",	"8s",	"9s",	"Ts",	"Js",	"Qs",	"Ks",	
+	"Ac",	"2c",	"3c",	"4c",	"5c",	"6c",	"7c",	"8c",	"9c",	"Tc",	"Jc",	"Qc",	"Kc"
 ];
 
 var numbers = [
@@ -337,14 +337,10 @@ setExports();
 
 
 
-// var	players = 7,
-// 	shared = 5,
-// // 	cards = getCards( players, shared ),
-// 	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
-// 	rankSortedHands = compareHands(hands);
-// 	
-// 	console.log(JSON.stringify(rankSortedHands));
-
-console.log( ordinalToNominal(42,0)[1] );
-console.log( ordinalToNominal(42,1)[1] );
-console.log( getFaceValues( [ordinalToNominal(42,1)[1]] ) );
+var	players = 7,
+	shared = 5,
+// 	cards = getCards( players, shared ),
+	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
+	rankSortedHands = compareHands(hands);
+	
+	console.log(JSON.stringify(rankSortedHands));
