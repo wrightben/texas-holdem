@@ -95,17 +95,16 @@ var getFaceValues = function( _array ) {
 }
 
 
-// Function: 29 -> 3; 0 -> 13 (Ace-high)
-var numToFaceValue = function( n, hc ) {
-	
-	if (typeof hc == "undefined") { hc = false; }
 
-	var s = Math.floor(n / 13);
-	var f = n - (s*13);
+// Function: o(rdinal) (int), hc (boolean)
+var ordinalToNominal = function( o, hc ) {
 
-	if ( ( hc == true ) && ( f == 0 ) ) { f = 13; }
+	var s = Math.floor(o / 13);
+	var n = o - (s*13);
 
-	return [n,f,s]; // Num, Face, Suit
+	if ( Boolean(hc) && ( n == 0 ) ) { n = 13; }
+
+	return [o,n,s]; // Ord (42), Nom (3), Suit (3)
 	
 }
 
@@ -118,7 +117,7 @@ var isSequence = function ( _array, req ) {
 	var	_s = _array.slice(); // _array contains no dupes
 
 	_s.forEach(function(e,i) {
-		_s[i] = numToFaceValue(e,true)[1]; // [1-13]
+		_s[i] = ordinalToNominal(e,true)[1]; // [1-13]
 	});
 
 	_s.sort(function(a,b){ return a-b; }); // [L..H]
@@ -179,7 +178,7 @@ var	evaluateHand = function( _array ) {
 	// GROUP 1: by value, suit; Flush?
 	for (i = 0; i < _l; i++ ) {
 		
-		_n = numToFaceValue( _array[i], false ); // [Num, Face, Suit]
+		_n = ordinalToNominal( _array[i], false ); // [Num, Face, Suit]
 		_values[ _n[1] ].push( _n[0] );
 		_fc = _suits[ _n[2] ].push( _n[0] );
 		if ( _fc > 4 ) { _o.suit = _n[2]; }
@@ -200,7 +199,7 @@ var	evaluateHand = function( _array ) {
 	// GROUP 2: by HC, Pairs, Trips, Quads
 	for (i = 0; i < 13; i++) {
 		if (_values[i].length > 0) {
-			_collections[_values[i].length - 1].push( numToFaceValue(i, true)[1] ); // Group		
+			_collections[_values[i].length - 1].push( ordinalToNominal(i, true)[1] ); // Group		
 			_sc.push(i);
 		}
 	}
@@ -241,7 +240,7 @@ var	evaluateHand = function( _array ) {
 		if ( _o.rank < 9 ) {				
 			_o.rank = 6;
 			_o.value = _suits[_o.suit].slice(-5).sort(function(a,b) { 
-				return numToFaceValue(a,true)[1] - numToFaceValue(b,true)[1];
+				return ordinalToNominal(a,true)[1] - ordinalToNominal(b,true)[1];
 			});			
 		}
 
@@ -306,8 +305,8 @@ var compareHands = function( _array ) {try {
 		// Ranks ARE equal, sort by value
 		for (i = b.value.length - 1; i >= 0; i--) {
 			
-			var	_a = numToFaceValue(a.value[i],true)[1],
-				_b = numToFaceValue(b.value[i],true)[1];
+			var	_a = ordinalToNominal(a.value[i],true)[1],
+				_b = ordinalToNominal(b.value[i],true)[1];
 						
 			return _b - _a;
 		}
