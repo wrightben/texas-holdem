@@ -176,7 +176,7 @@ var	evaluateHand = function( _array ) {
 	// GROUP 1: by value, suit; Flush?
 	for (i = 0; i < _l; i++ ) {
 		
-		_n = ordinalToNominal( _array[i], false ); // [Num, Face, Suit]
+		_n = ordinalToNominal( _array[i], false );
 		_values[ _n[1] ].push( _n[0] );
 		_fc = _suits[ _n[2] ].push( _n[0] );
 		if ( _fc > 4 ) { _o.suit = _n[2]; }
