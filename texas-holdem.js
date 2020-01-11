@@ -38,7 +38,7 @@ var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ] 
 
 	// Requires: getCard()
 	var	_ = []; // Return object: List of cards
-	var	_set = []; // [ [], [], ...]: Predetermined hole cards (1 or 2) for subset of players
+	var	_set = []; // [ [], [], ...]: Predetermined hole cards (1 or 2) for n <= players
 				
 	if ( Array.isArray(players) ) {
 
@@ -49,7 +49,7 @@ var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ] 
 			return "players is less than _set.length";  
 		}
 		
-		_set.forEach(function(a,e) { // 
+		_set.forEach(function(a,e) { // Predetermined cards, fill in
 			while (a.length < 2) { a.push( getCard() ); }
 			_c[a[0]] = -1;
 			_c[a[1]] = -1;
