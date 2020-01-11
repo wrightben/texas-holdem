@@ -33,7 +33,7 @@ evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// (See Output)
 ```
 
 
-**Output:** evaluateHand(*[44, 39, 43, 24, 51, 2, 49]* )
+**Output:** evaluateHand( [44, 39, 43, 24, 51, 2, 49] )
 ```
 {
 	"rank": 6,
