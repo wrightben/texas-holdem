@@ -291,7 +291,7 @@ var evaluateHands = function ( _array ) {
 }
 
 
-var compareHands = function( _array ) {try {
+var sortHands = function( _array ) {try {
 
 	var _ = {}, i;
 	
@@ -314,7 +314,7 @@ var compareHands = function( _array ) {try {
 	return _array;
 
 } catch (E) {
-	console.log('compareHands: '+E);
+	console.log('sortHands: '+E);
 }}
 
 
@@ -329,6 +329,7 @@ var setExports = function() {
 		exports.getFaceValues = getFaceValues;
 		exports.evaluateHand = evaluateHand;
 		exports.evaluateHands = evaluateHands;
+		exports.sortHands = sortHands;		
 	}
 }
 setExports();
@@ -339,6 +340,6 @@ var	players = 7,
 	shared = 5,
 // 	cards = getCards( players, shared ),
 	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
-	rankSortedHands = compareHands(hands);
+	sortedHands = sortHands(hands);
 	
-	console.log(JSON.stringify(rankSortedHands));
+	console.log(JSON.stringify(sortedHands));
