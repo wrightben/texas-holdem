@@ -17,7 +17,7 @@ var ordinals = [
 var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ]  */, shared /* int (0,3,4,5) */ ) {
 
 	if ( typeof players == "undefined" ) { players = 1; }
-	if ( (typeof shared == "undefined") || Array.isArray(shared) ) { shared = 5; }	
+	if ( typeof shared == "undefined" ) { shared = 5; }	
 
 	var _c = ordinals.slice();
 	
