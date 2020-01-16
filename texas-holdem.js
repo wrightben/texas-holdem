@@ -155,7 +155,7 @@ var	evaluateHand = function( _array ) {
 			"suit"		:-1,	// Index of groups._suits with length > 5
 			"flush"		:-1
 			/*groups {		// Added below
-				_values,
+				_nominals,
 				_suits, 
 				_collections,
 			}*/
@@ -163,13 +163,13 @@ var	evaluateHand = function( _array ) {
 
 
 	// COLLECTION
-	var	_values = [
-			// Values (0s, 1s, 2s, 3s ...); !FaceValue ([0,26]=0,26)
+	var	_nominals = [
+			// nominals (0s, 1s, 2s, 3s ... 12s)
 			[], [], [], [], [], [], [], [], [], [], [], [], []
 		];
 			
 	var _suits = [	
-			// Suits (0-12), (13-25), (26-38), (39-51); !FaceValue ([0,26]=0,26)
+			// Suits (0-12), (13-25), (26-38), (39-51)
 			[], [], [], []
 		]; 
 
@@ -177,7 +177,7 @@ var	evaluateHand = function( _array ) {
 	for (i = 0; i < _l; i++ ) {
 		
 		_n = ordinalToNominal( _array[i], false );
-		_values[ _n[1] ].push( _n[0] );
+		_nominals[ _n[1] ].push( _n[0] );
 		_fc = _suits[ _n[2] ].push( _n[0] );
 		if ( _fc > 4 ) { _o.suit = _n[2]; }
 
@@ -196,8 +196,8 @@ var	evaluateHand = function( _array ) {
 	
 	// GROUP 2: by HC, Pairs, Trips, Quads
 	for (i = 0; i < 13; i++) {
-		if (_values[i].length > 0) {
-			_collections[_values[i].length - 1].push( ordinalToNominal(i, true)[1] ); // Group		
+		if (_nominals[i].length > 0) {
+			_collections[_nominals[i].length - 1].push( ordinalToNominal(i, true)[1] ); // Group		
 			_sc.push(i);
 		}
 	}
@@ -269,7 +269,7 @@ var	evaluateHand = function( _array ) {
 	_o.cards = _array;
 	_o.faceValues = getFaceValues( _array );
 	_o.groups = {
-		"values" : _values,
+		"nominals" : _nominals,
 		"suits" : _suits,
 		"collections" : _collections
 	};
@@ -336,10 +336,12 @@ setExports();
 
 
 
-var	players = 7,
-	shared = 5,
-// 	cards = getCards( players, shared ),
-	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
-	sortedHands = sortHands(hands);
-	
-	console.log(JSON.stringify(sortedHands));
+// var	players = 7,
+// 	shared = 5,
+// // 	cards = getCards( players, shared ),
+// 	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
+// 	sortedHands = sortHands(hands);
+// 	
+// 	console.log(JSON.stringify(sortedHands));
+
+console.log( evaluateHand( [44, 39, 43, 24, 51, 2, 49] ) );
