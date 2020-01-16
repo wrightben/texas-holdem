@@ -336,10 +336,12 @@ setExports();
 
 
 
-var	players = 7,
-	shared = 5,
-// 	cards = getCards( players, shared ),
-	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
-	sortedHands = sortHands(hands);
-	
-	console.log(JSON.stringify(sortedHands));
+// var	players = 7,
+// 	shared = 5,
+// // 	cards = getCards( players, shared ),
+// 	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
+// 	sortedHands = sortHands(hands);
+// 	
+// 	console.log(JSON.stringify(sortedHands));
+
+console.log( JSON.stringify(evaluateHand( [44, 39, 43, 24, 51, 2, 49] )) );
