@@ -46,7 +46,7 @@ evaluateHand( [44, 39, 43, 24, 51, 2, 49] )
 	"suit": 3,
 	"flush": -1,
 	"groups": {
-		"values": [
+		"nominals": [
 			[39],
 			[],
 			[2],
