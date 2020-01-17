@@ -173,7 +173,7 @@ var	evaluateHand = function( _array ) {
 			[], [], [], []
 		]; 
 
-	// GROUP 1: by value, suit; Flush?
+	// GROUP 1: by nominal, suit; Flush?
 	for (i = 0; i < _l; i++ ) {
 		
 		_n = ordinalToNominal( _array[i], false );
@@ -186,7 +186,7 @@ var	evaluateHand = function( _array ) {
 
 	// COLLECTION
 	var	_collections = [ 
-			// High Cards, Pairs, Trips, Quads; FaceValue ([0,26]=13)
+			// High Cards, Pairs, Trips, Quads; by nominal ([0,26]=13)
 			[], [], [], [] 
 		],
 		_c0 = _collections[0],
@@ -213,7 +213,7 @@ var	evaluateHand = function( _array ) {
 	
 
 
-	// Rank, Value
+	// Set _o.rank, _o.value
 	if ( _c3.length > 0 ) { // (8) Four
 		_o.rank = 8;
 		_o.value = [].concat( _c3, _c0.slice(-1) );
