@@ -301,14 +301,13 @@ var sortHands = function( _array ) {try {
 		if (b.rank != a.rank) { return b.rank - a.rank; } // Sort by rank
 	
 		// Ranks ARE equal, sort by value
-		for (i = b.value.length - 1; i >= 0; i--) {
-			
-			var	_a = ordinalToNominal(a.value[i],true)[1],
-				_b = ordinalToNominal(b.value[i],true)[1];
-						
-			return _b - _a;
+		i = b.value.length - 1;
+		while ( (i > 0) && (ordinalToNominal(a.value[i],true)[1] == ordinalToNominal(b.value[i],true)[1]) ) {
+			i --;
 		}
-					
+		
+		return ordinalToNominal(b.value[i],true)[1] - ordinalToNominal(a.value[i],true)[1];
+		
 	});
 	
 	return _array;
@@ -333,6 +332,7 @@ var setExports = function() {
 	}
 }
 setExports();
+
 
 
 
