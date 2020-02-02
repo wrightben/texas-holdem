@@ -253,10 +253,12 @@ var	evaluateHand = function( _array ) {
 		
 	} else if ( _c1.length > 1 ) { // (3) Pair x 2
 		_o.rank = 3;
-		(_c1.length > 2) ? 
-			_o.value = _c1.slice(-3):
-			_o.value = [].concat( _c0.slice(-1), _c1.slice(-2) );
-			
+		_o.value = [].concat(
+			[_c0[_c0.length -1], _c1[_c1.length - 3] ].sort(function(a,b) { 
+				return ordinalToNominal(b,true)[1] - ordinalToNominal(a,true)[1];
+			})[0], // HC || 3rd Pair 
+			_c1.slice(-2) ); // 2nd Pair, 1st Pair
+	
 	} else if ( _c1.length > 0 ) { // (2) Pair x 1
 		_o.rank = 2;
 		_o.value = _c0.slice(-3).concat(_c1.slice(-1));
