@@ -98,6 +98,8 @@ var getFaceValues = function( _array ) {
 // Function: o(rdinal) (int), hc (boolean)
 var ordinalToNominal = function( o, hc ) {
 
+	if ( typeof o == "undefined" ) { return [-1,-1,-1]; }
+
 	var	s = Math.floor(o / 13),
 		n = o - (s*13);
 
@@ -254,10 +256,12 @@ var	evaluateHand = function( _array ) {
 	} else if ( _c1.length > 1 ) { // (3) Pair x 2
 		_o.rank = 3;
 		_o.value = [].concat(
-			[_c0[_c0.length -1], _c1[_c1.length - 3] ].sort(function(a,b) { 
-				return ordinalToNominal(b,true)[1] - ordinalToNominal(a,true)[1];
-			})[0], // HC || 3rd Pair 
-			_c1.slice(-2) ); // 2nd Pair, 1st Pair
+			Math.max(	
+				ordinalToNominal(_c0[_c0.length -1],true)[1],
+				ordinalToNominal(_c1[_c1.length - 3],true)[1]
+			),		// Math.max(HC, 3rd Pair); ordinalToNominal converts "undefined" to -1
+			_c1.slice(-2)	// 2nd Pair, 1st Pair
+		);
 	
 	} else if ( _c1.length > 0 ) { // (2) Pair x 1
 		_o.rank = 2;
