@@ -50,10 +50,11 @@ var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ] 
 		}
 		
 		_set.forEach(function(a,e) { // Predetermined cards, fill in
-			while (a.length < 2) { a.push( getCard() ); } // May produce duplicate card
+		
 			_c[a[0]] = -1;
-			_c[a[1]] = -1;
-			_.push( a[0],a[1] );
+			_.push( a[0], a[1] || getCard() );
+			_c[_c.length - 1] = -1;
+			
 		});
 
 	}
