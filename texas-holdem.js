@@ -53,7 +53,7 @@ var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ] 
 		
 			_c[a[0]] = -1;
 			_.push( a[0], a[1] || getCard() );
-			_c[_c.length - 1] = -1;
+			_c[ _.length - 1 ] = -1;
 			
 		});
 
