@@ -331,7 +331,7 @@ var sortHands = function( _array ) {try {
 // Node: setExports()
 // var Holdem = require('./texas-holdem.js'); 
 // var getCards = require('./texas-holdem.js').getCards;
-(function() {
+var setExports = function() {
 	if (typeof exports !== "undefined") {
 		exports.getCards = getCards;
 		exports.getCardsAsPlayers = getCardsAsPlayers;
@@ -340,7 +340,8 @@ var sortHands = function( _array ) {try {
 		exports.evaluateHands = evaluateHands;
 		exports.sortHands = sortHands;		
 	}
-})()
+}
+setExports();
 
 
 
