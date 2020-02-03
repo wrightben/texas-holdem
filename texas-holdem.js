@@ -139,7 +139,6 @@ var isSequence = function ( _array, req ) {
 }
 
 
-// Function: 
 var	evaluateHand = function( _array ) {
 
 	var	i = 0, 
@@ -165,7 +164,7 @@ var	evaluateHand = function( _array ) {
 	};
 
 
-	// COLLECTION
+	// COLLECTION (Group 1)
 	var	_nominals = [
 			// nominals (0s, 1s, 2s, 3s ... 12s)
 			[], [], [], [], [], [], [], [], [], [], [], [], []
@@ -187,7 +186,7 @@ var	evaluateHand = function( _array ) {
 	}
 
 
-	// COLLECTION
+	// COLLECTION (Group 2)
 	var	_collections = [ 
 			// High Cards, Pairs, Trips, Quads; by nominal ([0,26]=13)
 			[], [], [], [] 
@@ -216,6 +215,7 @@ var	evaluateHand = function( _array ) {
 	
 
 
+	// Object: 
 	// Set _o.rank, _o.value
 	if ( _c3.length > 0 ) { // (8) Four
 		_o.rank = 8;
@@ -272,7 +272,11 @@ var	evaluateHand = function( _array ) {
 		_o.value = _c0.slice(-5);
 	}
 	
+	
+	
+	
 	// Object: 
+	// Set other props
 	_o.cards = _array;
 	_o.faceValues = getFaceValues( _array );
 	_o.groups = {
@@ -324,21 +328,19 @@ var sortHands = function( _array ) {try {
 }}
 
 
-
-// Node:
+// Node: setExports()
 // var Holdem = require('./texas-holdem.js'); 
 // var getCards = require('./texas-holdem.js').getCards;
-var setExports = function() {
+(function() {
 	if (typeof exports !== "undefined") {
 		exports.getCards = getCards;
 		exports.getCardsAsPlayers = getCardsAsPlayers;
-		exports.getFaceValues = getFaceValues;
-		exports.evaluateHand = evaluateHand;
+// 		exports.getFaceValues = getFaceValues;
+// 		exports.evaluateHand = evaluateHand;
 		exports.evaluateHands = evaluateHands;
 		exports.sortHands = sortHands;		
 	}
-}
-setExports();
+})()
 
 
 
