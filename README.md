@@ -17,7 +17,7 @@ var	players = 10,
 	bestHands = getBestHands(hands);
 ```
 
-### Examples
+### Functions
 
 **Functions:** ***getCards*** and ***getCardsAsPlayers***
 
