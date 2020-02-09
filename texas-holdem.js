@@ -297,12 +297,16 @@ var	evaluateHand = function( _array ) {
 
 var evaluateHands = function ( _array ) {
 	var _ = [];
-	_array.forEach(function(a,e) { _.push( evaluateHand(a) ); });
+	_array.forEach(function(a,e) { 
+		var hand = evaluateHand(a);
+		hand.position = e;
+		_.push( hand ); 
+	});
 	return _;
 }
 
 
-var _sort = function(a,b) {
+var _sort = function( a, b ) {
 	
 	// Ranks NOT equal, sort by rank
 	if (b.rank != a.rank) { return b.rank - a.rank; } // Sort by rank
@@ -318,20 +322,36 @@ var _sort = function(a,b) {
 }
 
 
-var equals = function(a, b) {
+var equals = function( a, b ) {
 	
 	return Boolean(0 == _sort(a,b));
 
 }
 
 
-var sortHands = function( _array ) {try {
+var sortHands = function( _array ) {
 	
 	return _array.slice().sort(_sort);
+	
+}
 
-} catch (E) {
-	console.log('sortHands: '+E);
-}}
+
+var getBestHands = function( _hands ) {
+
+	
+	var	i = 1,
+		sortedHands = sortHands(_hands),
+		_ri = [ sortedHands[0].position ],
+		_si = [ 0 ];
+	
+	while( (i < sortedHands.length) && (equals(sortedHands[0], sortedHands[i]))  ) {
+		_.push( i );
+		i += 1;
+	}
+	
+	return [ _ri, _si, sortedHands ]; // positionIDs of hands, keys of sortHands (Tied winning hands), sortedHands
+	
+}
 
 
 // Node: setExports()
@@ -344,18 +364,17 @@ var setExports = function() {
 // 		exports.getFaceValues = getFaceValues;
 // 		exports.evaluateHand = evaluateHand;
 		exports.evaluateHands = evaluateHands;
-		exports.sortHands = sortHands;		
+		exports.sortHands = sortHands;	
+		exports.getBestHands = getBestHands;	
 	}
 }
 setExports();
 
 
-
-
 var	players = 7,
-	shared = 5,
-// 	cards = getCards( players, shared ),
-	hands = evaluateHands( getCardsAsPlayers( players, getCards( [players,[ [0,13], [12,25], [10] ]], 5 )) ),
-	sortedHands = sortHands(hands);
+	shared = 5,	// community cards
+	cards = getCards( players, shared ),	// shared optional; 5 default
+	hands = evaluateHands( getCardsAsPlayers( players, cards ) ),
+	bestHands = getBestHands(hands);
 	
-	console.log(JSON.stringify(sortedHands));
+console.log( JSON.stringify(hands), "\n", JSON.stringify(bestHands) );
