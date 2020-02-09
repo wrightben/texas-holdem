@@ -336,7 +336,7 @@ var sortHands = function( _array ) {
 }
 
 
-var getBestHands = function( _hands ) {
+var getBestHands = function( _hands ) { try {
 	
 	var	i = 1,
 		sortedHands = sortHands(_hands),
@@ -344,13 +344,16 @@ var getBestHands = function( _hands ) {
 		_si = [ 0 ];
 	
 	while( (i < sortedHands.length) && (equals(sortedHands[0], sortedHands[i]))  ) {
-		_.push( i );
+		_ri = [ sortedHands[i].position ];
+		_si = [ i ];
 		i += 1;
 	}
 	
 	return [ _ri, _si, sortedHands ]; // [hand.position] of best in hands[], [_index] of best in sortedHands[], sortedHands
 	
-}
+} catch (E) {
+	console.log(E, _hands);
+}}
 
 
 // Node: setExports()
