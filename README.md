@@ -32,7 +32,7 @@ getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
 ```
 
 
-**Functions:** ***evaluateHand***
+![Function](https://github.com/wrightben/texas-holdem/blob/master/function.png) ***evaluateHand***
 
 ```
 // Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
@@ -83,7 +83,7 @@ evaluateHand( [44, 39, 43, 24, 51, 2, 49] )
 }
 ```
 
-**Functions:** ***getFaceValues***
+![Function](https://github.com/wrightben/texas-holdem/blob/master/function.png) ***getFaceValues***
 ```
 getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
 ```
