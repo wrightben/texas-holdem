@@ -377,4 +377,4 @@ var	players = 7,
 	hands = evaluateHands( getCardsAsPlayers( players, cards ) ),
 	bestHands = getBestHands(hands);
 	
-console.log( JSON.stringify(hands), "\n", JSON.stringify(bestHands) );
+console.log( JSON.stringify(hands), "\n\n", JSON.stringify(bestHands) );
