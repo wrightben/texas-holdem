@@ -349,7 +349,8 @@ var getBestHands = function( _hands ) { try {
 		i += 1;
 	}
 	
-	return [ _ri, _si, sortedHands ]; // [hand.position] of best in hands[], [_index] of best in sortedHands[], sortedHands
+	//@return [ [hand.position] of best in hands[], [_index] of best in sortedHands[], sortedHands ]
+	return [ _ri, _si, sortedHands ]; 
 	
 } catch (E) {
 	console.log(E, _hands);
@@ -377,6 +378,6 @@ var	players = 7,
 	shared = 5,	// community cards
 	cards = getCards( players, shared ),	// shared optional; 5 default
 	hands = evaluateHands( getCardsAsPlayers( players, cards ) ),
-	bestHands = getBestHands(hands);
+	bestHands = getBestHands(hands); // see comment @return in getBestHands
 	
 console.log( JSON.stringify(bestHands) );
