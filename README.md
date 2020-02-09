@@ -36,12 +36,12 @@ getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
 
 ```
 // Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
-evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// (See Output)
-```
+JSON.stringify(
+	evaluateHand( [44, 39, 43, 24, 51, 2, 49] )	// (See Output)
+);
 
-**Output:**  
-evaluateHand( [44, 39, 43, 24, 51, 2, 49] )
-```
+// OUTPUT
+
 {
 	"rank": 6,
 	"label": "Flush",
