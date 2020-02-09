@@ -19,7 +19,7 @@ var	players = 10,
 
 ### Functions
 
-[Function](https://github.com/wrightben/texas-holdem/blob/master/function.png) ***getCards*** and ***getCardsAsPlayers***
+![Function](https://github.com/wrightben/texas-holdem/blob/master/function.png) ***getCards*** and ***getCardsAsPlayers***
 
 *getCards* accepts 2 optional parameters, *players* and *shared*, which default to 1 and 5, respectively. The *players* parameter may be either an *int* or an *array* in this format: [ int, [ [int, int], [int, int] ]]. 
 
