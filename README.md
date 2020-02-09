@@ -35,12 +35,9 @@ getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
 ![Function](https://github.com/wrightben/texas-holdem/blob/master/function.png) **evaluateHand**
 
 ```
-// Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
 JSON.stringify(
-	evaluateHand( [44, 39, 43, 24, 51, 2, 49] )	// (See Output)
+	evaluateHand( [44, 39, 43, 24, 51, 2, 49] )	// See below
 );
-
-// OUTPUT
 
 {
 	"rank": 6,
