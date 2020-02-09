@@ -17,6 +17,8 @@ var	players = 10,
 	bestHands = getBestHands(hands);
 ```
 
+### Examples
+
 **Functions:** ***getCards*** and ***getCardsAsPlayers***
 
 *getCards* accepts 2 optional parameters, *players* and *shared*, which default to 1 and 5, respectively. The *players* parameter may be either an *int* or an *array* in this format: [ int, [ [int, int], [int, int] ]]. 
@@ -24,16 +26,18 @@ var	players = 10,
 *getCardsAsPlayers* accepts 2 parameters, *players* and *cards*. The players parameter is an *int*.
 
 
-#### Examples	
 ```
 // Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
 getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
-
-getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
-
-evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// (See Output)
 ```
 
+
+**Functions:** ***evaluateHand***
+
+```
+// Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
+evaluateHand( [44, 39, 43, 24, 51, 2, 49] );	// (See Output)
+```
 
 **Output:**  
 evaluateHand( [44, 39, 43, 24, 51, 2, 49] )
@@ -77,4 +81,9 @@ evaluateHand( [44, 39, 43, 24, 51, 2, 49] )
 		]
 	}
 }
+```
+
+**Functions:** ***getFaceValues***
+```
+getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
 ```
