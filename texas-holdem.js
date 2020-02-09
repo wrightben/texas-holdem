@@ -344,8 +344,8 @@ var getBestHands = function( _hands ) { try {
 		_si = [ 0 ];
 	
 	while( (i < sortedHands.length) && (equals(sortedHands[0], sortedHands[i]))  ) {
-		_ri = [ sortedHands[i].position ];
-		_si = [ i ];
+		_ri.push( sortedHands[i].position );
+		_si.push( i );
 		i += 1;
 	}
 	
