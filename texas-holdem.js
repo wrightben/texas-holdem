@@ -302,26 +302,32 @@ var evaluateHands = function ( _array ) {
 }
 
 
-var sortHands = function( _array ) {try {
+var _sort = function(a,b) {
+	
+	// Ranks NOT equal, sort by rank
+	if (b.rank != a.rank) { return b.rank - a.rank; } // Sort by rank
 
-	var _ = {}, i;
+	// Ranks ARE equal, sort by value
+	i = b.value.length - 1;
+	while ( (i > 0) && (ordinalToNominal(a.value[i],true)[1] == ordinalToNominal(b.value[i],true)[1]) ) {
+		i --;
+	}
 	
-	_array.sort(function(a,b) {
-		
-		// Ranks NOT equal, sort by rank
-		if (b.rank != a.rank) { return b.rank - a.rank; } // Sort by rank
+	return ordinalToNominal(b.value[i],true)[1] - ordinalToNominal(a.value[i],true)[1];
 	
-		// Ranks ARE equal, sort by value
-		i = b.value.length - 1;
-		while ( (i > 0) && (ordinalToNominal(a.value[i],true)[1] == ordinalToNominal(b.value[i],true)[1]) ) {
-			i --;
-		}
-		
-		return ordinalToNominal(b.value[i],true)[1] - ordinalToNominal(a.value[i],true)[1];
-		
-	});
+}
+
+
+var equals = function(a, b) {
 	
-	return _array;
+	return Boolean(0 == _sort(a,b));
+
+}
+
+
+var sortHands = function( _array ) {try {
+	
+	return _array.slice().sort(_sort);
 
 } catch (E) {
 	console.log('sortHands: '+E);
