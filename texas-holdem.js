@@ -349,7 +349,7 @@ var getBestHands = function( _hands ) {
 		i += 1;
 	}
 	
-	return [ _ri, _si, sortedHands ]; // positionIDs of hands, keys of sortHands (Tied winning hands), sortedHands
+	return [ _ri, _si, sortedHands ]; // [hand.position] of best in hands[], [_index] of best in sortedHands[], sortedHands
 	
 }
 
