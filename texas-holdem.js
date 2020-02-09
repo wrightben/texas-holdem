@@ -337,7 +337,6 @@ var sortHands = function( _array ) {
 
 
 var getBestHands = function( _hands ) {
-
 	
 	var	i = 1,
 		sortedHands = sortHands(_hands),
@@ -377,4 +376,4 @@ var	players = 7,
 	hands = evaluateHands( getCardsAsPlayers( players, cards ) ),
 	bestHands = getBestHands(hands);
 	
-console.log( JSON.stringify(hands), "\n\n", JSON.stringify(bestHands) );
+console.log( JSON.stringify(bestHands) );
