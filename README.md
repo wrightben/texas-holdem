@@ -5,8 +5,6 @@
 Texas Hold'em in JavaScript for play and data analysis
 
 
-### Use
-
 ```
 var	players = 10,
 	shared = 5,	// community cards
@@ -16,6 +14,9 @@ var	players = 10,
 //	sortedHands = sortHands(hands);	// Implicit
 	bestHands = getBestHands(hands);
 ```
+
+---
+
 
 ### Functions
 
