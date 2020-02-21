@@ -188,8 +188,7 @@ var	evaluateHand = function( _array ) {
 
 	// COLLECTION (Group 2)
 	var	_collections = [ 
-			// High Cards, Pairs, Trips, Quads; by nominal ([0,26]=13)
-			[], [], [], [] 
+			[], [], [], []  // High Cards, Pairs, Trips, Quads; by nominal ([0,13,26,39] = 13)
 		],
 		_c0 = _collections[0],
 		_c1 = _collections[1],
