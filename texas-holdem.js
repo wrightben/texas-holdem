@@ -233,7 +233,7 @@ var	evaluateHand = function( _array ) {
 			// isSequence: FLUSH
 			_o.flush = isSequence(_suits[_o.suit]);
 			if (_o.flush != -1) { _o.rank = 9; _o.value = [_o.flush]; }
-			if (_o.flush == 13) { _o.rank = 10; _o.value = [_o.flush]; }			
+			if (_o.flush == 13) { _o.rank = 10; }			
 		}
 		
 		// (6) Flush 
