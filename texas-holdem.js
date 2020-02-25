@@ -236,7 +236,7 @@ var	evaluateHand = function( _array ) {
 			if (_o.flush == 13) { _o.rank = 10; }			
 		}
 		
-		// (6) Flush
+		// (6) Flush 
 		if ( _o.rank < 9 ) {				
 			_o.rank = 6;
 			_o.value = _suits[_o.suit].slice(-5).sort(function(a,b) { 
