@@ -33,7 +33,7 @@ getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
 ```
 
 
-<br /><br /><br /><br />
+<br /><br />
 **evaluateHand**
 
 ```
@@ -82,7 +82,7 @@ JSON.stringify(
 }
 ```
 
-<br /><br /><br /><br />
+<br /><br />
 **getFaceValues**
 ```
 getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
