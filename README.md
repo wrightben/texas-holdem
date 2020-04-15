@@ -2,8 +2,6 @@
 
 ### Summary
 
-Texas Hold'em in JavaScript
-
 
 ```
 var	players = 10,
