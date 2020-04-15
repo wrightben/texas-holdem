@@ -81,6 +81,7 @@ JSON.stringify(
 }
 ```
 
+<br />
 **getFaceValues()**
 ```
 getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
