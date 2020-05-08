@@ -8,7 +8,7 @@ var deal = function( cards ) {
 			i = Math.floor( Math.random() * 52 );
 		}
 		_[i] = i + 1;
-		cards --;
+		cards -= 1;
 	}
 
 	return _.filter(function( e ) {
