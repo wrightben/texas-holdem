@@ -339,17 +339,16 @@ var getBestHands = function( _hands ) {
 	
 	var	i = 1,
 		sortedHands = sortHands(_hands),
-		_ri = [ sortedHands[0].position ],
-		_si = [ 0 ];
+		_ri = [ sortedHands[0].position ];
 	
 	while( (i < sortedHands.length) && (equals(sortedHands[0], sortedHands[i]))  ) {
 		_ri.push( sortedHands[i].position );
-		_si.push( i );
 		i += 1;
 	}
 	
-	//@return [ [hand.position] of best in hands[], [_index] of best in sortedHands[], sortedHands ]
-	return [ _ri, _si, sortedHands ]; 
+	//@return [ [hand.position] of best in hands[], sortedHands ]
+	// _ri[i] = hand.position ( _ri is an ordered list of best hands ) 
+	return [ _ri, sortedHands ]; 
 	
 }
 
