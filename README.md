@@ -10,7 +10,7 @@ var	players = 10,
 	
 	hands = evaluateHands( getCardsAsPlayers( players, cards ) ),
 //	sortedHands = sortHands(hands);	// Implicit
-	bestHands = getBestHands(hands); // [ _ri[], sortedHands[] ]
+	bestHands = getBestHands(hands); // [ [hand.position,...], sortedHands[] ]
 ```
 
 ---
