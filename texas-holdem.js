@@ -12,6 +12,12 @@ var ordinals = [
 	39,	40,	41,	42,	43,	44,	45,	46,	47,	48,	49,	50,	51	
 ]; //	A	2	3	4	5	6	7	8	9	10	J	Q	K	A
 
+var faceValuesToOrdinals = {
+	"ah": 0, "2h": 1, "3h": 2, "4h": 3, "5h": 4, "6h": 5, "7h": 6, "8h": 7, "9h": 8, "th": 9, "jh":10, "qh":11, "kh":12,
+	"ad":13, "2d":14, "3d":15, "4d":16, "5d":17, "6d":18, "7d":19, "8d":20, "9d":21, "td":22, "jd":23, "qd":24, "kd":25,
+	"as":26, "2s":27, "3s":28, "4s":29, "5s":30, "6s":31, "7s":32, "8s":33, "9s":34, "ts":35, "js":36, "qs":37, "ks":38,
+	"ac":39, "2c":40, "3c":41, "4c":42, "5c":43, "6c":44, "7c":45, "8c":46, "9c":47, "tc":48, "jc":49, "qc":50, "kc":51
+}; // Required by getCardsFromString
 
 // Function: Generate array of random integers; Default [].length = 7 (1 player + 5 hole cards)
 var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ]  */, shared /* int (0,3,4,5) */ ) {
@@ -65,6 +71,17 @@ var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ] 
 
 	return _;
 
+}
+
+var getCardsFromString = function( ascii ) {
+	
+	cards = ascii.split(" ");
+	cards.forEach(function(e,i) {
+		cards[i] = faceValuesToOrdinals[e];
+	});
+
+	//console.log( ascii, "\n", cards.join(" ") );
+	return cards;
 }
 
 
@@ -370,9 +387,12 @@ var setExports = function() {
 setExports();
 
 
-var	players = 7,
+var	players = 2,
 	shared = 5,	// community cards
-	cards = getCards( players, shared ),	// shared optional; 5 default
+	
+	//cards = getCards( players, shared );	// shared optional; 5 default
+	cards = getCardsFromString( "qh 2d 8d qc jh 8s ks 7c js" );
+	
 	hands = evaluateHands( getCardsAsPlayers( players, cards ) ),
 	bestHands = getBestHands(hands); // see comment @return in getBestHands
 	
