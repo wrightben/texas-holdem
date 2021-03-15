@@ -391,7 +391,7 @@ var	players = 2,
 	shared = 5,	// community cards
 	
 	//cards = getCards( players, shared );	// shared optional; 5 default
-	cards = getCardsFromString( "qh 2d 8d qc jh 8s ks 7c js" );
+	cards = getCardsFromString( "jc 6h 4c qd jd 9c js 5s 3s" );
 	
 	hands = evaluateHands( getCardsAsPlayers( players, cards ) ),
 	bestHands = getBestHands(hands); // see comment @return in getBestHands
