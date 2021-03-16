@@ -1,4 +1,4 @@
-# Communication — Requirement — Dealing Cards
+# Communication — Requirement — Shuffle (Dealing Cards)
 
 One might ask for a function that *shuffles and deals [7] cards* from a non-programmer or from a programmer who thinks in object-oriented terms.
 
