@@ -18,9 +18,19 @@ var	players = 10,
 
 ### Functions
 
-**getCards()** and **getCardsAsPlayers()**
+**getCards()** and **getCardsFromString()**
 
-*getCards* accepts 2 optional parameters, *players* and *shared*, which default to 1 and 5, respectively. The *players* parameter may be either an *int* or an *array* in this format: [ int, [ [int, int], [int, int] ]]. 
+getCards and getCardsFromString both return a array of ints (ordinals)
+
+*getCards* accepts 2 optional parameters, *players* and *shared*, which default to 1 and 5, respectively. The *players* parameter may be either an *int* or an *array* in this format: [ int, [ [int, int], [int, int] ]].
+
+*getCardsFromString()* accepts a string of lowercase faceValues separated by spaces. This is useful if you're using real cards.
+
+```
+getCardsAsString("ts 4d js kc 7d 7c 7s 7h 8h 8c");
+```
+
+**getCardsAsPlayers()**
 
 *getCardsAsPlayers* accepts 2 parameters, *players* and *cards*. The players parameter is an *int*.
 
