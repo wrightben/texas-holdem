@@ -20,7 +20,7 @@ var	players = 10,
 
 **getCards()** and **getCardsFromString()**
 
-getCards and getCardsFromString both return a array of ints (ordinals)
+getCards and getCardsFromString both return an array of ints (ordinals)
 
 *getCards* accepts 2 optional parameters, *players* and *shared*, which default to 1 and 5, respectively. The *players* parameter may be either an *int* or an *array* in this format: [ int, [ [int, int], [int, int] ]].
 
