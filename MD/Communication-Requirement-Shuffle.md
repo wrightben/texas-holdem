@@ -9,6 +9,7 @@ var deal = function( cards ) {
 	
 	var i = Math.floor( Math.random() * 52 );
 	_ = new Array(52).fill(0);
+	_cards = [];
 	
 	while ( cards > 0 ) {
 		while ( _[ i ] != 0 ) { 
@@ -16,11 +17,10 @@ var deal = function( cards ) {
 		}
 		_[i] = i + 1;
 		cards -= 1;
+		_cards.push(i);
 	}
 
-	return _.filter(function( e ) {
-		return Boolean(e != 0);
-	});
+	return _cards;
 	
 }
 
