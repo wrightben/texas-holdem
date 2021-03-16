@@ -11,4 +11,4 @@
 * Choose your own card design
 
 ### Manual Play w/ app assistance
-Everyone goes to BookmarkPoker.com. A session is created. Each player can record his cards and his bets, be notified of his turn to bet, and track the game session in real time. It's manual play with computer assistance.
+Everyone goes to the app. A session is created. Each player can record his cards and his bets, be notified of his turn to bet, and track the game session in real time. It's manual play with computer assistance.
