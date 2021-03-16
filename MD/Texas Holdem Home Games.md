@@ -1,4 +1,4 @@
-# Texas Hold'em App
+# Texas Hold'em Home Games App
 
 * Real-time, In-person, Group play
 * Cards on smartphone
