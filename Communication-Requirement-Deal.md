@@ -1,6 +1,9 @@
 # Communication — Requirement — Dealing Cards
 
-A communication problem: One might ask for a function that *shuffles and deals [7] cards* from a non-programmer or from a programmer who thinks in object-oriented terms. The programming requirement: Get a list of 7 unique random numbers between 0-51.
+One might ask for a function that *shuffles and deals [7] cards* from a non-programmer or from a programmer who thinks in object-oriented terms.
+
+The programming requirement: Get a list of 7 unique random numbers between 0-51.
+
 
 ```
 var deal = function( cards ) {
