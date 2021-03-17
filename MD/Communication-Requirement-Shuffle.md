@@ -33,3 +33,6 @@ var deal = function( cards ) {
 
 console.log( deal( 7 ) );
 ```
+
+## Lottery
+This is a generalized lottery function when 51 is a variable.
