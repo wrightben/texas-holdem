@@ -35,4 +35,4 @@ console.log( deal( 7 ) );
 ```
 
 ## Lottery
-This is a generalized lottery function when 51 is a variable.
+This is a generalized lottery function when *52* is a variable.
