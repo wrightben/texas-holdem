@@ -34,5 +34,5 @@ var deal = function( cards ) {
 console.log( deal( 7 ) );
 ```
 
-## Lottery
+## Generalization
 This is a generalized lottery function when *52* is a variable.
