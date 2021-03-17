@@ -35,4 +35,4 @@ console.log( deal( 7 ) );
 ```
 
 ## Generalization
-This is a generalized lottery function when *52* is a variable.
+This is a generalized lottery function when *52* is a variable. Both the high and low of the range can be variables, which does not affect the creation of the _ (bit) array. Example: Range of 30-50, bit array length 0-51.
