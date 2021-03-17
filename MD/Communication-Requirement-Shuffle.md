@@ -3,7 +3,7 @@
 One might ask for a function that *shuffles and deals [7] cards* from a non-programmer or from a programmer who thinks in object-oriented terms.
 
 **The programming requirement:**
-Get a list of 7 unique random numbers between 0-51. Compare this to a function that outputs combinations or [permutations](https://github.com/wrightben/codeeval/blob/master/String%20Permutations%20(JavaScript).md).
+Get a list of 7 unique random numbers between 0-51. Compare this to a function that outputs combinations or <a href="https://github.com/wrightben/codeeval/blob/master/String%20Permutations%20(JavaScript).md" target="_blank">permutations</a>.
 ```
 var deal = function( cards ) {
 	
