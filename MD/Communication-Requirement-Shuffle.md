@@ -7,21 +7,28 @@ Get a list of 7 unique random numbers between 0-51.
 ```
 var deal = function( cards ) {
 	
-	var _ = new Array(52).fill(0);
-	var _cards = [];
+	var _ = new Array(52).fill(0); // i = value; [i] = order
+	var __ = new Array(cards);
+	
 	var i = Math.floor( Math.random() * 52 );
 	
 	while ( cards > 0 ) {
 		while ( _[ i ] != 0 ) { 
 			i = Math.floor( Math.random() * 52 );
 		}
-		_[i] = i + 1;
-		cards -= 1;
-		_cards.push(i);
+		_[i] = cards;
+		cards -= 1;		
+	}
+	
+	for (var i = 0; i < 52; i++) {
+		var e = _[i];
+		if (e != 0) {
+			__[e - 1] = i;
+		}
 	}
 
-	return _cards;
-	
+	return __;
+
 }
 
 console.log( deal( 7 ) );
