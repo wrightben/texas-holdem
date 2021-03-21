@@ -2,25 +2,22 @@
 
 Get a list of [7] unique random numbers between 0-51. Compare this to a function that outputs [permutations](https://github.com/wrightben/codeeval/blob/master/String%20Permutations%20(JavaScript).md).
 ```
-var deal = function( cards, range /* Optional */ ) {
-								// Return:
-	if (typeof cards == "undefined") { cards = 5; }		// 0 player cards, 5 shared cards = 5
-	if (typeof range == "undefined") { range = 52; }	// from deck of 52 cards	
+var deal = function( cards ) {
 	
-	var _ = new Array(range).fill(0); // i = value; [i] = order
+	var _ = new Array(52).fill(0); // i = value; [i] = order
 	var _cards = new Array(cards);
 	
-	var i = Math.floor( Math.random() * range );
+	var i = Math.floor( Math.random() * 52 );
 	
 	while ( cards > 0 ) {
 		while ( _[ i ] != 0 ) { 
-			i = Math.floor( Math.random() * range );
+			i = Math.floor( Math.random() * 52 );
 		}
 		_[i] = cards;
 		cards -= 1;		
 	}
 	
-	for (var i = 0; i < range; i++) {
+	for (var i = 0; i < 52; i++) {
 		var e = _[i];
 		if (e != 0) {
 			_cards[e - 1] = i;
@@ -31,9 +28,7 @@ var deal = function( cards, range /* Optional */ ) {
 
 }
 
-console.log( deal() ); // 5 shared cards, 52-card deck
-console.log( deal(12+5) ); // 6 players and 5 shared cards, 52-card deck
-console.log( deal( 1, 75 ) ); // Bingo: 1 from 75
+console.log( deal( 7 ) );
 ```
 
 ## Generalization
