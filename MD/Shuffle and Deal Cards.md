@@ -1,6 +1,6 @@
 # Shuffle and Deal Cards
 
-Get a list of [7] unique random numbers between 0-51. Compare this to a function that outputs combinations or [permutations](https://github.com/wrightben/codeeval/blob/master/String%20Permutations%20(JavaScript).md).
+Get a list of [7] unique random numbers between 0-51. Compare this to a function that outputs [permutations](https://github.com/wrightben/codeeval/blob/master/String%20Permutations%20(JavaScript).md).
 ```
 var deal = function( cards ) {
 	
