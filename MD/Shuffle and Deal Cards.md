@@ -33,3 +33,6 @@ console.log( deal( 7 ) );
 
 ## Generalization
 Deal cards, pick lottery numbers, etc. Both the high and low of the range can be variables, which does not have to change the creation of the _ (bit) array. Example: Range of 30-50, bit array length 0-51.
+
+## Notes
+- It was a challenge to change my thinking from permutations (as a programming task) to random numbers. Similarly, it's difficult to overlook that the 7 digits are selected and stored in a reverse order, which shouldn't necessarily matter. I'm fascinated by how challenging these *thinking* experiences are.
