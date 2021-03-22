@@ -30,9 +30,3 @@ var deal = function( cards ) {
 
 console.log( deal( 7 ) );
 ```
-
-## Generalization
-Deal cards, pick lottery numbers, and so on.
-
-## Notes
-- It was a challenge to change my focus from permutations (as a programming task) to random numbers. Similarly, it's possibly annoying, once you notice it, that the [7] selected digits are stored in *reverse* order.
