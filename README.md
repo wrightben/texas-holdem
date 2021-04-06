@@ -26,7 +26,7 @@ getCards and getCardsFromString both return an array of ints (ordinals)
 
 *getCardsFromString()* accepts a string of lowercase faceValues separated by spaces. This is useful if you're using real cards.
 
-```
+```js
 getCardsAsString("ts 4d js kc 7d 7c 7s 7h 8h 8c");
 ```
 
@@ -35,7 +35,7 @@ getCardsAsString("ts 4d js kc 7d 7c 7s 7h 8h 8c");
 *getCardsAsPlayers* accepts 2 parameters, *players* and *cards*. The players parameter is an *int*.
 
 
-```
+```js
 // Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
 getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
 ```
@@ -43,7 +43,7 @@ getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
 
 **evaluateHand()**
 
-```
+```js
 JSON.stringify(
 	evaluateHand( [44, 39, 43, 24, 51, 2, 49] )	// See below
 );
@@ -90,6 +90,6 @@ JSON.stringify(
 ```
 
 **getFaceValues()**
-```
+```js
 getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
 ```
