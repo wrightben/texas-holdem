@@ -17,6 +17,7 @@ var	players = 10,
 
 
 ### Functions
+<br />
 
 **getCards()** and **getCardsFromString()**
 
