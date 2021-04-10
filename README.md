@@ -42,6 +42,19 @@ getCardsFromString("ts 4d js kc 7d 7c 7s 8h 8c");
 ```js
 // Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
 getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
+
+
+// Or a complicated real-life example
+players = 6;
+shared = 5;
+getCardsAsPlayers(players, getCards([players, [
+	getCardsFromString( "9s 3s" ),
+	getCardsFromString( "3d 3h" ),
+	getCardsFromString( "kc 2h" ),
+	getCardsFromString( "js 7h" ),
+	getCardsFromString( "qc kh" ),
+	getCardsFromString( "8s as" )
+]], shared))
 ```
 
 <br /><br />
