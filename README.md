@@ -33,6 +33,7 @@ getCardsFromString( "ah ac kh kc" ).concat( getCards(0,5) );
 ```
 
 <br />
+
 **getCardsAsPlayers()**
 
 *getCardsAsPlayers* accepts 2 parameters, *players* and *cards*. The players parameter is an *int*.
@@ -44,6 +45,7 @@ getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
 ```
 
 <br />
+
 **evaluateHand()**
 
 ```js
@@ -93,6 +95,7 @@ JSON.stringify(
 ```
 
 <br />
+
 **getFaceValues()**
 ```js
 getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
