@@ -44,7 +44,7 @@ getCardsFromString("ts 4d js kc 7d 7c 7s 8h 8c");
 getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
 
 
-// Or a complicated real-life example
+// Real-life scenarios
 players = 6;
 shared = 5;
 getCardsAsPlayers(players, getCards([players, [
