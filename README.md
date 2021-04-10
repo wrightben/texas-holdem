@@ -30,7 +30,6 @@ getCards and getCardsFromString both return an array of ints (ordinals)
 ```js
 // players = 2, shared = 5
 getCardsFromString("ts 4d js kc 7d 7c 7s 8h 8c");
-getCardsFromString( "ah ac kh kc" ).concat( getCards(0,5) );
 ```
 
 <br /><br />
