@@ -40,6 +40,12 @@ getCardsAsString("ts 4d js kc 7d 7c 7s 7h 8h 8c");
 getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
 ```
 
+#### Creative combinations of getting cards
+1. Use face values to create a scenario
+```js
+cards = getCardsFromString( "ah ac kh kc" ).concat( getCards(0,5) ); // 2 players: (AA, KK) and 5 shared cards
+```
+
 
 **evaluateHand()**
 
