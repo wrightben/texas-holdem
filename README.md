@@ -25,7 +25,7 @@ getCards and getCardsFromString both return an array of ints (ordinals)
 
 *getCards* accepts 2 optional parameters, *players* and *shared*, which default to 1 and 5, respectively. The *players* parameter may be either an *int* or an *array* in this format: [ int, [ [int, int], [int, int] ]].
 
-*getCardsFromString()* accepts a string of lowercase faceValues separated by spaces, returns an array. This is useful if you're using real cards.
+*getCardsFromString()* accepts a string of lowercase faceValues separated by spaces. This is useful if you're using real cards.
 
 ```js
 // players = 2, shared = 5
