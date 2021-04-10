@@ -32,7 +32,7 @@ getCardsFromString("ts 4d js kc 7d 7c 7s 8h 8c");
 getCardsFromString( "ah ac kh kc" ).concat( getCards(0,5) );
 ```
 
-<br />
+<br /><br />
 
 **getCardsAsPlayers()**
 
@@ -44,7 +44,7 @@ getCardsFromString( "ah ac kh kc" ).concat( getCards(0,5) );
 getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
 ```
 
-<br />
+<br /><br />
 
 **evaluateHand()**
 
@@ -94,7 +94,7 @@ JSON.stringify(
 }
 ```
 
-<br />
+<br /><br />
 
 **getFaceValues()**
 ```js
