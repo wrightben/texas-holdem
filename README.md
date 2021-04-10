@@ -27,7 +27,8 @@ getCards and getCardsFromString both return an array of ints (ordinals)
 *getCardsFromString()* accepts a string of lowercase faceValues separated by spaces. This is useful if you're using real cards.
 
 ```js
-getCardsAsString("ts 4d js kc 7d 7c 7s 7h 8h 8c");
+getCardsFromString("ts 4d js kc 7d 7c 7s 7h 8h 8c");
+getCardsFromString( "ah ac kh kc" ).concat( getCards(0,5) ); // 2 players: (AA, KK) and 5 shared cards
 ```
 
 **getCardsAsPlayers()**
@@ -39,13 +40,6 @@ getCardsAsString("ts 4d js kc 7d 7c 7s 7h 8h 8c");
 // Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
 getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
 ```
-
-#### Creative combinations of getting cards
-1. Use face values to create a scenario
-```js
-cards = getCardsFromString( "ah ac kh kc" ).concat( getCards(0,5) ); // 2 players: (AA, KK) and 5 shared cards
-```
-
 
 **evaluateHand()**
 
