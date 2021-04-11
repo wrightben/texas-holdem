@@ -14,13 +14,6 @@ var	players = 10,
 ```
 ---
 
-- [Texas Hold'em by Bicycle Cards](https://bicyclecards.com/how-to-play/texas-holdem-poker/)
-- [Analysis Tools](https://github.com/wrightben/math/tree/master/Poker/Auto)
-
-
----
-
-
 ### Functions
 <br />
 
@@ -122,3 +115,11 @@ JSON.stringify(
 ```js
 getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
 ```
+
+---
+
+- [Texas Hold'em by Bicycle Cards](https://bicyclecards.com/how-to-play/texas-holdem-poker/)
+- [Analysis Tools](https://github.com/wrightben/math/tree/master/Poker/Auto)
+
+
+---
