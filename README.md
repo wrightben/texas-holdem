@@ -12,8 +12,8 @@ var	players = 10,
 //	sortedHands = sortHands(hands);	// Implicit
 	bestHands = getBestHands(hands); // [ [hand.position,...], sortedHands[] ]
 ```
-
-[Texas Hold'em by Bicycle Cards](https://bicyclecards.com/how-to-play/texas-holdem-poker/) and [Analysis Tools](https://github.com/wrightben/math/tree/master/Poker/Auto)
+- Play [Texas Hold'em by Bicycle Cards](https://bicyclecards.com/how-to-play/texas-holdem-poker/)
+- [Analysis Tools](https://github.com/wrightben/math/tree/master/Poker/Auto)
 
 
 ---
