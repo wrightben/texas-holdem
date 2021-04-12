@@ -42,7 +42,7 @@ getCardsFromString("ts 4d js kc 7d 7c 7s 8h 8c");
 getCardsAsPlayers(players, getCards(players, shared))
 
 
-// Scenario based on predefined cards
+// Scenario based on partially predefined hole cards
 // Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
 players = 7;
 shared = 5;
