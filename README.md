@@ -39,14 +39,14 @@ getCardsFromString("ts 4d js kc 7d 7c 7s 8h 8c");
 
 ```js
 // Random Hand
-getCardsAsPlayers(players, getCards(players, shared));
+getCardsAsPlayers(players, getCards(players, shared))
 
 // Scenario based on predefined cards
 // Aces vs Kings vs at least 1 Jack vs 4 other players; 5 shared cards
-getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5));
+getCardsAsPlayers(7, getCards([7, [[0,13], [12,25], [10]]], 5))
 
 
-// Scenario based on predefined cards
+// Scenario based on predefined hole cards
 players = 6;
 shared = 5;
 getCardsAsPlayers(players, getCards([players, [
@@ -57,6 +57,11 @@ getCardsAsPlayers(players, getCards([players, [
 	getCardsFromString( "qc kh" ),
 	getCardsFromString( "8s as" )
 ]], shared))
+
+// Scenario based on predefined hole cards and shared cards
+players = 2;
+shared = 5;
+getCardsFromString("ts 4d js kc 7d 7c 7s 8h 8c")
 ```
 
 <br /><br />
