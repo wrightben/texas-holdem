@@ -12,11 +12,12 @@ var	players = 10,
 ```
 
 ----
-#### Auto Play and Analysis
+
+Auto Play and Analysis
 ----
 Calculate statistics of Texas Hold'em scenarios using simple [Auto Play and Analysis](https://github.com/wrightben/math/tree/master/Poker/Auto) scripts.
 
-#### Functions
+Functions
 ----
 <br />
 
