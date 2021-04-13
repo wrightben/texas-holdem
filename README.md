@@ -1,8 +1,7 @@
 # Texas Hold'em
 
 ### Summary
-
-
+[Auto Play and Analysis](https://github.com/wrightben/math/tree/master/Poker/Auto)
 ```js
 var	players = 10,
 	shared = 5,	// community cards
@@ -13,10 +12,6 @@ var	players = 10,
 	bestHands = getBestHands(hands); // [ [hand.position,...], sortedHands[] ]
 ```
 
-&nbsp;&nbsp;
-----
-[Auto Play and Analysis](https://github.com/wrightben/math/tree/master/Poker/Auto)
-&nbsp;&nbsp;
 ----
 ### Functions
 <br />
