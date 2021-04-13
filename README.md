@@ -12,6 +12,10 @@ var	players = 10,
 //	sortedHands = sortHands(hands);	// Implicit
 	bestHands = getBestHands(hands); // [ [hand.position,...], sortedHands[] ]
 ```
+<br />
+---
+(Auto Play and Analysis)[https://github.com/wrightben/math/tree/master/Poker/Auto]
+
 ---
 
 ### Functions
