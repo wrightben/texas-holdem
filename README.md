@@ -11,7 +11,7 @@ var	players = 10,
 	bestHands = getBestHands(hands); // [ [hand.position,...], sortedHands[] ]
 ```
 
-Calculate statistics of texas-holdem scenarios using [Auto Play and Analysis](https://github.com/wrightben/math/tree/master/Poker/Auto) tools.
+Calculate statistics of Texas Hold'em scenarios using [Auto Play and Analysis](https://github.com/wrightben/math/tree/master/Poker/Auto) tools.
 
 ----
 ### Functions
