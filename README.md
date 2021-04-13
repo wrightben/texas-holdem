@@ -1,7 +1,6 @@
 # Texas Hold'em
 
 ### Summary
-[Auto Play and Analysis](https://github.com/wrightben/math/tree/master/Poker/Auto)
 ```js
 var	players = 10,
 	shared = 5,	// community cards
