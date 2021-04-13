@@ -11,7 +11,7 @@ var	players = 10,
 	bestHands = getBestHands(hands); // [ [hand.position,...], sortedHands[] ]
 ```
 
-**Tools** - [Auto Play and Analysis](https://github.com/wrightben/math/tree/master/Poker/Auto)
+Scripts for [Auto Play and Analysis](https://github.com/wrightben/math/tree/master/Poker/Auto)
 
 ----
 ### Functions
