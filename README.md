@@ -1,10 +1,5 @@
 # Texas Hold'em
 
-Tools
------
-[Auto Play and Analysis](https://github.com/wrightben/math/tree/master/Poker/Auto)
-
-
 ### Summary
 
 
@@ -18,6 +13,7 @@ var	players = 10,
 	bestHands = getBestHands(hands); // [ [hand.position,...], sortedHands[] ]
 ```
 
+&nbsp;&nbsp;
 ----
 ### Functions
 <br />
