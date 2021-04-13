@@ -14,6 +14,7 @@ var	players = 10,
 
 ### Functions
 
+
 **getCards()** and **getCardsFromString()**
 
 getCards and getCardsFromString both return an array of ints (ordinals)
