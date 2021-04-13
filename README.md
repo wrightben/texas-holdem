@@ -16,7 +16,6 @@ var	players = 10,
 &nbsp;&nbsp;
 ----
 [Auto Play and Analysis](https://github.com/wrightben/math/tree/master/Poker/Auto)
-
 &nbsp;&nbsp;
 ----
 ### Functions
