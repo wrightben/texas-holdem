@@ -13,7 +13,8 @@ var	players = 10,
 ---- 
 
 ### Functions
-<br>
+<br/>
+
 **getCards()** and **getCardsFromString()**
 
 getCards and getCardsFromString both return an array of ints (ordinals)
