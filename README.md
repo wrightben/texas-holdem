@@ -122,8 +122,4 @@ JSON.stringify(
 getFaceValues( getCards(0) );	// [ '6h', 'Kc', '2d', 'Ts', 'Qh' ]
 ```
 
-----
 
-### Auto Play and Data Analysis
-
-Use these simple scripts for [auto play and analysis](https://github.com/wrightben/math/tree/master/Poker/Auto).
