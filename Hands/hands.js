@@ -6,7 +6,7 @@ for (var i = 1; i <= 52; i++) {
 				[i, j].sort(function(a,b) {
 					return b - a;
 				})
-			);
+			)
 		}
 	}
 }
