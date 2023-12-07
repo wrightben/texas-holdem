@@ -387,6 +387,11 @@ var setExports = function() {
 setExports();
 
 
+// --------------------------------
+// NOTE: Uncomment the following lines to play 1 hand
+// node texas-holdem.js
+// --------------------------------
+
 // var	players = 6,
 // 	shared = 5,	// community cards
 // 	
