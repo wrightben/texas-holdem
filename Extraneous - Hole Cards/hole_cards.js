@@ -1,6 +1,6 @@
 var x = [];
-for (var i = 1; i <= 52; i++) {
-	for (var j = 1; j <= 52; j++) {
+for (var i = 0; i <= 51; i++) {
+	for (var j = 1; j <= 51; j++) {
 		if (i != j) {
 			x.push(
 				[i, j].sort(function(a,b) {

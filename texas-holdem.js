@@ -387,15 +387,15 @@ var setExports = function() {
 setExports();
 
 
-// var	players = 6,
-// 	shared = 5,	// community cards
-// 	
-// 	cards = getCards( players, shared );	// shared optional; 5 default
-// 	
-// 	hands = evaluateHands( 
-// 		getCardsAsPlayers(players, cards)
-// 	);
-// 	
-// 	bestHands = getBestHands(hands); // see comment @return in getBestHands
-// 	
-// console.log( JSON.stringify(bestHands) );
+var	players = 6,
+	shared = 5,	// community cards
+	
+	cards = getCards( players, shared );	// shared optional; 5 default
+	
+	hands = evaluateHands( 
+		getCardsAsPlayers(players, cards)
+	);
+	
+	bestHands = getBestHands(hands); // see comment @return in getBestHands
+	
+console.log( JSON.stringify(bestHands) );
