@@ -27,7 +27,7 @@ hole_cards.forEach(function(e) {
 // 	console.log(e, typeof e);
 
 	try {
-		for (var i = 1; i <= 7; i++) {
+		for (var i = 1; i <= 50000; i++) {
 
 			var	players = 6,
 				shared = 5,
