@@ -18,34 +18,55 @@ const texas_holdem = require('./../texas-holdem');
 // console.log(hole_cards[1]);
 
 
+var results = [];
+
+for (var i = 1; i <= 75000; i++) {
+
+	var	players = 6,
+		shared = 5,
+
+	cards = texas_holdem.getCards( players, shared );
+
+	hands = texas_holdem.evaluateHands( 
+		texas_holdem.getCardsAsPlayers(players, texas_holdem.getCards([players, [hole_cards[0]]], shared))
+	);
+
+	bestHands = texas_holdem.getBestHands(hands);
+
+	results.push(bestHands);
+
+};
+console.log( JSON.stringify(results) );
+
+
 // ------------------------------
 // Play All Hole Cards
 // ------------------------------
-hole_cards.forEach(function(e) {
-
-// 	e = [44,19];
-// 	console.log(e, typeof e);
-
-	try {
-		for (var i = 1; i <= 50000; i++) {
-
-			var	players = 6,
-				shared = 5,
-
-			cards = texas_holdem.getCards( players, shared );
-
-			hands = texas_holdem.evaluateHands( 
-				texas_holdem.getCardsAsPlayers(players, texas_holdem.getCards([players, [e]], shared))
-			);
-
-			bestHands = texas_holdem.getBestHands(hands);
-
-			console.log( JSON.stringify(bestHands) );
-
-		};
-
-	} catch (error) {
-		console.error(error);
-	}
-
-});
+// hole_cards.forEach(function(e) {
+// 
+// // 	e = [44,19];
+// // 	console.log(e, typeof e);
+// 
+// 	try {
+// 		for (var i = 1; i <= 50000; i++) {
+// 
+// 			var	players = 6,
+// 				shared = 5,
+// 
+// 			cards = texas_holdem.getCards( players, shared );
+// 
+// 			hands = texas_holdem.evaluateHands( 
+// 				texas_holdem.getCardsAsPlayers(players, texas_holdem.getCards([players, [e]], shared))
+// 			);
+// 
+// 			bestHands = texas_holdem.getBestHands(hands);
+// 
+// 			console.log( JSON.stringify(bestHands) );
+// 
+// 		};
+// 
+// 	} catch (error) {
+// 		console.error(error);
+// 	}
+// 
+// });
