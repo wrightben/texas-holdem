@@ -22,3 +22,7 @@ x = x.sort(function(a,b) {
 x.forEach(function(e) {
 	console.log(e.toString());
 });
+
+// OR
+
+// console.log( JSON.stringify(x) );
