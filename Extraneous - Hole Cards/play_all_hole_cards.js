@@ -1,9 +1,10 @@
 // ------------------------------
 // NOTES
 // ------------------------------
-// Idea: Play every hand 500,000 times against n opponents
-
-
+/* 
+	THINK: Play every hand 500,000 times against n opponents
+	DO: Comment out the last few lines in texas-holdem.js that play a single hand
+*/
 
 
 // console.log("Current directory:", __dirname);
