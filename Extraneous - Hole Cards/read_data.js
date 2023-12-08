@@ -7,7 +7,7 @@
 */
 
 // console.log("Current directory:", __dirname);
-const data = require('./data_300_1.json');
+const data = require('./data_211_1.json');
 
 l = data.length;
 winning = 0;

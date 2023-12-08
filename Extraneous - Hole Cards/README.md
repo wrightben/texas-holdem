@@ -16,6 +16,9 @@ node read_data.js
 
 ### Results (Scemarios)
 
+95000 hands, player 0 is dealt the specified hole cards in a 6-person game, and the results
+Try to define *bluff* in this context.
+
 hole_cards[313] - [ 25, 13 ] [ 'Kd', 'Ad' ]<br />
 30652 0.32265263157894736
 
@@ -34,4 +37,5 @@ hole_cards[0] - [ 1, 0 ] [ Ah, 2h ]<br />
 hole_cards[631] - [ 36, 1 ] [ 'Js', '2h' ]<br />
 12458 0.13113684210526316
 
-
+hole_cards[211] - [ 21, 1 ] [ '9d', '2h' ]<br />
+10474 0.11025263157894737
