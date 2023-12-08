@@ -37,7 +37,7 @@ for (var i = 1; i <= 50000; i++) {
 	);
 
 
-	// GAME: players + shared from STRING	
+	// GAME: from hole cards and shared cards as string	
 // 	players = 6;
 // 	cardsAsPlayers = texas_holdem.getCardsAsPlayers( players, texas_holdem.getCardsFromString("2d 7c tc 3c jd 7s th as kc kd 6c ad 8s 5d 2s td 2c") );
 		
