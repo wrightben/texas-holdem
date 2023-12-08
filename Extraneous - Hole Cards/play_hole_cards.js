@@ -25,7 +25,7 @@ var results = [];
 	
 for (var i = 1; i <= 50000; i++) {
 
-	var	players = 9,
+	var	players = 6,
 		shared = 5,
 
 	cardsAsPlayers = texas_holdem.getCardsAsPlayers(players, 
