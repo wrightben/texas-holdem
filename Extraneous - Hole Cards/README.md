@@ -10,6 +10,9 @@ node play_hole_cards.js 300 > data_300_1.json
 
 # SUMMARIZE
 node read_data.js data_300_1.json
+
+# OR ... use do.sh
+./do.sh
 ```
 ---- 
 
