@@ -3,9 +3,7 @@
 
 ```shell
 # GENERATE (played hands)
-node play_hole_cards.js > data_300_**1**.json
-# OR, etc.
-node play_hole_cards.js > data_300_**2**.json
+node play_hole_cards.js > data_300_1.json
 
 # SUMMARIZE
 node read_data.js 
