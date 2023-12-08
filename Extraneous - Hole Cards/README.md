@@ -7,7 +7,7 @@
 # LOOKUP — prints index, ordinals, facevalues for an index supplied in-file or as arg 1
 node lookup_hole_cards.js
 
-# GENERATE N hands using index specified as arg 1
+# GENERATE N games of N players where Player 0 plays with index specified as arg 1
 node play_hole_cards.js 300 > data_300_1.json
 
 # SUMMARIZE
