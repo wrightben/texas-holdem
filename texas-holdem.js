@@ -56,9 +56,14 @@ var getCards = function( players /* (int 0-23) || [ (int 0-23), [ [],[],... ] ] 
 		}
 		
 		_set.forEach(function(a,e) { // Predetermined cards, fill in
-		
+			
 			_c[a[0]] = -1;
-			_.push( a[0], a[1] || getCard() );
+			_.push( a[0] );			
+			if (typeof a[1] != "undefined") {
+				_.push( a[1] );
+			} else {
+				_.push( getCard() );
+			}
 			_c[ _[_.length - 1] ] = -1;
 			
 		});

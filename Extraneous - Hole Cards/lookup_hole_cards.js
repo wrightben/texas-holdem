@@ -28,6 +28,16 @@ var getIndex = function(_arr) {
 	return _i;
 };
 
+var verifyCards = function(_arr) {
+	var cards = texas_holdem.getCards([1, [
+				_arr
+			]
+	], 5);
+	
+	console.log(cards);
+};
+
+
 if (typeof process.argv[2] != "undefined") {
 
 	// INDEX of hole_cards.json
@@ -53,10 +63,11 @@ if (typeof process.argv[2] != "undefined") {
 
 
 	// FACEVALUES
-	var _hc = "as ah"
+	var _hc = "ad ah"
 	_hcfs = texas_holdem.getCardsFromString(_hc).sort(function(a,b) {
 		return b - a;
 	});
 	console.log(getIndex(_hcfs) ,_hcfs, texas_holdem.getFaceValues(_hcfs).join(" ").toLowerCase() );
+// 	verifyCards(_hcfs);
 
 }
