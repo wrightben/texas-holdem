@@ -28,26 +28,35 @@ var getIndex = function(_arr) {
 	return _i;
 };
 
+if (typeof process.argv[2] != "undefined") {
 
-// NOTE: The following lines all print the same 3 pieces of information requiring just 1 of the 3 pieces of information.
+	// INDEX of hole_cards.json
+	var _hc = process.argv[2];
+	console.log(_hc, hole_cards[_hc], texas_holdem.getFaceValues(hole_cards[_hc]).join(" ").toLowerCase() );
 
-// ORDINALS
-var _hc = [35,0];
-console.log(getIndex(_hc), _hc,  texas_holdem.getFaceValues(_hc).join(" ").toLowerCase() );
+} else {
 
+	// NOTE: The following lines all print the same 3 pieces of information requiring just 1 of the 3 pieces of information.
 
-
-// INDEX of hole_cards.json
-var _hc = 595;
-console.log(_hc, hole_cards[_hc], texas_holdem.getFaceValues(hole_cards[_hc]).join(" ").toLowerCase() );
-
-
-// FACEVALUES
-var _hc = "ah ts"
-_hcfs = texas_holdem.getCardsFromString(_hc).sort(function(a,b) {
-	return b - a;
-});
+	// ORDINALS
+	var _hc = [35,0];
+	console.log(getIndex(_hc), _hc,  texas_holdem.getFaceValues(_hc).join(" ").toLowerCase() );
 
 
 
-console.log(getIndex(_hcfs) ,_hcfs, texas_holdem.getFaceValues(_hcfs).join(" ").toLowerCase() );
+
+	// INDEX of hole_cards.json
+	var _hc = 78;
+	console.log(_hc, hole_cards[_hc], texas_holdem.getFaceValues(hole_cards[_hc]).join(" ").toLowerCase() );
+
+
+
+
+	// FACEVALUES
+	var _hc = "js jh"
+	_hcfs = texas_holdem.getCardsFromString(_hc).sort(function(a,b) {
+		return b - a;
+	});
+	console.log(getIndex(_hcfs) ,_hcfs, texas_holdem.getFaceValues(_hcfs).join(" ").toLowerCase() );
+
+}

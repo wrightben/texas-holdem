@@ -16,16 +16,16 @@ const texas_holdem = require('./../texas-holdem');
 // ------------------------------
 // console.log(texas_holdem);
 
-var _hc = "211";
+var _hc = "78";
 if (typeof process.argv[2] != "undefined") {
 	_hc = hole_cards[process.argv[2]];
 }
 
 var results = [];
+	
+for (var i = 1; i <= 50000; i++) {
 
-for (var i = 1; i <= 95000; i++) {
-
-	var	players = 6,
+	var	players = 9,
 		shared = 5,
 
 	cards = texas_holdem.getCards( players, shared );

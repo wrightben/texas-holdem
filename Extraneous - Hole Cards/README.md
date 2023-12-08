@@ -5,7 +5,7 @@
 # LOOKUP (index, ordinals, facevalues) - edit file directly
 node lookup_hole_cards.js
 
-# GENERATE 95,000 hands using hole_cards.json index specified as arg 1
+# GENERATE N hands using hole_cards.json index specified as arg 1
 node play_hole_cards.js 300 > data_300_1.json
 
 # SUMMARIZE
@@ -20,7 +20,7 @@ Player 0 was dealt hole_cards[0] 1 time in a 6-person game. The other data files
 
 
 ### Results of Scenarios
-Player 0 is dealt the specified hole cards 95000 times in a 6-person game. Try to define *bluff* in this context.
+Player 0 is dealt the specified hole cards N times in an N-person game. Try to define *bluff* in this context.
 
 313 [ 25, 13 ] kd ad<br />
 30652 0.32265263157894736
@@ -42,3 +42,12 @@ Player 0 is dealt the specified hole cards 95000 times in a 6-person game. Try t
 
 211 [ 21, 1 ] 9d 2h<br />
 10474 0.11025263157894737
+
+
+9-players
+640 [ 36, 10 ] js jh<br />
+11200 0.224
+
+78 [ 13, 0 ] ad ah<br />
+
+
