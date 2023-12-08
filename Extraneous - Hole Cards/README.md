@@ -26,4 +26,3 @@ Player 0 was dealt hole_cards[0] 1 time in a 6-person game.
 
 ### Results of Scenarios
 Player 0 is dealt the specified hole cards N times in an N-person game. Try to define *bluff* in this context.
-
