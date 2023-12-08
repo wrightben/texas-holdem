@@ -27,7 +27,7 @@ Player 0 was dealt hole_cards[0] 1 time in a 6-person game.
 Player 0 is dealt the specified hole cards N times in an N-person game. Try to define *bluff* in this context.
 
 
-#### 8-Player
+#### 9-Player
 
 78 [ 13, 0 ] ad ah	17413	**0.34826**<br />
 715 [ 38, 12 ] ks kh	14861	**0.29722**<br />
