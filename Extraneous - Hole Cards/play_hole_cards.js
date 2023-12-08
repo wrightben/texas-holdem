@@ -23,12 +23,10 @@ if (typeof process.argv[2] != "undefined") {
 
 var results = [];
 	
-for (var i = 1; i <= 50000; i++) {
+for (var i = 1; i <= 3; i++) {
 
-	var	players = 9,
+	var	players = 1,
 		shared = 5,
-
-	cards = texas_holdem.getCards( players, shared );
 
 	cardsAsPlayers = texas_holdem.getCardsAsPlayers(players, 
 		texas_holdem.getCards([players, [
