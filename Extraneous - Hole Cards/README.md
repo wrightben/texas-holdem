@@ -2,7 +2,7 @@
 ### Summary
 
 ```shell
-# LOOKUP (index, ordinals, facevalues) - edit file directly
+# LOOKUP (index, ordinals, facevalues) - edit file directly or index specified as arg 1 
 node lookup_hole_cards.js
 
 # GENERATE N hands using hole_cards.json index specified as arg 1
