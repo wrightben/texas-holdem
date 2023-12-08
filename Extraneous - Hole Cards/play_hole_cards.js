@@ -21,9 +21,6 @@ if (typeof process.argv[2] != "undefined") {
 	_hc = hole_cards[process.argv[2]];
 }
 
-// console.log(_hc, texas_holdem.getFaceValues( _hc ));
-// process.exit();
-
 var results = [];
 
 for (var i = 1; i <= 95000; i++) {
