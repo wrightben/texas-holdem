@@ -12,7 +12,7 @@ node read_data.js
 
 ### Files
 
-**data_0_exmaple.json** - This is hole_cards[0] played just 1 hand to show the layout of the data format. The other data files are a single array of ~95,000 played hands.
+**data_0_example.json** - This is hole_cards[0] played just 1 hand to show the layout of the data format. The other data files are a single array of ~95,000 played hands.
 
 
 ### Results (Scemarios)
