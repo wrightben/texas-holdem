@@ -1,7 +1,7 @@
 # Texas Hold'em
 ### Summary
 ```js
-var	players = 10,
+var	players = 9,
 	shared = 5,	// community cards
 	cards = getCards( players, shared ),	// shared optional; 5 default
 	

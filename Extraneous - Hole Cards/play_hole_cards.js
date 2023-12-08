@@ -25,14 +25,16 @@ var results = [];
 	
 for (var i = 1; i <= 50000; i++) {
 
-	var	players = 6,
+	var	players = 9,
 		shared = 5,
 
 	cards = texas_holdem.getCards( players, shared );
 
 	cardsAsPlayers = texas_holdem.getCardsAsPlayers(players, 
 		texas_holdem.getCards([players, [
-				_hc
+				_hc				
+// 				texas_holdem.getCardsFromString("as ah"),
+// 				texas_holdem.getCardsFromString("js jh")
 			]
 		], shared)
 	);

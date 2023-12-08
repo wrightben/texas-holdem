@@ -53,7 +53,7 @@ if (typeof process.argv[2] != "undefined") {
 
 
 	// FACEVALUES
-	var _hc = "ah kh"
+	var _hc = "as ah"
 	_hcfs = texas_holdem.getCardsFromString(_hc).sort(function(a,b) {
 		return b - a;
 	});
