@@ -15,9 +15,8 @@ node read_data.js
 **data_0_example.json** - This is hole_cards[0] played just 1 hand to show the layout of the data format. The other data files are a single array of ~95,000 played hands.
 
 
-### Results (Scemarios)
-
-95000 hands, player 0 is dealt the specified hole cards in a 6-person game, and the results. Try to define *bluff* in this context.
+### Results of Scenarios
+Player 0 is dealt the specified hole cards 95000 times in a 6-person game. Try to define *bluff* in this context.
 
 hole_cards[313] - [ 25, 13 ] [ 'Kd', 'Ad' ]<br />
 30652 0.32265263157894736
