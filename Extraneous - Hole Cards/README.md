@@ -2,10 +2,10 @@
 ### Summary
 
 ```shell
-# LOOKUP (index, ordinals, facevalues)
+# LOOKUP (index, ordinals, facevalues) - edit file directly
 node lookup_hole_cards.js
 
-# GENERATE (played hands)
+# GENERATE 95,000 hands using hole_cards.json index specified as arg 1
 node play_hole_cards.js 300 > data_300_1.json
 
 # SUMMARIZE
