@@ -377,7 +377,7 @@ var setExports = function() {
 	if (typeof exports !== "undefined") {
 		exports.getCards = getCards;
 		exports.getCardsAsPlayers = getCardsAsPlayers;
-// 		exports.getFaceValues = getFaceValues;
+		exports.getFaceValues = getFaceValues;
 // 		exports.evaluateHand = evaluateHand;
 		exports.evaluateHands = evaluateHands;
 		exports.sortHands = sortHands;	
