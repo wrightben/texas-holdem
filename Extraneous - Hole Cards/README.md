@@ -2,9 +2,12 @@
 ### Summary
 
 ```shell
-# Create data (played hands)
-# Data file format: data_[hole_cards[n]]_[nth file].json
-node play_hole_cards.js > data_0_2.json
+# GENERATE (played hands)
+node play_hole_cards.js > data_300_**1**.json
+# OR, etc.
+node play_hole_cards.js > data_300_**2**.json
+
+# SUMMARIZE
 node read_data.js 
 ```
 ---- 
