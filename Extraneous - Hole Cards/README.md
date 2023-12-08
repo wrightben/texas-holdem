@@ -21,7 +21,7 @@ node read_data.js data_300_1.json
 ### Files
 
 **data_0_example.json**<br />
-Player 0 was dealt hole_cards[0] 1 time in a 6-person game. The other data files are a single array of ~95,000 played hands.
+Player 0 was dealt hole_cards[0] 1 time in a 6-person game.
 
 
 ### Results of Scenarios
@@ -47,12 +47,3 @@ Player 0 is dealt the specified hole cards N times in an N-person game. Try to d
 
 211 [ 21, 1 ] 9d 2h<br />
 10474 0.11025263157894737
-
-
-9-players
-640 [ 36, 10 ] js jh<br />
-11200 0.224
-
-78 [ 13, 0 ] ad ah<br />
-
-
