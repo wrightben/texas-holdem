@@ -15,7 +15,8 @@ const texas_holdem = require('./../texas-holdem');
 // REQUIRE executed correctly?
 // ------------------------------
 // console.log(texas_holdem);
-// console.log(hole_cards[1]);
+// console.log(hole_cards[631]);
+// process.exit();
 
 
 var results = [];
@@ -29,7 +30,7 @@ for (var i = 1; i <= 95000; i++) {
 
 	cardsAsPlayers = texas_holdem.getCardsAsPlayers(players, 
 		texas_holdem.getCards([players, [
-				hole_cards[0]
+				hole_cards[631]
 			]
 		], shared)
 	);
