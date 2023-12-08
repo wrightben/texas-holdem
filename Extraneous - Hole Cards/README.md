@@ -2,10 +2,12 @@
 ### Summary
 
 ```shell
-# LOOKUP (index, ordinals, facevalues) - edit file directly or index specified as arg 1 
+# index - hole_cards[index]
+
+# LOOKUP — prints index, ordinals, facevalues for an index supplied in-file or as arg 1
 node lookup_hole_cards.js
 
-# GENERATE N hands using hole_cards.json index specified as arg 1
+# GENERATE N hands using index specified as arg 1
 node play_hole_cards.js 300 > data_300_1.json
 
 # SUMMARIZE
