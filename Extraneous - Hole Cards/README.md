@@ -16,17 +16,17 @@ node read_data.js
 
 ### Results (Scemarios)
 
-hole_cards[313] - [ 25, 13 ] [ 'Kd', 'Ad' ]
+hole_cards[313] - [ 25, 13 ] [ 'Kd', 'Ad' ]<br />
 30652 0.32265263157894736
 
-hole_cards[665] - [ 36, 35 ] [ 'Js', 'Ts' ] - 
+hole_cards[665] - [ 36, 35 ] [ 'Js', 'Ts' ]<br />
 25055 0.26373684210526316
 
-hole_cards[78] - [ 13, 0 ] [ 'Ad', 'Ah' ]
+hole_cards[78] - [ 13, 0 ] [ 'Ad', 'Ah' ]<br />
 23255 0.24478947368421053
 
-hole_cards[0] - [ 1, 0 ] [ Ah, 2h ]
+hole_cards[0] - [ 1, 0 ] [ Ah, 2h ]<br />
 12821 0.1349578947368421
 
-hole_cards[631] - [ 36, 1 ] [ 'Js', '2h' ]
+hole_cards[631] - [ 36, 1 ] [ 'Js', '2h' ]<br />
 12458 0.13113684210526316
