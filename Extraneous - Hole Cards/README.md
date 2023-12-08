@@ -40,7 +40,6 @@ Player 0 is dealt the specified hole cards N times in an N-person game. Try to d
 631 [ 36, 1 ] js 2h	4272	**0.08544**<br />
 211 [ 21, 1 ] 9d 2h	3645	**0.0729**<br />
 
-
 #### 6-Player
 
 78 [ 13, 0 ] ad ah	24883	**0.49766**<br />
@@ -67,7 +66,6 @@ Player 0 is dealt the specified hole cards N times in an N-person game. Try to d
 631 [ 36, 1 ] js 2h	14434	**0.28868**<br />
 211 [ 21, 1 ] 9d 2h	12575	**0.2515**<br />
 
-
 #### 2-Player
 
 78 [ 13, 0 ] ad ah	42814	**0.85628**<br />
@@ -80,3 +78,8 @@ Player 0 is dealt the specified hole cards N times in an N-person game. Try to d
 665 [ 36, 35 ] js ts	29571	**0.59142**<br />
 631 [ 36, 1 ] js 2h	23326	**0.46652**<br />
 211 [ 21, 1 ] 9d 2h	20894	**0.41788**<br />
+
+#### 9-Player (Aces vs Jacks)
+
+as ah vs js jh	16804	**0.33608**<br />
+js jh vs as ah	6601	**0.13202**<br />

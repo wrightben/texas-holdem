@@ -31,8 +31,8 @@ for (var i = 1; i <= 50000; i++) {
 	cardsAsPlayers = texas_holdem.getCardsAsPlayers(players, 
 		texas_holdem.getCards([players, [
 				_hc				
-// 				texas_holdem.getCardsFromString("as ah"),
-// 				texas_holdem.getCardsFromString("js jh")
+// 				texas_holdem.getCardsFromString("js jh"),
+// 				texas_holdem.getCardsFromString("as ah")
 			]
 		], shared)
 	);
