@@ -11,7 +11,7 @@ node read_data.js
 
 ### Files
 
-**data_0_exmaple.json** - This is hole_cards[0] (better known as [1,0] or [Ah,2h]) played just 1 hand to show the layout of the data format. The other data files are a single array of every played hand.
+**data_0_exmaple.json** - This is hole_cards[0] played just 1 hand to show the layout of the data format. The other data files are a single array of ~95,000 played hands.
 
 
 ### Results (Scemarios)
