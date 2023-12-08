@@ -34,7 +34,7 @@ Player 0 is dealt the specified hole cards 95000 times in a 6-person game. Try t
 300 [ 25, 0 ] kd ah<br />
 21811 0.22958947368421054
 
-0 [ 1, 0 ] ah 2h<br />
+0 [ 1, 0 ] 2h ah<br />
 12821 0.1349578947368421
 
 631 [ 36, 1 ] js 2h<br />
