@@ -7,7 +7,16 @@
 */
 
 // console.log("Current directory:", __dirname);
-const data = require('./data_211_1.json');
+
+var _filename;
+
+if (typeof process.argv[2] != "undefined") {
+	_filename = process.argv[2];
+} else {
+	process.exit("Cannot find filename");
+}
+
+const data = require('./'+_filename);
 
 l = data.length;
 winning = 0;

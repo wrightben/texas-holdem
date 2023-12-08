@@ -2,11 +2,14 @@
 ### Summary
 
 ```shell
+# LOOKUP (index, ordinals, facevalues)
+node lookup_hole_cards.js
+
 # GENERATE (played hands)
-node play_hole_cards.js > data_300_1.json
+node play_hole_cards.js 300 > data_300_1.json
 
 # SUMMARIZE
-node read_data.js 
+node read_data.js data_300_1.json
 ```
 ---- 
 

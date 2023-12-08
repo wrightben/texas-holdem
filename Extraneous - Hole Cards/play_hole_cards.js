@@ -16,11 +16,13 @@ const texas_holdem = require('./../texas-holdem');
 // ------------------------------
 // console.log(texas_holdem);
 
+var _hc = "211";
+if (typeof process.argv[2] != "undefined") {
+	_hc = hole_cards[process.argv[2]];
+}
 
-_hc = hole_cards[211];
 // console.log(_hc, texas_holdem.getFaceValues( _hc ));
 // process.exit();
-
 
 var results = [];
 
