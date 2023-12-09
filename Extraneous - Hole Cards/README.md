@@ -42,6 +42,10 @@ js jh vs as ah	6601	**0.13202**<br />
 
 #### 2023-12-09
 
-There are adults that make you want to have children. And children that make you want to kill them. This completes a 35-year-long adventure in the contemplation of how to help a smart child accomplish something meaningful.
+There are adults that make you want to have children. And children that make you want to kill them.
+
+This completes a 35-year-long adventure in the contemplation of how to help a smart child accomplish something meaningful.
 
 I hope it helps you.
+
+"The best ways to improve your odds at poker are to eliminate players and not play yourself."
