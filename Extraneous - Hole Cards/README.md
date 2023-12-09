@@ -38,8 +38,8 @@ Define *bluff* in this context.
 as ah vs js jh	16804	**0.33608**<br />
 js jh vs as ah	6601	**0.13202**<br />
 
-### Notes
-*2023-12-09*<br />
+#### 2023-12-09
+
 There are adults that make you want to have children. And children that make you want to kill them. This completes a 35-year-long adventure in the contemplation of how to help a smart child accomplish something meaningful.
 
 I hope it helps you.
