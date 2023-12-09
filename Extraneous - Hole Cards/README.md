@@ -18,7 +18,7 @@ node read_data.js data_300_1.json
 ```
 ---- 
 
-### *Suggestion*
+### Suggestion
 
 Create an example by doing this:
 1. Set players = 3 in play_hole_cards.js
