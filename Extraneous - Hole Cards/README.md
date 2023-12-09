@@ -18,7 +18,7 @@ node read_data.js data_300_1.json
 ```
 ---- 
 
-### Files
+### **Suggestion**
 
 Create an example by doing this:
 1. Set players = 3 in play_hole_cards.js
@@ -33,7 +33,7 @@ Player 0 is dealt the specified hole cards N times in an N-person game.
 
 Define *bluff* in this context.
 
-#### Example: 9-Player (Aces vs Jacks)
+##### Example: 9-Player (Aces vs Jacks)
 
 as ah vs js jh	16804	**0.33608**<br />
 js jh vs as ah	6601	**0.13202**<br />
