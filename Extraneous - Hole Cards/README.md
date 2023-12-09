@@ -48,4 +48,4 @@ This completes a 35-year-long adventure in the contemplation of how to help a sm
 
 I hope it helps you.
 
-"The best ways to improve your odds at poker are to eliminate players and not play yourself."
+"The best ways to improve your odds at poker are to eliminate players and not play yourself." &mdash; perhaps you'll predict seeing it the way I do.
