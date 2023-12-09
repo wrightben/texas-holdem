@@ -28,8 +28,7 @@ node play_hole_cards.js 78 > data_example_1.json
 ```
 
 
-### Results of Scenarios
-(See Analysis - Explorable)
+### Scenarios
 Player 0 is dealt the specified hole cards N times in an N-person game. 
 
 Define *bluff* in this context.
