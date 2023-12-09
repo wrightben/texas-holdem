@@ -20,8 +20,12 @@ node read_data.js data_300_1.json
 
 ### Files
 
-**data_0_example.json**<br />
-Player 0 was dealt hole_cards[0] 1 time in a 6-person game.
+Create an example by doing this:
+1. Set players = 3 in play_hole_cards.js
+2. Set i <= 1 in play_hole_cards.js (to play 1 game)
+```
+node play_hole_cards.js 78 > data_example_1.json
+```
 
 ### Results of Scenarios
 Player 0 is dealt the specified hole cards N times in an N-person game. Define *bluff* in this context.

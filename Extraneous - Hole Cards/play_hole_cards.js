@@ -2,8 +2,8 @@
 // NOTES
 // ------------------------------
 /* 
-	THINK: Play every hand 500,000 times against n opponents
-	DO: Comment out the last few lines in texas-holdem.js that play a single hand
+	THINK: Play every hand 50,000+ times against N opponents
+	DO: Comment out the last few lines in texas-holdem.js that play a single game
 */
 
 
@@ -25,7 +25,7 @@ var results = [];
 	
 for (var i = 1; i <= 50000; i++) {
 
-	var	players = 6,
+	var	players = 3,
 		shared = 5,
 
 	cardsAsPlayers = texas_holdem.getCardsAsPlayers(players, 
