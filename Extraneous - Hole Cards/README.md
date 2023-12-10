@@ -1,6 +1,8 @@
 # Texas Hold'em
 ### Summary
 
+"The best ways to improve your odds at poker are to eliminate players and not play yourself." &mdash; perhaps you'll predict seeing it the way I do. I hope it helps you.
+
 ```shell
 # index - hole_cards[index]
 
@@ -37,6 +39,3 @@ Define *bluff* in this context.
 
 as ah vs js jh	16804	**0.33608**<br />
 js jh vs as ah	6601	**0.13202**<br />
-
-
-"The best ways to improve your odds at poker are to eliminate players and not play yourself." &mdash; perhaps you'll predict seeing it the way I do. I hope it helps you.
