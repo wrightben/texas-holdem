@@ -1,9 +1,9 @@
 # Texas Hold'em
 ### Scenarios
 
-```shell
-# Save this code as: predicted_seat.sh
 
+### Save this code as: predicted_seat.sh
+```shell
 #!/bin/bash
 
 cat Results* | grep -e "$1" | grep -e "$2"
