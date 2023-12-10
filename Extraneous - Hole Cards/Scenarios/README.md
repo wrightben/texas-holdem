@@ -2,7 +2,7 @@
 ### Scenarios
 
 
-### Save this code as: predicted_seat.sh
+### Save this code as: seats.sh
 ```shell
 #!/bin/bash
 
@@ -16,9 +16,9 @@ cat Results* | grep -e "${11}" | grep -e "${12}"
 
 #### Run
 ```shell
-./predicted_seat.sh td 5s as 2s jc js qs 9c 9d 8c ah 7s | nl
+./seats.sh td 5s as 2s jc js qs 9c 9d 8c ah 7s | nl
 ```
 
 1. Copy a Results*.tsv to desktop.
-2. Save predicted_seat.sh
+2. Save seats.sh
 3. Deal your cards and run command
