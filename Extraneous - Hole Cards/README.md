@@ -38,14 +38,5 @@ Define *bluff* in this context.
 as ah vs js jh	16804	**0.33608**<br />
 js jh vs as ah	6601	**0.13202**<br />
 
-### Conclusion
 
-#### 2023-12-09
-
-There are adults that make you want to have children. And children that make you want to kill them.
-
-This completes a 35-year-long adventure in the contemplation of how to help a smart child accomplish something meaningful.
-
-I hope it helps you.
-
-"The best ways to improve your odds at poker are to eliminate players and not play yourself." &mdash; perhaps you'll predict seeing it the way I do.
+"The best ways to improve your odds at poker are to eliminate players and not play yourself." &mdash; perhaps you'll predict seeing it the way I do. I hope it helps you.
