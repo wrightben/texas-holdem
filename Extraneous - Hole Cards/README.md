@@ -1,6 +1,6 @@
 # Texas Hold'em
 
-"The best ways to improve your odds at poker are to eliminate players and not play yourself."
+"The best ways to improve your odds in poker are to eliminate players and not play yourself."
 
 ### Summary
 
