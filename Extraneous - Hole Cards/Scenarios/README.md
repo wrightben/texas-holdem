@@ -22,3 +22,6 @@ cat Results* | grep -e "${11}" | grep -e "${12}"
 1. Copy a Results*.tsv to desktop.
 2. Save seats.sh
 3. Deal your cards and run command
+
+### Theory
+Generating 50,000 games of N players for each of the hole cards yields the data necessary to simulate future games using only statistics (weighted outcomes).
