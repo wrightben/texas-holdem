@@ -29,7 +29,7 @@ Create an example by doing this:
 ```
 node play_hole_cards.js 78 > data_example_1.json
 ```
-
+---- 
 
 ### Scenarios
 Player 0 is dealt the specified hole cards N times in an N-person game. 
