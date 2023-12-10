@@ -2,8 +2,6 @@
 
 "The best ways to improve your odds at poker are to eliminate players and not play yourself."
 
-Perhaps you'll predict seeing it the way I do. I hope it helps you.
-
 ### Summary
 
 ```shell
