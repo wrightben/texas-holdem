@@ -25,3 +25,7 @@ cat Results* | grep -e "${11}" | grep -e "${12}"
 
 ### Theory
 Generating 50,000 games of N players for each of the hole cards yields the data necessary to simulate future games using only statistics (weighted outcomes).
+
+If you have 6 defined positions and play that game 50,000 times, how do those game statistics relate to the individual statistics? Is this question worth answering?
+
+When does it make sense to bet on a 30% (or less) expected value? I've dreamt of winning the lottery too.
