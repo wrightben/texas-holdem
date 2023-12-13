@@ -6,12 +6,18 @@
 ```shell
 #!/bin/bash
 
+echo ""
 cat Results* | grep -e "$1" | grep -e "$2"
 cat Results* | grep -e "$3" | grep -e "$4"
 cat Results* | grep -e "$5" | grep -e "$6"
 cat Results* | grep -e "$7" | grep -e "$8"
 cat Results* | grep -e "$9" | grep -e "${10}"
 cat Results* | grep -e "${11}" | grep -e "${12}"
+
+#echo ""
+#node "th/Extraneous - Hole Cards/play_hole_cards.js" "$1 $2 $3 $4 $5 $6 $7 $8 $9 ${10} ${11} ${12} ${13} ${14} ${15} ${16} ${17}"
+
+#echo ""
 ```
 
 #### Run
