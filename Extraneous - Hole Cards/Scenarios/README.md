@@ -39,3 +39,5 @@ When does it make sense to bet on a 50% (or less) expected value?
 No one ever gave me the impression that I would appreciate an unshuffled deck as much as I do now.
 
 The game can be simulated statistically. Perhaps the best online poker sites use that technique. But they still need cards, don't they? There are interesting implementations to consider at this intersection.
+
+Consider AA in first position at a 6-man table. Will the game collapse to a 3-man scenario?
