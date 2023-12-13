@@ -29,3 +29,5 @@ Generating 50,000 games of N players for each of the hole cards yields the data 
 If you have 6 defined positions and play that game 50,000 times, how do those game statistics relate to the individual statistics? Is this question worth answering?
 
 When does it make sense to bet on a 30% (or less) expected value? I've dreamt of winning the lottery too.
+
+No one ever gave me the impression that I would appreciate an unshuffled deck as much as I do now.
