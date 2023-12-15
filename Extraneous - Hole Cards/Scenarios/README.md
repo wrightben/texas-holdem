@@ -40,8 +40,8 @@ No one ever gave me the impression that I would appreciate an unshuffled deck as
 
 The game can be simulated statistically. Perhaps the best online poker sites use that technique. But they still need cards, don't they? There are interesting implementations to consider at this intersection.
 
-In a 6-person game, you can bet A or K, and not expect to win much money. Contemplating poker is a toy that can be explained to a young person in a few minutes. There are other examples—Don't waste too much time on video games, or try running for an hour a day, etc. The lesson is succinct and you can move on to other, more important things.
-
 Consider AA in first position at a 6-man table. Will the game collapse to a 3-man scenario?
 
 Do the 6 sets of hole cards when known sum to 100% probability?
+
+In a 6-person game, you can bet A or K, and not expect to win much money. Contemplating poker is a toy that can be explained to a young person in a few minutes. There are other examples—Don't waste too much time on video games, or try running for an hour a day, etc. The lesson is succinct and you can move on to other, more important things.
