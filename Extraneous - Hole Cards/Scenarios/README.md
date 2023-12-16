@@ -32,16 +32,10 @@ cat Results* | grep -e "${11}" | grep -e "${12}"
 ### Theory
 Generating 50,000 games of N players for each of the hole cards yields the data necessary to simulate future games using only statistics (weighted outcomes).
 
-If you have 6 defined positions and play that game 50,000 times, how do those game statistics relate to the individual statistics? Is this question worth answering?
+The game can be simulated statistically. Perhaps the best online poker sites use that technique. But they still need cards, don't they? There are interesting implementations to consider at this intersection.
 
 When does it make sense to bet on a 50% (or less) expected value?
 
-No one ever gave me the impression that I would appreciate an unshuffled deck as much as I do now.
+A 6-person table will likely collapse to a 3-man-or-less scenario. In a 6-person game, you can bet A or K, and not expect to win much money. Contemplating poker is a toy that can be explained to a young person in a few minutes.
 
-The game can be simulated statistically. Perhaps the best online poker sites use that technique. But they still need cards, don't they? There are interesting implementations to consider at this intersection.
-
-Consider AA in first position at a 6-man table. Will the game collapse to a 3-man scenario?
-
-Do the 6 sets of hole cards when known sum to 100% probability?
-
-In a 6-person game, you can bet A or K, and not expect to win much money. Contemplating poker is a toy that can be explained to a young person in a few minutes. There are other examples—Don't waste too much time on video games, or try running for an hour a day, etc. The lesson is succinct and you can move on to other, more important things.
+No one ever gave me the impression that I would appreciate an unshuffled deck as much as I do now. Who would accept this possible outcome?
