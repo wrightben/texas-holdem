@@ -40,3 +40,7 @@ Define *bluff* in this context.
 
 as ah vs js jh	16804	**0.33608**<br />
 js jh vs as ah	6601	**0.13202**<br />
+
+##### Example: Collapse to 3-Player (Ks Js vs AK Off)
+
+Ks Js has a 27% ev
