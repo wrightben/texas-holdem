@@ -38,4 +38,4 @@ When does it make sense to bet on a 50% (or less) expected value?
 
 A 6-person table will likely collapse to a 3-man-or-less scenario. In a 6-person game, you can bet A or K, and not expect to win much money. Contemplating poker is a toy that can be explained to a young person in a few minutes.
 
-No one ever gave me the impression that I would appreciate an unshuffled deck as much as I do now. Who would accept this possible outcome?
+I appreciate an unshuffled deck differently now. Who would accept this possible outcome?
