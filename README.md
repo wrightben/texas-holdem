@@ -1,6 +1,16 @@
 > [!NOTE]
 > Paste texas-holdem.js into meta.ai and it will explain how to use it and/or run it for you.<br />
 > You can even ask: "deal a 6-player hand" or "play aces vs jacks" or similar.
+>
+> See the meta.ai analysis of this code's elegant, clever and well-designed elements:
+> https://www.meta.ai/share/c/QHRa7SMW59
+>
+> DESIGN SCORES on the BELL CURVE
+> Type of Library: Kernel for reproducible experiments
+> Readability / correctness: ∼90th percentile
+> API design for research: ∼95th percentile
+> Performance: ∼50-60th percentile (Average)
+> Size / embeddability: ∼90th percentile
 
 # Texas Hold'em
 ### Summary
