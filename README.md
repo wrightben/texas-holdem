@@ -1,5 +1,5 @@
 > [!NOTE]
-> Paste texas-holdem.js into meta.ai and it will explain how to use it and/or run it for you.
+> Paste texas-holdem.js into meta.ai and it will explain how to use it and/or run it for you.<br />
 > You can even ask: "deal a 6-player hand" or "play aces vs jacks" or similar.
 
 # Texas Hold'em
