@@ -96,13 +96,12 @@ var getCardsAsPlayers = function( players, cards ) {
 
 	var _ = [],
 		_p = 2 * players,
-		_length = cards.length,
-		_shared = _length - ( _length - (players * 2) );
+		_length = cards.length;
 		
 	for (var i = 2; i <= _p; i += 2) {
 		_.push( [].concat( 
 			cards.slice(i-2, i), 
-			cards.slice( _shared, _length ) 
+			cards.slice( _p, _length ) 
 		) );
 	}
 	return _;
