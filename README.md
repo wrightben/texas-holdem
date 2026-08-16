@@ -1,3 +1,6 @@
+> [!NOTE]
+> Paste this file into meta.ai and it will explain how to use it and/or run it for you
+
 # Texas Hold'em
 ### Summary
 ```js
